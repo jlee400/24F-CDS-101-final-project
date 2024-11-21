@@ -1,0 +1,189 @@
+---
+title: "Predictive Analytics"
+author: "Juhyun"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+### Libraries
+```{r}
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+library(modelr)
+library(boot)
+```
+
+### Import Dataset
+```{r}
+data <- read.csv("climate_change_impact_on_agriculture_2024.csv")
+```
+
+### Preparation and cleaning the data
+
+```{r}
+# mutate continent columns
+
+country_to_continent <- data.frame(
+  Country = c("Argentina", "Australia", "Brazil","Canada","China","France",
+              "India","Nigeria", "Russia","USA"),
+  Continent = c("South America", "Oceania", "South America", 
+                "North America", "East Asia", "Europe", 
+                "South Asia", "Africa","Eurasia","North America")
+)
+
+data_with_continent <- data %>%
+  left_join(country_to_continent, by = "Country") 
+
+data <- data_with_continent %>%
+  select(Year, Country, Continent, Region, everything())
+
+```
+
+```{r}
+aggregated_data <- data %>%
+  group_by(Year, Continent) %>%
+  summarize(
+    avg_crop_yield = 
+      mean(Crop_Yield_MT_per_HA, na.rm = TRUE),
+    avg_extreme_weather_events =
+      mean(Extreme_Weather_Events, na.rm= TRUE),
+    avg_temp_c = 
+      mean(Average_Temperature_C, na.rm = TRUE),
+    avg_total_precipitation_mm = 
+      mean(Total_Precipitation_mm, na.rm = TRUE),
+    avg_co2_emissions_mt = 
+      mean(CO2_Emissions_MT, na.rm =TRUE),
+    avg_pesticide_use_kg_per_ha = 
+      mean(Pesticide_Use_KG_per_HA, na.rm=TRUE),
+    avg_fertilizer_use_kg_per_ha = 
+      mean(Fertilizer_Use_KG_per_HA, na.rm =TRUE),
+    avg_soil_health_index = 
+      mean(Soil_Health_Index, na.rm=TRUE),
+    avg_economic_impact_million_usd = 
+      mean(Economic_Impact_Million_USD, na.rm = TRUE)
+  ) %>%
+  ungroup() 
+
+```
+
+```{r}
+data <- data %>%
+  left_join(aggregated_data, by = c("Year", "Continent"))
+
+data_constracted <- data %>%
+  select(-c(6:9, 12:14, 16))
+```
+
+```{r}
+set.seed(10000)
+
+train_df <- data %>% sample_frac(0.7)
+
+test_df <- anti_join(data, train_df)
+
+```
+```{r}
+train_df <- train_df %>%
+  mutate(
+    continent = as.factor(Continent),
+    crop_type = as.factor(Crop_Type),
+    average_temperature_c = as.numeric(Average_Temperature_C),
+    extreme_weather_events = as.numeric(Extreme_Weather_Events), 
+    avg_crop_yield = as.numeric(avg_crop_yield) 
+  )
+
+```
+```{r}
+train_df %>%
+  summarize(
+    total = n(),
+    missing = sum(is.na(avg_crop_yield)),
+    fraction_missing = missing / total
+  )
+
+train_df <- train_df %>%
+  mutate(avg_crop_yield = if_else(is.na(avg_crop_yield), 
+                                  mean(avg_crop_yield, na.rm = TRUE), 
+                                  avg_crop_yield))
+
+```
+#### crop_yield
+```{r}
+library(randomForest)
+# Train a random forest model
+rf_model <- randomForest(
+  avg_crop_yield ~ average_temperature_c + extreme_weather_events + 
+    Total_Precipitation_mm + continent + crop_type,
+  data = train_df,
+  ntree = 100, # Number of trees
+  mtry = 2,    # Number of variables randomly sampled
+  importance = TRUE
+)
+
+# View model summary
+print(rf_model)
+
+```
+
+```{r}
+# Predict on the test dataset
+test_df <- test_df %>%
+  mutate(
+    continent = as.factor(Continent),
+    crop_type = as.factor(Crop_Type),
+    average_temperature_c = as.numeric(Average_Temperature_C),
+    extreme_weather_events = as.numeric(Extreme_Weather_Events) # Ensure numeric type
+  )
+# Predict on the test dataset
+test_df <- test_df %>%
+  mutate(
+    predicted_yield = predict(rf_model, newdata = test_df)
+  )
+
+# Calculate Mean Absolute Error (MAE)
+mae <- mean(abs(test_df$predicted_yield - test_df$avg_crop_yield))
+print(paste("Mean Absolute Error:", mae))
+
+
+```
+```{r}
+head(test_df %>%
+  select(Continent, Crop_Type, avg_crop_yield, predicted_yield) %>%
+  arrange(predicted_yield))
+
+```
+
+# economic_impact
+```{r}
+# Train a random forest model to predict economic impact
+rf_model <- randomForest(
+  avg_economic_impact_million_usd ~ average_temperature_c + extreme_weather_events + 
+    avg_total_precipitation_mm + continent + crop_type + avg_crop_yield,
+  data = train_df,
+  ntree = 100, # Number of trees
+  mtry = 2,    # Number of variables randomly sampled
+  importance = TRUE
+)
+
+# View model summary
+print(rf_model)
+```
+```{r}
+#Predict on the test dataset
+test_df <- test_df %>%
+  mutate(
+    predicted_economic_impact = predict(rf_model, newdata = test_df)
+  )
+
+# Calculate Mean Absolute Error (MAE)
+mae <- mean(abs(test_df$predicted_economic_impact - test_df$avg_economic_impact_million_usd))
+print(paste("Mean Absolute Error:", mae))
+```
+```{r}
+head(test_df %>%
+  select(Continent, Crop_Type, avg_economic_impact_million_usd, predicted_economic_impact) %>%
+  arrange(predicted_economic_impact))
+
+
+```
+
