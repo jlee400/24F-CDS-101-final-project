@@ -45,6 +45,7 @@ aggregated_data <- data %>%
   group_by(Year, Continent) %>%
   summarize(
     avg_crop_yield = mean(Crop_Yield_MT_per_HA, na.rm = TRUE),
+    avg_extreme_weather_events =mean(Extreme_Weather_Events, na.rm= TRUE),
     avg_temp_c = mean(Average_Temperature_C, na.rm = TRUE),
     avg_total_precipitation_mm = mean(Total_Precipitation_mm, na.rm = TRUE),
     avg_co2_emissions_mt = mean(CO2_Emissions_MT, na.rm =TRUE),
@@ -88,6 +89,26 @@ corr_matrix <- round(cor(reduced_data, use = "complete.obs"), 2)
 
 # Visualize the correlation matrix
 ggcorrplot(corr_matrix, hc.order = TRUE, type = "lower", lab = TRUE)
+```
+```{r}
+ data %>%
+  pivot_longer(
+    cols = c(Average_Temperature_C, CO2_Emissions_MT, Total_Precipitation_mm, 
+             Crop_Yield_MT_per_HA, Extreme_Weather_Events), 
+    names_to = "measurement", 
+    values_to = "value"
+  ) %>%
+  ggplot() +
+  geom_point(mapping = aes(x = value, y = Economic_Impact_Million_USD)) +
+  facet_wrap(~measurement, scales = "free_x") +
+  geom_smooth(mapping = aes(x = value, y = Economic_Impact_Million_USD), method = "lm") +
+  labs(
+    title = "Relationships Between Measurements and Economic Impact",
+    x = "Measurement Value",
+    y = "Economic Impact (Million USD)"
+  ) +
+  theme_minimal()
+
 ```
 
 
@@ -311,3 +332,11 @@ logistic_cv_best <- cv.glm(
 ```{r}
 logistic_cv3$delta
 ```
+```{r}
+ Bonus_exercise_df<-model_best_preds%>%
+ select(Year, Country, Continent,Crop_Type,outcome)%>%
+ rename(extreme_weather_model=outcome)
+ write_csv(Bonus_exercise_df,"Bonus_exercise.csv")
+```
+
+
