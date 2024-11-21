@@ -1,0 +1,157 @@
+---
+title: "Final Project"
+author: "Daehee Cho"
+date: "2024-11-20"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+### Libraries
+```{r}
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+```
+
+### Import Dataset
+```{r}
+data <- read.csv("climate_change_impact_on_agriculture_2024.csv")
+```
+
+### Preparation and cleaning the data
+
+```{r}
+# mutate continent columns
+
+country_to_continent <- data.frame(
+  Country = c("Argentina", "Australia", "Brazil","Canada","China","France",
+              "India","Nigeria", "Russia","USA"),
+  Continent = c("South America", "Oceania", "South America", 
+                "North America", "East Asia", "Europe", 
+                "South Asia", "Africa","Eurasia","North America")
+)
+
+data_with_continent <- data %>%
+  left_join(country_to_continent, by = "Country") 
+
+data <- data_with_continent %>%
+  select(Year, Country, Continent, Region, everything())
+
+```
+
+# Continent
+
+# 1) avg_temp and continent
+
+Box plot for Average Temperature by Continent
+
+```{r}
+anova_results <- aov(Average_Temperature_C ~ Continent, data = data)
+summary(anova_results)
+```
+
+p-value
+
+```{r}
+p_value <- summary(anova_results)[[1]]["Pr(>F)"]
+
+ggplot(data, aes(x = Continent, y = Average_Temperature_C)) +
+  geom_boxplot() +
+  labs(title = "Average Temperature by Continent",
+       x = "Continent",
+       y = "Average Temperature (°C)")
+```
+
+Hypothesis:
+
+   - Null Hypothesis (H0): There is no significant difference in average temperature across continents.
+
+
+   - Alternative Hypothesis (Ha): There is a significant difference in average temperature across continents
+
+
+
+
+# 2) Year vs CO2 emissions
+
+Bar plot for CO2 Emissions by Year
+
+```{r}
+co2_model <- lm(CO2_Emissions_MT ~ Year, data = data) 
+summary(co2_model)
+ p_value <- summary(co2_model)$coefficients
+ggplot(data, aes(x = Year, y = CO2_Emissions_MT)) +
+  geom_bar(stat = "identity") +
+  labs(title = "CO₂ Emissions by Year",
+       x = "Year",
+       y = "CO₂ Emissions (Million Tons)")
+```
+
+Hypotheses:
+
+   - Null Hypothesis (H0): CO₂ emissions have not significantly changed over 
+the years.
+
+   - Alternative Hypothesis (Ha): CO₂ emissions have significantly changed over the years.
+
+
+
+
+# 3) Extreme weather by year
+
+Histogram for extreme weather by year in continent
+
+```{r}
+extreme_weather_model <- aov(Extreme_Weather_Events ~ Continent * Year, data = data) 
+summary(extreme_weather_model)
+ p_value <- summary(extreme_weather_model)[[1]]["Pr(>F)"]
+
+ 
+ggplot(data.frame(data_with_continent), aes(x = Extreme_Weather_Events)) +  
+   geom_histogram(binwidth = 0.5, fill = "skyblue", color = "black") + 
+    labs(
+       title = "Distribution of Extreme weather events", 
+       x = "the number of occurance", 
+       y = "Frequency"
+       )
+```
+
+Hypotheses:
+
+   - Null Hypothesis (H0): There is no significant difference in the frequency 
+of extreme weather events across continents over the years; any observed differences are due to random chance.
+
+   - Alternative Hypothesis (Ha): There is a significant difference in the frequency of extreme weather events across continents over the years.
+
+
+
+
+# 4) Year vs precipitation
+
+Histogram for extreme weather by year in continent
+
+```{r}
+precipitation_model <- aov(Total_Precipitation_mm ~ Continent * Year, data = data) 
+summary(precipitation_model) 
+p_value <- summary(precipitation_model)[[1]]["Pr(>F)"]
+ggplot(data, aes(x = Year, y = Total_Precipitation_mm, fill = Continent)) +   
+   geom_bar(stat = "identity", position = "dodge") + 
+   labs(
+      title = "Annual Precipitation by Year and Continent", 
+      x = "Year", 
+      y = "Average Precipitation (mm)" 
+   ) 
+```
+
+Hypotheses:
+
+   - Null Hypothesis (H0): There is no significant difference in average annual precipitation across continents over the years; any observed differences are due to random variation.
+
+   - Alternative Hypothesis (Ha): There is a significant difference in average annual precipitation across continents over the years.
+
+
+
