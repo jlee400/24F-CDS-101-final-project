@@ -45,6 +45,8 @@ data <- data_with_continent %>%
 
 ### Continent
 
+* Sub Research Question: Which of the continent has less change in change of climate?
+
 #### 1) avg_temp and continent
 
 Box plot for Average Temperature by Continent
@@ -54,11 +56,11 @@ anova_results <- aov(Average_Temperature_C ~ Continent, data = data)
 summary(anova_results)
 ```
 
-p-value
+* p-value
 
 ```{r}
 p_value <- summary(anova_results)[[1]]["Pr(>F)"]
-
+# 색 바꾸고 그래프 설명(전체적을 그래프 설명이 없음)
 ggplot(data, aes(x = Continent, y = Average_Temperature_C)) +
   geom_boxplot() +
   labs(title = "Average Temperature by Continent",
@@ -78,9 +80,10 @@ Hypothesis:
 
 # 2) Year vs CO2 emissions
 
-Bar plot for CO2 Emissions by Year
+Bar plot for CO2 Emissions by Year 
 
 ```{r}
+## line graph/ continent 별로 나눠서 다 따로 그려야함
 co2_model <- lm(CO2_Emissions_MT ~ Year, data = data) 
 summary(co2_model)
  p_value <- summary(co2_model)$coefficients
@@ -110,9 +113,10 @@ extreme_weather_model <- aov(Extreme_Weather_Events ~ Continent * Year, data = d
 summary(extreme_weather_model)
  p_value <- summary(extreme_weather_model)[[1]]["Pr(>F)"]
 
- 
+# data 를 여기서 왜 data_with_continent 를 썼는지...?  + 다 continent 로 나눠서 그렸으면 좋겠음
 ggplot(data.frame(data_with_continent), aes(x = Extreme_Weather_Events)) +  
-   geom_histogram(binwidth = 0.5, fill = "skyblue", color = "black") + 
+  # bar graph 가 더 낳은 것 같음
+   geom_bar(binwidth = 0.5, fill = "skyblue", color = "black") + 
     labs(
        title = "Distribution of Extreme weather events", 
        x = "the number of occurance", 
@@ -135,10 +139,12 @@ of extreme weather events across continents over the years; any observed differe
 Histogram for extreme weather by year in continent
 
 ```{r}
+# 이거 너무 지저분함 그래프를 대륙별로 다 따로 그려야함 
 precipitation_model <- aov(Total_Precipitation_mm ~ Continent * Year, data = data) 
 summary(precipitation_model) 
 p_value <- summary(precipitation_model)[[1]]["Pr(>F)"]
-ggplot(data, aes(x = Year, y = Total_Precipitation_mm, fill = Continent)) +   
+ggplot(data, aes(x = Year, y = Total_Precipitation_mm, fill = Continent)) + 
+  #대륙별로 다시 그리고 line 으로도 그려보고 지저분하면 bar 로 그리길 바람.
    geom_bar(stat = "identity", position = "dodge") + 
    labs(
       title = "Annual Precipitation by Year and Continent", 
