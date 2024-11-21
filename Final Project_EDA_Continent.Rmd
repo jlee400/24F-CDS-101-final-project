@@ -43,9 +43,9 @@ data <- data_with_continent %>%
 
 ```
 
-# Continent
+### Continent
 
-# 1) avg_temp and continent
+#### 1) avg_temp and continent
 
 Box plot for Average Temperature by Continent
 
