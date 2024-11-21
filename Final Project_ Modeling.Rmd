@@ -1,0 +1,152 @@
+---
+title: "Final Project_Modeling"
+author: "Joonsoo Choi"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: 
+    toc: yes
+    number_sections: yes
+  html_document:
+    df_print: paged
+  word_document: default
+editor_options:
+  chunk_output_type: inline
+---
+
+
+### Libraries
+```{r}
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+```
+
+### Import Dataset
+```{r}
+data <- read.csv("climate_change_impact_on_agriculture_2024.csv")
+```
+
+### Preparation and cleaning the data
+
+```{r}
+# mutate continent columns
+
+country_to_continent <- data.frame(
+  Country = c("Argentina", "Australia", "Brazil","Canada","China","France",
+              "India","Nigeria", "Russia","USA"),
+  Continent = c("South America", "Oceania", "South America", 
+                "North America", "East Asia", "Europe", 
+                "South Asia", "Africa","Eurasia","North America")
+)
+
+data_with_continent <- data %>%
+  left_join(country_to_continent, by = "Country") 
+
+data <- data_with_continent %>%
+  select(Year, Country, Continent, Region, everything())
+
+```
+
+
+##Modeling
+###Modeling 1
+```{r}
+# 데이터 샘플링
+set.seed(123) # 재현성을 위해 시드 설정
+sampled_data <- data %>% sample_n(1000) # 1000개의 랜덤 샘플 선택
+
+# 샘플 데이터를 활용한 그래프
+ggplot(sampled_data, aes(x = Fertilizer_Use_KG_per_HA, y = Soil_Health_Index)) +
+  geom_point(color = "darkgreen", size = 2, alpha = 0.6) +
+  geom_smooth(method = "lm", color = "red", se = FALSE, linewidth = 1.2) +
+  facet_wrap(~ Country) +
+  labs(
+    title = "Country-wise Fertilizer Use vs Soil Health Index (Sampled Data)",
+    x = "Fertilizer Use (kg/ha)",
+    y = "Soil Health Index"
+  ) +
+  theme_light() +
+  theme(
+    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
+    strip.text = element_text(size = 12, face = "bold"),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 10)
+  )
+
+```
+
+
+###Slope
+```{r}
+# 나라별 선형 회귀 기울기 계산
+library(dplyr)
+
+slopes <- data %>%
+  group_by(Country) %>%
+  summarise(
+    slope = coef(lm(Soil_Health_Index ~ Fertilizer_Use_KG_per_HA))[2], # 회귀선의 기울기
+    p_value = summary(lm(Soil_Health_Index ~ Fertilizer_Use_KG_per_HA))$coefficients[2, 4] # 기울기의 p-value
+  )
+
+# 결과 출력
+print(slopes)
+```
+
+
+###Slope시각화 1-1
+```{r}
+# 나라별 기울기 시각화
+ggplot(slopes, aes(x = reorder(Country, slope), y = slope, fill = slope > 0)) +
+  geom_bar(stat = "identity", show.legend = FALSE) +
+  coord_flip() +
+  scale_fill_manual(values = c("blue", "red")) +
+  labs(
+    title = "Slope of Fertilizer Use vs Soil Health Index by Country",
+    x = "Country",
+    y = "Slope (Impact of Fertilizer Use)"
+  ) +
+  theme_minimal()
+
+```
+
+
+###Slope시각화 1-2
+```{r}
+# Scatter Plot (점 그래프)
+ggplot(slopes, aes(x = slope, y = reorder(Country, slope))) +
+  geom_point(size = 4, color = "red") + # 점의 크기와 색상 설정
+  geom_vline(xintercept = 0, linetype = "dashed", color = "gray") + # 기준선 추가
+  labs(
+    title = "Scatter Plot of Slope (Impact of Fertilizer Use)",
+    x = "Slope (Impact of Fertilizer Use)",
+    y = "Country"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 10)
+  )
+
+```
+
+
+###Slope시각화 1-3
+```{r}
+ggplot(slopes, aes(x = slope, y = reorder(Country, slope), fill = slope > 0)) +
+  geom_bar(stat = "identity", show.legend = FALSE, width = 0.7) +
+  coord_flip() +
+  scale_fill_manual(values = c("blue", "red")) + # 음수=파랑, 양수=빨강
+  labs(
+    title = "Impact of Fertilizer Use on Soil Health Index by Country",
+    x = "Slope (Impact of Fertilizer Use)",
+    y = "Country"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 10)
+  )
+
+```
