@@ -1,5 +1,5 @@
 ---
-title: "Final Project_EDA_Continent"
+title: "Final Project"
 author: "Daehee Cho"
 date: "2024-11-20"
 output: pdf_document
