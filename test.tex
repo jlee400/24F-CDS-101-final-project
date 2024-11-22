@@ -1,0 +1,486 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Predictive Analytics},
+  pdfauthor={Juhyun},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Predictive Analytics}
+\author{Juhyun}
+\date{2024-11-22}
+
+\begin{document}
+\maketitle
+
+\hypertarget{libraries}{%
+\subsubsection{Libraries}\label{libraries}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## 다음의 패키지를 부착합니다: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
+## v forcats   1.0.0     v stringr   1.5.1
+## v lubridate 1.9.3     v tibble    3.2.1
+## v purrr     1.0.2     v tidyr     1.3.1
+## v readr     2.1.5
+\end{verbatim}
+
+\begin{verbatim}
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+## i Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(modelr)}
+\FunctionTok{library}\NormalTok{(boot)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{import-dataset}{%
+\subsubsection{Import Dataset}\label{import-dataset}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"climate\_change\_impact\_on\_agriculture\_2024.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{preparation-and-cleaning-the-data}{%
+\subsubsection{Preparation and cleaning the
+data}\label{preparation-and-cleaning-the-data}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# mutate continent columns}
+
+\NormalTok{country\_to\_continent }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{Country =} \FunctionTok{c}\NormalTok{(}\StringTok{"Argentina"}\NormalTok{, }\StringTok{"Australia"}\NormalTok{, }\StringTok{"Brazil"}\NormalTok{,}\StringTok{"Canada"}\NormalTok{,}\StringTok{"China"}\NormalTok{,}\StringTok{"France"}\NormalTok{,}
+              \StringTok{"India"}\NormalTok{,}\StringTok{"Nigeria"}\NormalTok{, }\StringTok{"Russia"}\NormalTok{,}\StringTok{"USA"}\NormalTok{),}
+  \AttributeTok{Continent =} \FunctionTok{c}\NormalTok{(}\StringTok{"South America"}\NormalTok{, }\StringTok{"Oceania"}\NormalTok{, }\StringTok{"South America"}\NormalTok{, }
+                \StringTok{"North America"}\NormalTok{, }\StringTok{"East Asia"}\NormalTok{, }\StringTok{"Europe"}\NormalTok{, }
+                \StringTok{"South Asia"}\NormalTok{, }\StringTok{"Africa"}\NormalTok{,}\StringTok{"Eurasia"}\NormalTok{,}\StringTok{"North America"}\NormalTok{)}
+\NormalTok{)}
+
+\NormalTok{data\_with\_continent }\OtherTok{\textless{}{-}}\NormalTok{ data }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{left\_join}\NormalTok{(country\_to\_continent, }\AttributeTok{by =} \StringTok{"Country"}\NormalTok{) }
+
+\NormalTok{data }\OtherTok{\textless{}{-}}\NormalTok{ data\_with\_continent }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{select}\NormalTok{(Year, Country, Continent, Region, }\FunctionTok{everything}\NormalTok{())}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{aggregated\_data }\OtherTok{\textless{}{-}}\NormalTok{ data }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(Year, Continent) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarize}\NormalTok{(}
+    \AttributeTok{avg\_crop\_yield =} 
+      \FunctionTok{mean}\NormalTok{(Crop\_Yield\_MT\_per\_HA, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{),}
+    \AttributeTok{avg\_extreme\_weather\_events =}
+      \FunctionTok{mean}\NormalTok{(Extreme\_Weather\_Events, }\AttributeTok{na.rm=} \ConstantTok{TRUE}\NormalTok{),}
+    \AttributeTok{avg\_temp\_c =} 
+      \FunctionTok{mean}\NormalTok{(Average\_Temperature\_C, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{),}
+    \AttributeTok{avg\_total\_precipitation\_mm =} 
+      \FunctionTok{mean}\NormalTok{(Total\_Precipitation\_mm, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{),}
+    \AttributeTok{avg\_co2\_emissions\_mt =} 
+      \FunctionTok{mean}\NormalTok{(CO2\_Emissions\_MT, }\AttributeTok{na.rm =}\ConstantTok{TRUE}\NormalTok{),}
+    \AttributeTok{avg\_pesticide\_use\_kg\_per\_ha =} 
+      \FunctionTok{mean}\NormalTok{(Pesticide\_Use\_KG\_per\_HA, }\AttributeTok{na.rm=}\ConstantTok{TRUE}\NormalTok{),}
+    \AttributeTok{avg\_fertilizer\_use\_kg\_per\_ha =} 
+      \FunctionTok{mean}\NormalTok{(Fertilizer\_Use\_KG\_per\_HA, }\AttributeTok{na.rm =}\ConstantTok{TRUE}\NormalTok{),}
+    \AttributeTok{avg\_soil\_health\_index =} 
+      \FunctionTok{mean}\NormalTok{(Soil\_Health\_Index, }\AttributeTok{na.rm=}\ConstantTok{TRUE}\NormalTok{),}
+    \AttributeTok{avg\_economic\_impact\_million\_usd =} 
+      \FunctionTok{mean}\NormalTok{(Economic\_Impact\_Million\_USD, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ungroup}\NormalTok{() }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `summarise()` has grouped output by 'Year'. You can override using the
+## `.groups` argument.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data }\OtherTok{\textless{}{-}}\NormalTok{ data }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{left\_join}\NormalTok{(aggregated\_data, }\AttributeTok{by =} \FunctionTok{c}\NormalTok{(}\StringTok{"Year"}\NormalTok{, }\StringTok{"Continent"}\NormalTok{))}
+
+\NormalTok{data\_constracted }\OtherTok{\textless{}{-}}\NormalTok{ data }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{6}\SpecialCharTok{:}\DecValTok{9}\NormalTok{, }\DecValTok{12}\SpecialCharTok{:}\DecValTok{14}\NormalTok{, }\DecValTok{16}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{10000}\NormalTok{)}
+
+\NormalTok{train\_df }\OtherTok{\textless{}{-}}\NormalTok{ data }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{sample\_frac}\NormalTok{(}\FloatTok{0.7}\NormalTok{)}
+
+\NormalTok{test\_df }\OtherTok{\textless{}{-}} \FunctionTok{anti\_join}\NormalTok{(data, train\_df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Joining with `by = join_by(Year, Country, Continent, Region, Crop_Type,
+## Average_Temperature_C, Total_Precipitation_mm, CO2_Emissions_MT,
+## Crop_Yield_MT_per_HA, Extreme_Weather_Events, Irrigation_Access_.,
+## Pesticide_Use_KG_per_HA, Fertilizer_Use_KG_per_HA, Soil_Health_Index,
+## Adaptation_Strategies, Economic_Impact_Million_USD, avg_crop_yield,
+## avg_extreme_weather_events, avg_temp_c, avg_total_precipitation_mm,
+## avg_co2_emissions_mt, avg_pesticide_use_kg_per_ha,
+## avg_fertilizer_use_kg_per_ha, avg_soil_health_index,
+## avg_economic_impact_million_usd)`
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{train\_df }\OtherTok{\textless{}{-}}\NormalTok{ train\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}
+    \AttributeTok{continent =} \FunctionTok{as.factor}\NormalTok{(Continent),}
+    \AttributeTok{crop\_type =} \FunctionTok{as.factor}\NormalTok{(Crop\_Type),}
+    \AttributeTok{average\_temperature\_c =} \FunctionTok{as.numeric}\NormalTok{(Average\_Temperature\_C),}
+    \AttributeTok{extreme\_weather\_events =} \FunctionTok{as.numeric}\NormalTok{(Extreme\_Weather\_Events), }
+    \AttributeTok{avg\_crop\_yield =} \FunctionTok{as.numeric}\NormalTok{(avg\_crop\_yield) }
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{train\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarize}\NormalTok{(}
+    \AttributeTok{total =} \FunctionTok{n}\NormalTok{(),}
+    \AttributeTok{missing =} \FunctionTok{sum}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(avg\_crop\_yield)),}
+    \AttributeTok{fraction\_missing =}\NormalTok{ missing }\SpecialCharTok{/}\NormalTok{ total}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   total missing fraction_missing
+## 1  7000       0                0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{train\_df }\OtherTok{\textless{}{-}}\NormalTok{ train\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{avg\_crop\_yield =} \FunctionTok{if\_else}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(avg\_crop\_yield), }
+                                  \FunctionTok{mean}\NormalTok{(avg\_crop\_yield, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{), }
+\NormalTok{                                  avg\_crop\_yield))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{crop_yield}{%
+\paragraph{crop\_yield}\label{crop_yield}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(randomForest)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: 패키지 'randomForest'는 R 버전 4.4.2에서 작성되었습니다
+\end{verbatim}
+
+\begin{verbatim}
+## randomForest 4.7-1.2
+\end{verbatim}
+
+\begin{verbatim}
+## Type rfNews() to see new features/changes/bug fixes.
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## 다음의 패키지를 부착합니다: 'randomForest'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:ggplot2':
+## 
+##     margin
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:dplyr':
+## 
+##     combine
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Train a random forest model}
+\NormalTok{rf\_model }\OtherTok{\textless{}{-}} \FunctionTok{randomForest}\NormalTok{(}
+\NormalTok{  avg\_crop\_yield }\SpecialCharTok{\textasciitilde{}}\NormalTok{ average\_temperature\_c }\SpecialCharTok{+}\NormalTok{ extreme\_weather\_events }\SpecialCharTok{+} 
+\NormalTok{    Total\_Precipitation\_mm }\SpecialCharTok{+}\NormalTok{ continent }\SpecialCharTok{+}\NormalTok{ crop\_type,}
+  \AttributeTok{data =}\NormalTok{ train\_df,}
+  \AttributeTok{ntree =} \DecValTok{100}\NormalTok{, }\CommentTok{\# Number of trees}
+  \AttributeTok{mtry =} \DecValTok{2}\NormalTok{,    }\CommentTok{\# Number of variables randomly sampled}
+  \AttributeTok{importance =} \ConstantTok{TRUE}
+\NormalTok{)}
+
+\CommentTok{\# View model summary}
+\FunctionTok{print}\NormalTok{(rf\_model)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+##  randomForest(formula = avg_crop_yield ~ average_temperature_c +      extreme_weather_events + Total_Precipitation_mm + continent +      crop_type, data = train_df, ntree = 100, mtry = 2, importance = TRUE) 
+##                Type of random forest: regression
+##                      Number of trees: 100
+## No. of variables tried at each split: 2
+## 
+##           Mean of squared residuals: 0.03292584
+##                     % Var explained: -4.86
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Predict on the test dataset}
+\NormalTok{test\_df }\OtherTok{\textless{}{-}}\NormalTok{ test\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}
+    \AttributeTok{continent =} \FunctionTok{as.factor}\NormalTok{(Continent),}
+    \AttributeTok{crop\_type =} \FunctionTok{as.factor}\NormalTok{(Crop\_Type),}
+    \AttributeTok{average\_temperature\_c =} \FunctionTok{as.numeric}\NormalTok{(Average\_Temperature\_C),}
+    \AttributeTok{extreme\_weather\_events =} \FunctionTok{as.numeric}\NormalTok{(Extreme\_Weather\_Events) }\CommentTok{\# Ensure numeric type}
+\NormalTok{  )}
+\CommentTok{\# Predict on the test dataset}
+\NormalTok{test\_df }\OtherTok{\textless{}{-}}\NormalTok{ test\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}
+    \AttributeTok{predicted\_yield =} \FunctionTok{predict}\NormalTok{(rf\_model, }\AttributeTok{newdata =}\NormalTok{ test\_df)}
+\NormalTok{  )}
+
+\CommentTok{\# Calculate Mean Absolute Error (MAE)}
+\NormalTok{mae }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(}\FunctionTok{abs}\NormalTok{(test\_df}\SpecialCharTok{$}\NormalTok{predicted\_yield }\SpecialCharTok{{-}}\NormalTok{ test\_df}\SpecialCharTok{$}\NormalTok{avg\_crop\_yield))}
+\FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"Mean Absolute Error:"}\NormalTok{, mae))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Mean Absolute Error: 0.137131315371807"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(test\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{select}\NormalTok{(Continent, Crop\_Type, avg\_crop\_yield, predicted\_yield) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{arrange}\NormalTok{(predicted\_yield))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Continent  Crop_Type avg_crop_yield predicted_yield
+## 1   Eurasia     Coffee       2.097615        2.005410
+## 2 East Asia Vegetables       1.859909        2.029474
+## 3   Eurasia   Soybeans       2.137800        2.043336
+## 4   Eurasia       Corn       2.245636        2.075565
+## 5   Eurasia       Corn       2.149656        2.078574
+## 6   Eurasia Vegetables       1.915600        2.081742
+\end{verbatim}
+
+\hypertarget{economic_impact}{%
+\section{economic\_impact}\label{economic_impact}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Train a random forest model to predict economic impact}
+\NormalTok{rf\_model }\OtherTok{\textless{}{-}} \FunctionTok{randomForest}\NormalTok{(}
+\NormalTok{  avg\_economic\_impact\_million\_usd }\SpecialCharTok{\textasciitilde{}}\NormalTok{ average\_temperature\_c }\SpecialCharTok{+}\NormalTok{ extreme\_weather\_events }\SpecialCharTok{+} 
+\NormalTok{    avg\_total\_precipitation\_mm }\SpecialCharTok{+}\NormalTok{ continent }\SpecialCharTok{+}\NormalTok{ crop\_type }\SpecialCharTok{+}\NormalTok{ avg\_crop\_yield,}
+  \AttributeTok{data =}\NormalTok{ train\_df,}
+  \AttributeTok{ntree =} \DecValTok{100}\NormalTok{, }\CommentTok{\# Number of trees}
+  \AttributeTok{mtry =} \DecValTok{2}\NormalTok{,    }\CommentTok{\# Number of variables randomly sampled}
+  \AttributeTok{importance =} \ConstantTok{TRUE}
+\NormalTok{)}
+
+\CommentTok{\# View model summary}
+\FunctionTok{print}\NormalTok{(rf\_model)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+##  randomForest(formula = avg_economic_impact_million_usd ~ average_temperature_c +      extreme_weather_events + avg_total_precipitation_mm + continent +      crop_type + avg_crop_yield, data = train_df, ntree = 100,      mtry = 2, importance = TRUE) 
+##                Type of random forest: regression
+##                      Number of trees: 100
+## No. of variables tried at each split: 2
+## 
+##           Mean of squared residuals: 152.5297
+##                     % Var explained: 97.32
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Predict on the test dataset}
+\NormalTok{test\_df }\OtherTok{\textless{}{-}}\NormalTok{ test\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}
+    \AttributeTok{predicted\_economic\_impact =} \FunctionTok{predict}\NormalTok{(rf\_model, }\AttributeTok{newdata =}\NormalTok{ test\_df)}
+\NormalTok{  )}
+
+\CommentTok{\# Calculate Mean Absolute Error (MAE)}
+\NormalTok{mae }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(}\FunctionTok{abs}\NormalTok{(test\_df}\SpecialCharTok{$}\NormalTok{predicted\_economic\_impact }\SpecialCharTok{{-}}\NormalTok{ test\_df}\SpecialCharTok{$}\NormalTok{avg\_economic\_impact\_million\_usd))}
+\FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"Mean Absolute Error:"}\NormalTok{, mae))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Mean Absolute Error: 7.85622101969733"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(test\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{select}\NormalTok{(Continent, Crop\_Type, avg\_economic\_impact\_million\_usd, predicted\_economic\_impact) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{arrange}\NormalTok{(predicted\_economic\_impact))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Continent Crop_Type avg_economic_impact_million_usd predicted_economic_impact
+## 1    Africa    Barley                        454.3550                  469.0314
+## 2    Europe    Cotton                        465.3039                  472.3679
+## 3    Europe     Wheat                        465.3039                  472.8046
+## 4    Africa  Soybeans                        454.3550                  474.0483
+## 5    Africa    Cotton                        454.3550                  479.3397
+## 6    Europe  Soybeans                        465.3039                  481.3647
+\end{verbatim}
+
+\end{document}
