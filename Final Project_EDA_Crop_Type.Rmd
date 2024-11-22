@@ -1,0 +1,149 @@
+---
+title: "Final_Croptype"
+author: "SuminChun"
+date: "2024-11-22"
+output: html_document
+---
+```{r}
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+```
+
+### Import Dataset
+```{r}
+data <- read.csv("climate_change_impact_on_agriculture_2024.csv")
+```
+
+### Preparation and cleaning the data
+
+```{r}
+# mutate continent columns
+
+country_to_continent <- data.frame(
+  Country = c("Argentina", "Australia", "Brazil","Canada","China","France",
+              "India","Nigeria", "Russia","USA"),
+  Continent = c("South America", "Oceania", "South America", 
+                "North America", "East Asia", "Europe", 
+                "South Asia", "Africa","Eurasia","North America")
+)
+
+data_with_continent <- data %>%
+  left_join(country_to_continent, by = "Country") 
+
+data <- data_with_continent %>%
+  select(Year, Country, Continent, Region, everything())
+```
+
+# Crop type 
+
+1. Crop Yield vs Climate Variables
+
+```{r}
+crop_types <- unique(data$Crop_Type)
+```
+
+```{r}
+ggplot(data, aes(x = Crop_Type, y = Crop_Yield_MT_per_HA)) +
+  geom_violin(fill = "lightblue", color = "darkblue") +
+  facet_wrap(~ Crop_Type, scales = "free_x") +
+  labs(
+    title = "Yield Distribution by Crop Type",
+    x = "Crop Type",
+    y = "Yield (MT/HA)"
+  ) +
+  theme_minimal()
+```
+
+
+2. Yield vs Average Temperature
+
+i. Research Question:
+How does the average temperature affect crop yield, and which crops are most resilient to temperature changes?
+
+ii. Hypotheses:
+
+Null Hypothesis (H0): Average temperature has no significant effect on crop yield, and there is no difference in resilience across crop types.
+
+Alternative Hypothesis(Ha): Average temperature significantly affects crop yield, with some crop types showing greater resilience.
+
+```{r}
+ggplot(data, aes(x = Average_Temperature_C, y = Crop_Yield_MT_per_HA, color = Crop_Type)) +
+  geom_line() +
+  facet_wrap(~ Crop_Type, scales = "free") + 
+  labs(
+    title = "Yield vs Average Temperature by Crop Type",
+    x = "Average Temperature (°C)",
+    y = "Yield (MT/HA)"
+  ) +
+  theme_minimal()
+```
+
+3. Yield vs CO2 Emissions
+
+i. Research Question: What impact do CO2 emissions have on crop yields, and which crops perform best under higher CO2 conditions?
+
+ii. Hypotheses:
+
+Null Hypothesis (H0): CO2 emissions have no significant effect on crop yield, and crop performance does not vary under different CO2 levels.
+
+Alternative Hypothesis(Ha): CO2 emissions significantly affect crop yield, with certain crop types performing better under higher CO2 conditions.
+
+```{r}
+ggplot(data, aes(x = CO2_Emissions_MT, y = Crop_Yield_MT_per_HA, color = Crop_Type)) +
+  geom_line() +
+  facet_wrap(~ Crop_Type, scales = "free") +
+  labs(
+    title = "Yield vs CO₂ Emissions by Crop Type",
+    x = "CO₂ Emissions (Million Tons)",
+    y = "Yield (MT/HA)"
+  ) +
+  theme_minimal()
+```
+
+
+4. Yield vs Extreme Weather Events
+
+i. Research Question: Is there a significant relationship between crop yield and the frequency of extreme weather events?
+
+ii. Hypotheses:
+
+Null Hypothesis (H0): There is no significant relationship between crop yield and extreme weather events.
+
+Alternative Hypothesis(Ha): There is a significant relationship between crop yield and extreme weather events.
+
+```{r}
+ggplot(data, aes(x = Extreme_Weather_Events, y = Crop_Yield_MT_per_HA, color = Crop_Type)) +
+  geom_point() +
+  facet_wrap(~ Crop_Type, scales = "free") +
+  labs(
+    title = "Yield vs Extreme Weather Events by Crop Type",
+    x = "Extreme Weather Events",
+    y = "Yield (MT/HA)"
+  ) +
+  theme_minimal()
+```
+
+5. Yield vs Precipitation
+
+i. Research Question: Is there a significant relationship between crop yield and precipitation levels?
+
+ii. Hypotheses:
+
+Null Hypothesis (H0): There is no significant relationship between crop yield and precipitation levels.
+
+Alternative Hypothesis(Ha): There is a significant relationship between crop yield and precipitation levels.
+
+```{r}
+ggplot(data, aes(x = Total_Precipitation_mm, y = Crop_Yield_MT_per_HA)) +
+  geom_bin2d() +
+  facet_wrap(~ Crop_Type, scales = "free") +
+  scale_fill_viridis_c() + 
+  labs(
+    title = "Yield vs Precipitation Heatmap by Crop Type",
+    x = "Precipitation (mm)",
+    y = "Yield (MT/HA)"
+  ) +
+  theme_minimal()
+```
+
