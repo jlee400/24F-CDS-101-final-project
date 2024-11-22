@@ -76,7 +76,7 @@ ggplot(sampled_data, aes(x = Fertilizer_Use_KG_per_HA, y = Soil_Health_Index)) +
 ```
 
 
-###Slope
+###Slope 1
 ```{r}
 # 나라별 선형 회귀 기울기 계산
 library(dplyr)
@@ -141,6 +141,109 @@ ggplot(slopes, aes(x = slope, y = reorder(Country, slope), fill = slope > 0)) +
     title = "Impact of Fertilizer Use on Soil Health Index by Country",
     x = "Slope (Impact of Fertilizer Use)",
     y = "Country"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 10)
+  )
+
+```
+
+
+###Modeling 2
+```{r}
+set.seed(123) # 재현성을 위해 시드 설정
+sampled_data_pesticide <- data %>% sample_n(1000) # 1000개의 랜덤 샘플 선택
+
+ggplot(sampled_data_pesticide, aes(x = Pesticide_Use_KG_per_HA, y = Soil_Health_Index)) +
+  geom_point(color = "darkblue", size = 2, alpha = 0.6) +
+  geom_smooth(method = "lm", color = "red", se = FALSE, linewidth = 1.2) +
+  facet_wrap(~ Country) +
+  labs(
+    title = "Country-wise Pesticide Use vs Soil Health Index (Sampled Data)",
+    x = "Pesticide Use (kg/ha)",
+    y = "Soil Health Index"
+  ) +
+  theme_light() +
+  theme(
+    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
+    strip.text = element_text(size = 12, face = "bold"),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 10)
+  )
+```
+
+###Slope 2
+```{r}
+# 나라별 선형 회귀 기울기 계산
+library(dplyr)
+
+slopes_pesticide <- data %>%
+  group_by(Country) %>%
+  summarise(
+    slope = coef(lm(Soil_Health_Index ~ Pesticide_Use_KG_per_HA))[2], # 회귀선의 기울기
+    p_value = summary(lm(Soil_Health_Index ~ Pesticide_Use_KG_per_HA))$coefficients[2, 4] # 기울기의 p-value
+  )
+
+# 결과 확인
+print(slopes_pesticide)
+```
+
+
+###Slope시각화 2-1
+```{r}
+# 나라별 기울기 시각화
+ggplot(slopes_pesticide, aes(x = reorder(Country, slope), y = slope, fill = slope > 0)) +
+  geom_bar(stat = "identity", show.legend = FALSE) +
+  coord_flip() +
+  scale_fill_manual(values = c("blue", "red")) + # 음수=파랑, 양수=빨강
+  labs(
+    title = "Slope of Pesticide Use vs Soil Health Index by Country",
+    x = "Country",
+    y = "Slope (Impact of Pesticide Use)"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 10)
+  )
+```
+
+
+###Slope시각화 2-2
+```{r}
+# Scatter Plot (점 그래프)
+ggplot(slopes_pesticide, aes(x = slope, y = reorder(Country, slope), color = slope > 0)) +
+  geom_point(size = 4) + # 점 스타일
+  geom_vline(xintercept = 0, linetype = "dashed", color = "gray") + # 기준선 추가
+  scale_color_manual(values = c("blue", "red")) + # 음수=파랑, 양수=빨강
+  labs(
+    title = "Scatter Plot of Slope (Impact of Pesticide Use)",
+    x = "Slope (Impact of Pesticide Use)",
+    y = "Country"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
+    axis.title = element_text(size = 12),
+    axis.text = element_text(size = 10)
+  )
+```
+
+
+###Slope시각화 2-3
+```{r}
+# 막대
+ggplot(slopes_pesticide, aes(x = Country, y = slope, fill = slope > 0)) +
+  geom_bar(stat = "identity", show.legend = FALSE, width = 0.7) + # 막대 스타일
+  scale_fill_manual(values = c("blue", "red")) + # 음수=파랑, 양수=빨강
+  labs(
+    title = "Impact of Pesticide Use on Soil Health Index by Country",
+    x = "Country",
+    y = "Slope (Impact of Pesticide Use)"
   ) +
   theme_minimal() +
   theme(
