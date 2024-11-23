@@ -41,7 +41,7 @@ data <- data_with_continent %>%
 
 ```{r}
 aggregated_data <- data %>%
-  group_by(Year, Continent) %>%
+  group_by(Year, Continent, Crop_Type) %>%
   summarize(
     avg_crop_yield = 
       mean(Crop_Yield_MT_per_HA, na.rm = TRUE),
@@ -77,20 +77,9 @@ data_constracted <- data %>%
 ```{r}
 set.seed(10000)
 
-train_df <- data %>% sample_frac(0.7)
+train_df <- aggregated_data %>% sample_frac(0.7)
 
-test_df <- anti_join(data, train_df)
-
-```
-```{r}
-train_df <- train_df %>%
-  mutate(
-    continent = as.factor(Continent),
-    crop_type = as.factor(Crop_Type),
-    average_temperature_c = as.numeric(Average_Temperature_C),
-    extreme_weather_events = as.numeric(Extreme_Weather_Events), 
-    avg_crop_yield = as.numeric(avg_crop_yield) 
-  )
+test_df <- anti_join(aggregated_data, train_df)
 
 ```
 ```{r}
@@ -110,37 +99,26 @@ train_df <- train_df %>%
 #### crop_yield
 ```{r}
 library(randomForest)
-# Train a random forest model
 rf_model <- randomForest(
-  avg_crop_yield ~ average_temperature_c + extreme_weather_events + 
-    Total_Precipitation_mm + continent + crop_type,
+  avg_crop_yield ~ avg_temp_c + avg_extreme_weather_events + 
+    avg_total_precipitation_mm + Continent + Crop_Type,
   data = train_df,
-  ntree = 100, # Number of trees
-  mtry = 2,    # Number of variables randomly sampled
+  ntree = 100, 
+  mtry = 2, 
   importance = TRUE
 )
 
-# View model summary
 print(rf_model)
 
 ```
 
 ```{r}
-# Predict on the test dataset
-test_df <- test_df %>%
-  mutate(
-    continent = as.factor(Continent),
-    crop_type = as.factor(Crop_Type),
-    average_temperature_c = as.numeric(Average_Temperature_C),
-    extreme_weather_events = as.numeric(Extreme_Weather_Events) # Ensure numeric type
-  )
-# Predict on the test dataset
 test_df <- test_df %>%
   mutate(
     predicted_yield = predict(rf_model, newdata = test_df)
   )
 
-# Calculate Mean Absolute Error (MAE)
+
 mae <- mean(abs(test_df$predicted_yield - test_df$avg_crop_yield))
 print(paste("Mean Absolute Error:", mae))
 
@@ -155,27 +133,24 @@ head(test_df %>%
 
 # economic_impact
 ```{r}
-# Train a random forest model to predict economic impact
 rf_model <- randomForest(
-  avg_economic_impact_million_usd ~ average_temperature_c + extreme_weather_events + 
-    avg_total_precipitation_mm + continent + crop_type + avg_crop_yield,
+  avg_economic_impact_million_usd ~ avg_temp_c + avg_extreme_weather_events + 
+    avg_total_precipitation_mm + Continent + Crop_Type + avg_crop_yield,
   data = train_df,
-  ntree = 100, # Number of trees
-  mtry = 2,    # Number of variables randomly sampled
+  ntree = 100, 
+  mtry = 2,   
   importance = TRUE
 )
 
-# View model summary
+
 print(rf_model)
 ```
 ```{r}
-#Predict on the test dataset
 test_df <- test_df %>%
   mutate(
     predicted_economic_impact = predict(rf_model, newdata = test_df)
   )
 
-# Calculate Mean Absolute Error (MAE)
 mae <- mean(abs(test_df$predicted_economic_impact - test_df$avg_economic_impact_million_usd))
 print(paste("Mean Absolute Error:", mae))
 ```
