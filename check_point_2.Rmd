@@ -6,25 +6,27 @@ output:
   pdf_document:
     latex_engine: xelatex
 ---
-### Research Question
+## Research Question
 
-Considering climate factors and chemical factors in agriculture, construction of which continent and what crop type would bring more economic impact with its efficiency?
+Considering climate factors and chemical factors in agriculture, construction of which continent and what crop type would bring more economic impact?
 
-### Libraries
+## Libraries
 ```{r}
 library(dplyr)
 library(ggplot2)
 library(tidyverse)
 library(modelr)
 library(boot)
+library(randomForest)
+library(agricolae)
 ```
 
-### Import Dataset
+## Import Dataset 
 ```{r}
 data <- read.csv("climate_change_impact_on_agriculture_2024.csv")
 ```
 
-### Preparation and cleaning the data
+## Preparation and cleaning the data (Juhyun Lee)
 
 ```{r}
 # mutate continent columns
@@ -78,12 +80,14 @@ data <- data %>%
 data_constracted <- data %>%
   select(-c(6:9, 12:14, 16))
 ```
-### EDA by continent
+## EDA by continent (Daehee Cho, Donghyun Park)
 
-#### Average_Temperature by Year 
+### Average_Temperature by Year 
+
 ```{r, fig.width = 10}
 ggplot(aggregated_data) +
-  geom_boxplot(mapping = aes(x = reorder(Continent, avg_temp_c, FUN = IQR), y = avg_temp_c, fill = Continent)) +
+  geom_boxplot(mapping = aes(x = reorder(Continent, avg_temp_c, FUN = IQR), 
+                             y = avg_temp_c, fill = Continent)) +
   labs(
     title = "Average Temperature by Continent",
     x = "Continent",
@@ -92,10 +96,12 @@ ggplot(aggregated_data) +
   theme_minimal()
 ```
 
-#### CO2 Emissions by Year
 
-```{r, fig.width = 50}
-ggplot(aggregated_data, aes(x = Year, y =  avg_co2_emissions_mt, fill = Continent)) +
+### CO2 Emissions by Year
+
+```{r, fig.size = 40}
+ggplot(aggregated_data, aes(x = Year, y =  avg_co2_emissions_mt, 
+                            fill = Continent)) +
   geom_histogram(stat = "identity") +
   facet_wrap(~ Continent) +
   labs(title = "CO₂ Emissions by Year (Separated by Content)",
@@ -103,21 +109,28 @@ ggplot(aggregated_data, aes(x = Year, y =  avg_co2_emissions_mt, fill = Continen
        y = "CO₂ Emissions (Million Tons)",
        fill = "Continent"
   ) +
-  theme_minimal()+
-  theme(
-    plot.title = element_text(size = 18, face = "bold", hjust = 0.5),
-    axis.title = element_text(size = 16), 
-    axis.text = element_text(size = 14), 
-    strip.text = element_text(size = 15, face = "bold"), 
-    legend.title = element_text(size = 14),
-    legend.text = element_text(size = 12) 
-  )
+  theme_minimal()
 ```
-#### Extreme weather by year
-
 ```{r}
+co2_stability <- aggregated_data %>%
+  group_by(Continent) %>%
+  summarize(
+    variance = var(avg_co2_emissions_mt, na.rm = TRUE),
+    std_dev1 = sd(avg_co2_emissions_mt, na.rm = TRUE),
+    mean_co2 = mean(avg_co2_emissions_mt, na.rm = TRUE),
+    cv = std_dev1 / mean_co2
+  )
+
+print(co2_stability)
+
+```
+
+### Extreme weather by year
+
+```{r, fig.size = 40}
 ggplot(aggregated_data, aes(x = avg_extreme_weather_events, fill = Continent)) +
-  geom_histogram(binwidth = 0.5, color = "black", alpha = 0.7, position = "identity") +
+  geom_histogram(binwidth = 0.5, color = "black", 
+                 alpha = 0.7, position = "identity") +
   facet_wrap(~ Continent) +
   labs(
     title = "Distribution of Extreme Weather Events by Continent",
@@ -127,12 +140,56 @@ ggplot(aggregated_data, aes(x = avg_extreme_weather_events, fill = Continent)) +
   ) +
   theme_minimal()
 ```
-### EDA by Crop type
+```{r}
+variance_std <- aggregated_data %>%
+  group_by(Continent) %>%
+  summarize(
+    variance = var(avg_extreme_weather_events, na.rm = TRUE),
+    std_dev = sd(avg_extreme_weather_events, na.rm = TRUE)
+  )
+
+# Print the results
+print(variance_std)
+
+```
+
+### Precipitation vs Year
+```{r}
+ggplot(aggregated_data, aes(x = Year, y = avg_total_precipitation_mm, fill = Continent)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  facet_wrap(~ Continent) +
+   labs(
+      title = "Annual Precipitation by Year and Continent", 
+      x = "Year", 
+      y = "Average Precipitation (mm)",
+      fill = "Continent"
+   ) +
+ theme_minimal()
+```
+```{r}
+precipitation_stability <- aggregated_data %>%
+  group_by(Continent) %>%
+  summarize(
+    variance = var(avg_total_precipitation_mm, na.rm = TRUE),
+    std_dev = sd(avg_total_precipitation_mm, na.rm = TRUE),
+    mean_precipitation = mean(avg_total_precipitation_mm, na.rm = TRUE),
+    cv = std_dev / mean_precipitation 
+  )
+
+print(precipitation_stability)
+
+```
+
+
+
+
+## EDA by Crop type (Sumin Chun, Janghee Cho)
 ```{r}
 crop_types <- unique(aggregated_data$Crop_Type)
 ```
-#### Crop type vs yield
-```{r}
+
+### Crop type vs yield
+```{r,fig.size = 40}
 ggplot(aggregated_data, aes(x = Crop_Type, y = avg_crop_yield)) +
   geom_violin(fill = "lightblue", color = "darkblue") +
   facet_wrap(~ Crop_Type, scales = "free_x") +
@@ -143,9 +200,34 @@ ggplot(aggregated_data, aes(x = Crop_Type, y = avg_crop_yield)) +
   ) +
   theme_minimal()
 ```
-#### Average Temperature vs Yield
+1. Hypothesis
+H0: All the mean of average crop yield from different crop types are the same.
+Ha: At least one of them is different.
+
+2. alpha = 0.05
+3. Test = ANOVA Test
 ```{r}
-ggplot(aggregated_data, aes(x = avg_temp_c, y = avg_crop_yield, color = Crop_Type)) +
+anova_result <- aov(avg_crop_yield ~ Crop_Type, data = aggregated_data)
+
+
+summary(anova_result)
+
+```
+4. Critical Region 
+p-value >= alpha : Do not reject H0.
+p-value < alpha : Reject H0.
+
+5. Conclusion 
+Since the p-value is larger than alpha, we do not reject the hypothesis. So this plot does not have significant difference.
+
+
+
+
+### Average Temperature vs Yield
+
+```{r, fig.size = 40}
+ggplot(aggregated_data, aes(x = avg_temp_c, 
+                            y = avg_crop_yield, color = Crop_Type)) +
   geom_line() +
   facet_wrap(~ Crop_Type, scales = "free") + 
   labs(
@@ -155,9 +237,38 @@ ggplot(aggregated_data, aes(x = avg_temp_c, y = avg_crop_yield, color = Crop_Typ
   ) +
   theme_minimal()
 ```
-#### CO2 Emissions vs Yield
 ```{r}
-ggplot(aggregated_data, aes(x = avg_co2_emissions_mt, y = avg_crop_yield, color = Crop_Type)) +
+
+slopes_resilience <- aggregated_data %>%
+  group_by(Crop_Type) %>%
+  summarize(
+    slope = coef(lm(avg_crop_yield ~ avg_temp_c, data = cur_data()))[2], 
+    intercept = coef(lm(avg_crop_yield ~ avg_temp_c, data = cur_data()))[1],
+  ) %>%
+  arrange(abs(slope)) 
+
+# Print
+print(slopes_resilience)
+
+```
+```{r}
+ggplot(slopes_resilience, aes(x = reorder(Crop_Type, abs(slope)), y = slope, fill = slope > 0)) +
+  geom_bar(stat = "identity", show.legend = FALSE) +
+  coord_flip() +
+  scale_fill_manual(values = c("blue")) + 
+  labs(
+    title = "Resilience of Crops to Temperature Changes (Slope Analysis)",
+    x = "Crop Type",
+    y = "Slope (Impact of Temperature on Yield)"
+  )
+```
+
+
+### CO2 Emissions vs Yield
+
+```{r, fig.size = 40}
+ggplot(aggregated_data, aes(x = avg_co2_emissions_mt, 
+                            y = avg_crop_yield, color = Crop_Type)) +
   geom_line() +
   facet_wrap(~ Crop_Type, scales = "free") +
   labs(
@@ -167,7 +278,37 @@ ggplot(aggregated_data, aes(x = avg_co2_emissions_mt, y = avg_crop_yield, color 
   ) +
   theme_minimal()
 ```
-#### Extreme Weather events vs Yield
+```{r}
+
+slopes_resilience1 <- aggregated_data %>%
+  group_by(Crop_Type) %>%
+  summarize(
+    slope = abs(coef(lm(avg_crop_yield ~ avg_co2_emissions_mt, data = cur_data()))[2]), 
+    intercept = coef(lm(avg_crop_yield ~ avg_co2_emissions_mt, data = cur_data()))[1],
+  ) %>%
+  arrange(desc(slope)) 
+
+# Print
+print(slopes_resilience1)
+
+```
+```{r}
+ggplot(slopes_resilience1, aes(x = reorder(Crop_Type, abs(slope)), y = slope, fill = slope > 0)) +
+  geom_bar(stat = "identity", show.legend = FALSE) +
+  coord_flip() +
+  scale_fill_manual(values = c("blue", "red")) + 
+  labs(
+    title = "Resilience of Crops to CO2 Emission Changes (Slope Analysis)",
+    x = "Crop Type",
+    y = "Slope (Impact of Temperature on Yield)"
+  ) +
+  theme_minimal()
+
+```
+
+
+### Extreme Weather events vs Yield
+
 ```{r}
 ggplot(aggregated_data, aes(x = avg_extreme_weather_events, y = avg_crop_yield, 
                             color = Crop_Type)) +
@@ -182,7 +323,36 @@ ggplot(aggregated_data, aes(x = avg_extreme_weather_events, y = avg_crop_yield,
   ) +
   theme_minimal()
 ```
-#### Precipitation vs Yield
+```{r}
+
+slopes_resilience2 <- aggregated_data %>%
+  group_by(Crop_Type) %>%
+  summarize(
+    slope = coef(lm(avg_crop_yield ~ avg_extreme_weather_events, data = cur_data()))[2], 
+    intercept = coef(lm(avg_crop_yield ~ avg_extreme_weather_events, data = cur_data()))[1],
+  ) %>%
+  arrange(abs(slope)) 
+
+# Print
+print(slopes_resilience2)
+
+```
+```{r}
+ggplot(slopes_resilience1, aes(x = reorder(Crop_Type, abs(slope)), y = slope, fill = slope > 0)) +
+  geom_bar(stat = "identity", show.legend = FALSE) +
+  coord_flip() +
+  scale_fill_manual(values = c("blue", "red")) + 
+  labs(
+    title = "Resilience of Crops to Extreme weather events (Slope Analysis)",
+    x = "Crop Type",
+    y = "Slope (Impact of Temperature on Yield)"
+  ) +
+  theme_minimal()
+
+```
+
+### Precipitation vs Yield
+
 ```{r}
 ggplot(aggregated_data, 
        aes(x = avg_total_precipitation_mm, y = avg_crop_yield)) +
@@ -197,52 +367,66 @@ ggplot(aggregated_data,
   theme_minimal()
 
 ```
-### Modeling
+```{r, fig.width = 10}
+correlation_matrix <- correlation_matrix %>%
+  mutate(Crop_Type = reorder(Crop_Type, correlation))
 
-#### Fertilizer and Soil Health Index
+ggplot(correlation_matrix, aes(x = Crop_Type, y = "Correlation", fill = correlation)) +
+  geom_tile() +
+  labs(
+    title = "Correlation Between Precipitation and Yield by Crop Type",
+    x = "Crop Type",
+    y = "",
+    fill = "Correlation"
+  )
+
+
+```
+
+## Modeling (Joonsoo Choi)
+
+### Fertilizer and Soil Health Index
+* continent
 ```{r}
 set.seed(10000)
 
 sampled_data <- aggregated_data %>% sample_n(1000, replace = TRUE)
 
-ggplot(sampled_data, aes(x = avg_fertilizer_use_kg_per_ha, y = avg_soil_health_index)) +
+ggplot(sampled_data, aes(x = avg_fertilizer_use_kg_per_ha, 
+                         y = avg_soil_health_index)) +
   geom_point(color = "darkgreen", size = 2, alpha = 0.6) +
   geom_smooth(method = "lm", color = "red", se = FALSE, linewidth = 1.2) +
   facet_wrap(~ Continent) +
   labs(
-    title = "Country-wise Fertilizer Use vs Soil Health Index (Sampled Data)",
+    title = "Continent-wise Fertilizer Use vs Soil Health Index (Sampled Data)",
     x = "Fertilizer Use (kg/ha)",
     y = "Soil Health Index"
   ) +
-  theme_light() +
-  theme(
-    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
-    strip.text = element_text(size = 12, face = "bold"),
-    axis.title = element_text(size = 12),
-    axis.text = element_text(size = 10)
-  )
+  theme_light()
 
 
 ```
-#### Pesticide use vs Soil health index
 
-##### Slope 1
+
+*  Slope 1
 ```{r}
 
 slopes <- aggregated_data %>%
   group_by(Continent) %>%
   summarise(
-    slope = coef(lm(avg_soil_health_index ~ avg_fertilizer_use_kg_per_ha))[2], 
-    p_value = summary(lm(avg_soil_health_index ~ avg_fertilizer_use_kg_per_ha))$coefficients[2, 4] 
-  )
+    slope = abs(coef(lm(avg_soil_health_index ~ avg_fertilizer_use_kg_per_ha))[2]), 
+    p_value = summary(lm(avg_soil_health_index ~ 
+                           avg_fertilizer_use_kg_per_ha))$coefficients[2, 4] 
+  ) %>%
+  arrange(slope)
 
 print(slopes)
 ```
 
 
-##### Slope시각화 1-1
-```{r}
-ggplot(slopes, aes(x = reorder(Continent, slope), y = slope, fill = slope > 0)) +
+* Slope
+```{r, fig.width = 10}
+ggplot(slopes, aes(x = reorder(Continent, slope), y = slope, fill = slope > 0))+
   geom_bar(stat = "identity", show.legend = FALSE) +
   coord_flip() +
   scale_fill_manual(values = c("blue", "red")) +
@@ -256,50 +440,11 @@ ggplot(slopes, aes(x = reorder(Continent, slope), y = slope, fill = slope > 0)) 
 ```
 
 
-##### Slope시각화 1-2
-```{r}
-ggplot(slopes, aes(x = slope, y = reorder(Continent, slope))) +
-  geom_point(size = 4, color = "red") + 
-  geom_vline(xintercept = 0, linetype = "dashed", color = "gray") + 
-  labs(
-    title = "Scatter Plot of Slope (Impact of Fertilizer Use)",
-    x = "Slope (Impact of Fertilizer Use)",
-    y = "Continent"
-  ) +
-  theme_minimal() +
-  theme(
-    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
-    axis.title = element_text(size = 12),
-    axis.text = element_text(size = 10)
-  )
-
-```
-
-
-##### Slope시각화 1-3
-```{r, fig.width =10}
-ggplot(slopes, aes(x = slope, y = reorder(Continent, slope), fill = slope > 0)) +
-  geom_bar(stat = "identity", show.legend = FALSE, width = 0.7) +
-  coord_flip() +
-  scale_fill_manual(values = c("blue", "red")) +
-  labs(
-    title = "Impact of Fertilizer Use on Soil Health Index by Continent",
-    x = "Slope (Impact of Fertilizer Use)",
-    y = "Country"
-  ) +
-  theme_minimal() +
-  theme(
-    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
-    axis.title = element_text(size = 12),
-    axis.text = element_text(size = 10)
-  )
-
-```
-
-#### Pesticide Use and Soil health index
+### Pesticide Use and Soil health index
 ```{r}
 
-ggplot(sampled_data, aes(x = avg_pesticide_use_kg_per_ha, y = avg_soil_health_index)) +
+ggplot(sampled_data, aes(x = avg_pesticide_use_kg_per_ha, 
+                         y = avg_soil_health_index)) +
   geom_point(color = "darkblue", size = 2, alpha = 0.6) +
   geom_smooth(method = "lm", color = "red", se = FALSE, linewidth = 1.2) +
   facet_wrap(~ Continent) +
@@ -307,32 +452,28 @@ ggplot(sampled_data, aes(x = avg_pesticide_use_kg_per_ha, y = avg_soil_health_in
     title = "Continent-wise Pesticide Use vs Soil Health Index (Sampled Data)",
     x = "Pesticide Use (kg/ha)",
     y = "Soil Health Index"
-  ) +
-  theme_light() +
-  theme(
-    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
-    strip.text = element_text(size = 12, face = "bold"),
-    axis.title = element_text(size = 12),
-    axis.text = element_text(size = 10)
-  )
+  ) 
 ```
 
-##### Slope 2
+* Slope 2
 ```{r}
 slopes_pesticide <- aggregated_data %>%
   group_by(Continent) %>%
   summarise(
-    slope = coef(lm(avg_soil_health_index ~ avg_pesticide_use_kg_per_ha))[2], 
-    p_value = summary(lm(avg_soil_health_index ~ avg_pesticide_use_kg_per_ha))$coefficients[2, 4] 
-  )
+    slope = abs(coef(lm(avg_soil_health_index ~ avg_pesticide_use_kg_per_ha))[2]), 
+    p_value = summary(lm(avg_soil_health_index ~ 
+                           avg_pesticide_use_kg_per_ha))$coefficients[2, 4] 
+  )%>%
+  arrange(slope)
 
 print(slopes_pesticide)
 ```
 
 
-##### Slope시각화 2-1
+* Slope visualization
 ```{r}
-ggplot(slopes_pesticide, aes(x = reorder(Continent, slope), y = slope, fill = slope > 0)) +
+ggplot(slopes_pesticide, aes(x = reorder(Continent, slope), 
+                             y = slope, fill = slope > 0)) +
   geom_bar(stat = "identity", show.legend = FALSE) +
   coord_flip() +
   scale_fill_manual(values = c("blue", "red")) + 
@@ -340,66 +481,26 @@ ggplot(slopes_pesticide, aes(x = reorder(Continent, slope), y = slope, fill = sl
     title = "Slope of Pesticide Use vs Soil Health Index by Continent",
     x = "Continent",
     y = "Slope (Impact of Pesticide Use)"
-  ) +
-  theme_minimal() +
-  theme(
-    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
-    axis.title = element_text(size = 12),
-    axis.text = element_text(size = 10)
-  )
+  ) 
 ```
 
 
-##### Slope시각화 2-2
-```{r}
-# Scatter Plot (점 그래프)
-ggplot(slopes_pesticide, aes(x = slope, y = reorder(Continent, slope), color = slope > 0)) +
-  geom_point(size = 4) + # 점 스타일
-  geom_vline(xintercept = 0, linetype = "dashed", color = "gray") + # 기준선 추가
-  scale_color_manual(values = c("blue", "red")) + # 음수=파랑, 양수=빨강
-  labs(
-    title = "Scatter Plot of Slope (Impact of Pesticide Use)",
-    x = "Slope (Impact of Pesticide Use)",
-    y = "Continent"
-  ) +
-  theme_minimal() +
-  theme(
-    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
-    axis.title = element_text(size = 12),
-    axis.text = element_text(size = 10)
-  )
-```
 
 
-##### Slope시각화 2-3
-```{r}
-# 막대
-ggplot(slopes_pesticide, aes(x = reorder(Continent, slope), y = slope, fill = slope > 0)) +
-  geom_bar(stat = "identity", show.legend = FALSE, width = 0.7) + 
-  scale_fill_manual(values = c("blue", "red")) + 
-  labs(
-    title = "Impact of Pesticide Use on Soil Health Index by Continent",
-    x = "Continent",
-    y = "Slope (Impact of Pesticide Use)"
-  ) +
-  theme_minimal() +
-  theme(
-    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
-    axis.title = element_text(size = 12),
-    axis.text = element_text(size = 10)
-  )
 
+### Yield ~ Soil Health Index (Seunghoon Oh)
 
-```
-#### Yield ~ Soil Health Index
+* Model 3
 ```{r}
 # Check if the required variables are available in the dataset
-if (!all(c("avg_crop_yield", "avg_soil_health_index") %in% colnames(aggregated_data))) {
+if (!all(c("avg_crop_yield", "avg_soil_health_index")
+         %in% colnames(aggregated_data))) {
   stop("Variables 'yield' and 'soil_health_index' are missing in the dataset.")
 }
 
 # Model: Yield as a function of Soil Health Index
-model_Crop_Yield_MT_per_HA_Soil_Health_Index <- lm(avg_crop_yield ~ avg_soil_health_index, data = aggregated_data)
+model_Crop_Yield_MT_per_HA_Soil_Health_Index <- 
+  lm(avg_crop_yield ~ avg_soil_health_index, data = aggregated_data)
 
 # Summary of the model
 summary(model_Crop_Yield_MT_per_HA_Soil_Health_Index)
@@ -407,12 +508,14 @@ summary(model_Crop_Yield_MT_per_HA_Soil_Health_Index)
 
 ```
 * Very low R-squared value.
+
 ```{r}
 # Rename 'avg_soil_health_index' to 'Soil_Health'
 data1 <- aggregated_data %>%
   rename(Soil_Health = avg_soil_health_index)
 
 ```
+* Continent
 
 ```{r}
 sampled_data_by_continent <- data1 %>%
@@ -435,7 +538,7 @@ ggplot(sampled_data_by_continent, aes(x = Soil_Health, y = avg_crop_yield)) +
 
 ```
 
-###### Slope 
+* Slope 
 ```{r}
 continent_slopes <- data1 %>%
   group_by(Continent) %>%
@@ -449,7 +552,43 @@ continent_slopes <- data1 %>%
 print(continent_slopes)
 
 ```
-##### Visualization
+* Crop_Type
+```{r}
+sampled_data_by_continent <- data1 %>%
+  group_by(Crop_Type) %>%
+  sample_frac(0.1) %>%  
+  ungroup()  
+
+ggplot(sampled_data_by_continent, aes(x = Soil_Health, y = avg_crop_yield)) +
+  geom_point(size = 1.5, alpha = 0.5, aes(color = Crop_Type)) +  
+  geom_smooth(method = "lm", se = TRUE, color = "black", linetype = "dashed") +  
+  labs(
+    title = "Crop Yield vs Soil Health by Crop Type (Sampled)",
+    x = "Soil Health Index",
+    y = "Crop Yield (MT/HA)"
+  ) +
+  scale_color_brewer(palette = "Set2") +  
+  theme_minimal() +
+  facet_wrap(~ Crop_Type, scales = "free") # Facet by Country
+
+
+```
+* Slope 
+```{r}
+crop_type_slopes <- data1 %>%
+  group_by(Crop_Type) %>%
+  summarize(
+    slope = abs(coef(lm(avg_crop_yield ~ Soil_Health, data = cur_data()))[2]),  
+    intercept = coef(lm(avg_crop_yield ~ Soil_Health, data = cur_data()))[1]
+  ) %>%
+  arrange(slope)  
+
+# Print the results
+print(crop_type_slopes)
+
+
+```
+### Visualization
 
 * Continent
 ```{r}
@@ -469,8 +608,10 @@ ggplot(data1, aes(x = avg_crop_yield, y = avg_economic_impact_million_usd)) +
 continent_slopes <- data1 %>%
   group_by(Continent) %>%
   summarize(
-    Slope = coef(lm(avg_economic_impact_million_usd ~ avg_crop_yield, data = cur_data()))[2],
-    Intercept = coef(lm(avg_economic_impact_million_usd ~ avg_crop_yield, data = cur_data()))[1]
+    Slope = coef(lm(avg_economic_impact_million_usd 
+                    ~ avg_crop_yield, data = cur_data()))[2],
+    Intercept = coef(lm(avg_economic_impact_million_usd 
+                        ~ avg_crop_yield, data = cur_data()))[1]
   ) %>%
   arrange(desc(Slope))
 
@@ -506,8 +647,10 @@ ggplot(data1, aes(x = avg_crop_yield, y = avg_economic_impact_million_usd)) +
 crop_type_slopes <- data1 %>%
   group_by(Crop_Type) %>%
   summarize(
-    Slope = coef(lm(avg_economic_impact_million_usd ~ avg_crop_yield, data = cur_data()))[2],
-    Intercept = coef(lm(avg_economic_impact_million_usd ~ avg_crop_yield, data = cur_data()))[1]
+    Slope = coef(lm(avg_economic_impact_million_usd ~ 
+                      avg_crop_yield, data = cur_data()))[2],
+    Intercept = coef(lm(avg_economic_impact_million_usd ~
+                          avg_crop_yield, data = cur_data()))[1]
   ) %>%
   arrange(desc(Slope)) 
 
@@ -516,7 +659,7 @@ print(crop_type_slopes)
 ```{r}
 ggplot(crop_type_slopes, aes(x = Crop_Type, y = Slope, color = Slope)) +
   geom_point(size = 4, alpha = 0.8) +
-  geom_text(aes(label = round(Slope, 2)), vjust = -1, size = 3) +  # Display slope values
+  geom_text(aes(label = round(Slope, 2)), vjust = -1, size = 3) +  
   labs(
     title = "Crop Yield Efficiency (Slope) by Crop Type",
     x = "Crop Type",
@@ -525,7 +668,7 @@ ggplot(crop_type_slopes, aes(x = Crop_Type, y = Slope, color = Slope)) +
   scale_color_gradient(low = "blue", high = "red") +
   theme_minimal()
 ```
-### Prediction Analytics
+## Prediction Analytics (Juhyun Lee)
 
 ```{r}
 set.seed(10000)
@@ -549,9 +692,8 @@ train_df <- train_df %>%
                                   avg_crop_yield))
 
 ```
-#### crop_yield
+### crop_yield
 ```{r}
-library(randomForest)
 rf_model <- randomForest(
   avg_crop_yield ~ avg_temp_c + avg_extreme_weather_events + 
     avg_total_precipitation_mm + Continent + Crop_Type,
@@ -584,9 +726,9 @@ head(test_df %>%
 
 ```
 
-# economic_impact
+### economic_impact
 ```{r}
-rf_model <- randomForest(
+rf_model1 <- randomForest(
   avg_economic_impact_million_usd ~ avg_temp_c + avg_extreme_weather_events + 
     avg_total_precipitation_mm + Continent + Crop_Type + avg_crop_yield,
   data = train_df,
@@ -596,21 +738,82 @@ rf_model <- randomForest(
 )
 
 
-print(rf_model)
+print(rf_model1)
 ```
 ```{r}
 test_df <- test_df %>%
   mutate(
-    predicted_economic_impact = predict(rf_model, newdata = test_df)
+    predicted_economic_impact = predict(rf_model1, newdata = test_df)
   )
 
-mae <- mean(abs(test_df$predicted_economic_impact - test_df$avg_economic_impact_million_usd))
+mae <- mean(abs(test_df$predicted_economic_impact - 
+                  test_df$avg_economic_impact_million_usd))
 print(paste("Mean Absolute Error:", mae))
 ```
 ```{r}
 head(test_df %>%
-  select(Continent, Crop_Type, avg_economic_impact_million_usd, predicted_economic_impact) %>%
+  select(Year,Continent, Crop_Type, avg_economic_impact_million_usd, 
+         predicted_economic_impact) %>%
   arrange(predicted_economic_impact))
 
+```
+
+
+```{r}
+ggplot(test_df, aes(x = predicted_yield, y = predicted_economic_impact, color = Continent)) +
+  geom_point(size = 3, alpha = 0.6) +
+  geom_smooth(method = "lm", se = TRUE, color = "black", linetype = "dashed") +
+  labs(
+    title = "Predicted Economic Impact vs Predicted Crop Yield",
+    x = "Predicted Crop Yield (MT/HA)",
+    y = "Predicted Economic Impact (Million USD)",
+    color = "Continent"
+  ) +
+  
+  theme_minimal()+
+  facet_wrap(~ Continent, scales = "free")
+```
+```{r}
+
+slope_intercept <- test_df %>%
+  group_by(Continent) %>%
+  summarize(
+    slope = coef(lm(predicted_economic_impact ~ predicted_yield, data = cur_data()))[2],
+    intercept = coef(lm(predicted_economic_impact ~ predicted_yield, data = cur_data()))[1]
+  )
+
+
+print(slope_intercept)
 
 ```
+
+
+
+
+```{r}
+ggplot(test_df, aes(x = predicted_yield, y = predicted_economic_impact, color = Crop_Type)) +
+  geom_point(size = 3, alpha = 0.6) +
+  geom_smooth(method = "lm", se = TRUE, color = "black", linetype = "dashed") +
+  labs(
+    title = "Predicted Economic Impact vs Predicted Crop Yield",
+    x = "Predicted Crop Yield (MT/HA)",
+    y = "Predicted Economic Impact (Million USD)",
+    color = "Crop Type"
+  ) +
+  
+  theme_minimal()+
+  facet_wrap(~ Crop_Type, scales = "free")
+```
+```{r}
+slope_intercept_crop <- test_df %>%
+  group_by(Crop_Type) %>%
+  summarize(
+    slope = coef(lm(predicted_economic_impact ~ predicted_yield, data = cur_data()))[2],
+    intercept = coef(lm(predicted_economic_impact ~ predicted_yield, data = cur_data()))[1]
+  ) %>% arrange(desc(intercept))
+
+print(slope_intercept_crop)
+
+```
+
+
