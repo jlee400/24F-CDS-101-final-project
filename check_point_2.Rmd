@@ -2,7 +2,9 @@
 title: 'Checkpoint # 2'
 author: 'Group # 3'
 date: "`r Sys.Date()`"
-output: pdf_document
+output: 
+  pdf_document:
+    latex_engine: xelatex
 ---
 ### Research Question
 
@@ -81,12 +83,13 @@ data_constracted <- data %>%
 #### Average_Temperature by Year 
 ```{r, fig.width = 10}
 ggplot(aggregated_data) +
-  geom_boxplot(mapping = aes(x = Continent, avg_temp_c, fill = Continent)) +
+  geom_boxplot(mapping = aes(x = reorder(Continent, avg_temp_c, FUN = IQR), y = avg_temp_c, fill = Continent)) +
   labs(
     title = "Average Temperature by Continent",
     x = "Continent",
     y = "Average Temperature (°C)"
-  )
+  ) +
+  theme_minimal()
 ```
 
 #### CO2 Emissions by Year
