@@ -10,6 +10,14 @@ output:
 
 Considering climate factors and chemical factors in agriculture, construction of which continent and what crop type would bring more economic impact?
 
+## Hypothesis
+
+Null Hypothesis :
+There is no significant difference in economic impact across different continents and crop types based on climate factors (average temperature, precipitation, extreme weather events), chemical factors (fertilizer use, pesticide use) and crop yield.
+
+Alternative Hypothesis :
+Economic impact significantly differs across continents and crop types due to variations in climate factors and chemical inputs.
+
 ## Libraries
 ```{r}
 library(dplyr)
@@ -128,7 +136,7 @@ print(co2_stability)
 ### Extreme weather by year
 
 ```{r, fig.size = 40}
-ggplot(aggregated_data, aes(x = avg_extreme_weather_events, fill = Continent)) +
+ggplot(aggregated_data, aes(x = avg_extreme_weather_events, fill = Continent))+
   geom_histogram(binwidth = 0.5, color = "black", 
                  alpha = 0.7, position = "identity") +
   facet_wrap(~ Continent) +
@@ -155,7 +163,9 @@ print(variance_std)
 
 ### Precipitation vs Year
 ```{r}
-ggplot(aggregated_data, aes(x = Year, y = avg_total_precipitation_mm, fill = Continent)) +
+ggplot(aggregated_data, aes(x = Year, 
+                            y = avg_total_precipitation_mm, 
+                            fill = Continent)) +
   geom_bar(stat = "identity", position = "dodge") +
   facet_wrap(~ Continent) +
    labs(
@@ -252,7 +262,8 @@ print(slopes_resilience)
 
 ```
 ```{r}
-ggplot(slopes_resilience, aes(x = reorder(Crop_Type, abs(slope)), y = slope, fill = slope > 0)) +
+ggplot(slopes_resilience, aes(x = reorder(Crop_Type, abs(slope)), 
+                              y = slope, fill = slope > 0)) +
   geom_bar(stat = "identity", show.legend = FALSE) +
   coord_flip() +
   scale_fill_manual(values = c("blue")) + 
@@ -283,8 +294,10 @@ ggplot(aggregated_data, aes(x = avg_co2_emissions_mt,
 slopes_resilience1 <- aggregated_data %>%
   group_by(Crop_Type) %>%
   summarize(
-    slope = abs(coef(lm(avg_crop_yield ~ avg_co2_emissions_mt, data = cur_data()))[2]), 
-    intercept = coef(lm(avg_crop_yield ~ avg_co2_emissions_mt, data = cur_data()))[1],
+    slope = abs(coef(lm(avg_crop_yield ~ avg_co2_emissions_mt, 
+                        data = cur_data()))[2]), 
+    intercept = coef(lm(avg_crop_yield ~ avg_co2_emissions_mt, 
+                        data = cur_data()))[1],
   ) %>%
   arrange(desc(slope)) 
 
@@ -293,7 +306,8 @@ print(slopes_resilience1)
 
 ```
 ```{r}
-ggplot(slopes_resilience1, aes(x = reorder(Crop_Type, abs(slope)), y = slope, fill = slope > 0)) +
+ggplot(slopes_resilience1, aes(x = reorder(Crop_Type, abs(slope)),
+                               y = slope, fill = slope > 0)) +
   geom_bar(stat = "identity", show.legend = FALSE) +
   coord_flip() +
   scale_fill_manual(values = c("blue", "red")) + 
@@ -328,17 +342,18 @@ ggplot(aggregated_data, aes(x = avg_extreme_weather_events, y = avg_crop_yield,
 slopes_resilience2 <- aggregated_data %>%
   group_by(Crop_Type) %>%
   summarize(
-    slope = coef(lm(avg_crop_yield ~ avg_extreme_weather_events, data = cur_data()))[2], 
+    slope = abs(coef(lm(avg_crop_yield ~ avg_extreme_weather_events, data = cur_data()))[2]), 
     intercept = coef(lm(avg_crop_yield ~ avg_extreme_weather_events, data = cur_data()))[1],
   ) %>%
-  arrange(abs(slope)) 
+  arrange(slope) 
 
 # Print
 print(slopes_resilience2)
 
 ```
 ```{r}
-ggplot(slopes_resilience1, aes(x = reorder(Crop_Type, abs(slope)), y = slope, fill = slope > 0)) +
+ggplot(slopes_resilience2, aes(x = reorder(Crop_Type, abs(slope)), 
+                               y = slope, fill = slope > 0)) +
   geom_bar(stat = "identity", show.legend = FALSE) +
   coord_flip() +
   scale_fill_manual(values = c("blue", "red")) + 
@@ -368,10 +383,17 @@ ggplot(aggregated_data,
 
 ```
 ```{r, fig.width = 10}
+
+correlation_matrix <- aggregated_data %>%
+  group_by(Crop_Type) %>%
+  summarize(correlation = cor(avg_total_precipitation_mm, 
+                              avg_crop_yield))
 correlation_matrix <- correlation_matrix %>%
   mutate(Crop_Type = reorder(Crop_Type, correlation))
 
-ggplot(correlation_matrix, aes(x = Crop_Type, y = "Correlation", fill = correlation)) +
+
+ggplot(correlation_matrix, aes(x = Crop_Type, y = "Correlation", 
+                               fill = correlation)) +
   geom_tile() +
   labs(
     title = "Correlation Between Precipitation and Yield by Crop Type",
@@ -414,7 +436,8 @@ ggplot(sampled_data, aes(x = avg_fertilizer_use_kg_per_ha,
 slopes <- aggregated_data %>%
   group_by(Continent) %>%
   summarise(
-    slope = abs(coef(lm(avg_soil_health_index ~ avg_fertilizer_use_kg_per_ha))[2]), 
+    slope = abs(coef(lm(avg_soil_health_index ~ 
+                          avg_fertilizer_use_kg_per_ha))[2]), 
     p_value = summary(lm(avg_soil_health_index ~ 
                            avg_fertilizer_use_kg_per_ha))$coefficients[2, 4] 
   ) %>%
@@ -426,7 +449,8 @@ print(slopes)
 
 * Slope
 ```{r, fig.width = 10}
-ggplot(slopes, aes(x = reorder(Continent, slope), y = slope, fill = slope > 0))+
+ggplot(slopes, aes(x = reorder(Continent, slope), 
+                   y = slope, fill = slope > 0))+
   geom_bar(stat = "identity", show.legend = FALSE) +
   coord_flip() +
   scale_fill_manual(values = c("blue", "red")) +
@@ -460,7 +484,8 @@ ggplot(sampled_data, aes(x = avg_pesticide_use_kg_per_ha,
 slopes_pesticide <- aggregated_data %>%
   group_by(Continent) %>%
   summarise(
-    slope = abs(coef(lm(avg_soil_health_index ~ avg_pesticide_use_kg_per_ha))[2]), 
+    slope = abs(coef(lm(avg_soil_health_index ~ 
+                          avg_pesticide_use_kg_per_ha))[2]), 
     p_value = summary(lm(avg_soil_health_index ~ 
                            avg_pesticide_use_kg_per_ha))$coefficients[2, 4] 
   )%>%
@@ -760,7 +785,8 @@ head(test_df %>%
 
 
 ```{r}
-ggplot(test_df, aes(x = predicted_yield, y = predicted_economic_impact, color = Continent)) +
+ggplot(test_df, aes(x = predicted_yield, y = predicted_economic_impact, 
+                    color = Continent)) +
   geom_point(size = 3, alpha = 0.6) +
   geom_smooth(method = "lm", se = TRUE, color = "black", linetype = "dashed") +
   labs(
@@ -778,8 +804,10 @@ ggplot(test_df, aes(x = predicted_yield, y = predicted_economic_impact, color = 
 slope_intercept <- test_df %>%
   group_by(Continent) %>%
   summarize(
-    slope = coef(lm(predicted_economic_impact ~ predicted_yield, data = cur_data()))[2],
-    intercept = coef(lm(predicted_economic_impact ~ predicted_yield, data = cur_data()))[1]
+    slope = coef(lm(predicted_economic_impact ~ predicted_yield, 
+                    data = cur_data()))[2],
+    intercept = coef(lm(predicted_economic_impact ~ predicted_yield, data = 
+                          cur_data()))[1]
   )
 
 
@@ -791,7 +819,8 @@ print(slope_intercept)
 
 
 ```{r}
-ggplot(test_df, aes(x = predicted_yield, y = predicted_economic_impact, color = Crop_Type)) +
+ggplot(test_df, aes(x = predicted_yield, y = predicted_economic_impact, 
+                    color = Crop_Type)) +
   geom_point(size = 3, alpha = 0.6) +
   geom_smooth(method = "lm", se = TRUE, color = "black", linetype = "dashed") +
   labs(
@@ -808,8 +837,10 @@ ggplot(test_df, aes(x = predicted_yield, y = predicted_economic_impact, color = 
 slope_intercept_crop <- test_df %>%
   group_by(Crop_Type) %>%
   summarize(
-    slope = coef(lm(predicted_economic_impact ~ predicted_yield, data = cur_data()))[2],
-    intercept = coef(lm(predicted_economic_impact ~ predicted_yield, data = cur_data()))[1]
+    slope = coef(lm(predicted_economic_impact ~ predicted_yield,
+                    data = cur_data()))[2],
+    intercept = coef(lm(predicted_economic_impact ~ predicted_yield,
+                        data = cur_data()))[1]
   ) %>% arrange(desc(intercept))
 
 print(slope_intercept_crop)
