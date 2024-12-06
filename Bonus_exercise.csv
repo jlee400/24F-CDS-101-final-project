@@ -1,0 +1,3001 @@
+Year,Country,Continent,Crop_Type,extreme_weather_model
+2001,Canada,North America,Coffee,1
+2012,India,South Asia,Wheat,1
+1999,Nigeria,Africa,Soybeans,1
+1990,France,Europe,Soybeans,1
+2017,Nigeria,Africa,Coffee,1
+1996,Argentina,South America,Coffee,1
+2002,Canada,North America,Soybeans,1
+2024,Canada,North America,Barley,1
+2004,China,East Asia,Rice,1
+2015,Brazil,South America,Sugarcane,1
+2008,Brazil,South America,Fruits,1
+2005,Brazil,South America,Cotton,1
+1998,Argentina,South America,Soybeans,1
+2019,Argentina,South America,Rice,1
+2015,Argentina,South America,Rice,1
+2007,India,South Asia,Vegetables,1
+1992,Canada,North America,Sugarcane,1
+2013,India,South Asia,Cotton,1
+2013,Canada,North America,Cotton,1
+2008,France,Europe,Soybeans,1
+2014,Canada,North America,Coffee,1
+1999,Australia,Oceania,Barley,1
+2003,France,Europe,Cotton,1
+2012,France,Europe,Coffee,1
+2002,India,South Asia,Corn,1
+1991,China,East Asia,Wheat,1
+2009,China,East Asia,Rice,1
+2012,Brazil,South America,Barley,1
+2019,Australia,Oceania,Wheat,1
+2016,Brazil,South America,Soybeans,1
+2005,China,East Asia,Corn,1
+2010,Brazil,South America,Vegetables,1
+1997,Argentina,South America,Soybeans,1
+2016,Nigeria,Africa,Barley,1
+2020,India,South Asia,Sugarcane,1
+1992,Canada,North America,Wheat,1
+1995,Nigeria,Africa,Fruits,1
+2017,Argentina,South America,Coffee,1
+2002,France,Europe,Fruits,1
+2014,Australia,Oceania,Rice,1
+2019,Australia,Oceania,Rice,1
+1997,USA,North America,Coffee,1
+2011,Brazil,South America,Fruits,1
+2012,USA,North America,Vegetables,1
+1990,Nigeria,Africa,Vegetables,1
+1993,Argentina,South America,Cotton,1
+2018,Canada,North America,Coffee,1
+2008,France,Europe,Cotton,1
+2010,Brazil,South America,Corn,1
+2016,Nigeria,Africa,Corn,1
+1992,India,South Asia,Cotton,1
+2009,Russia,Eurasia,Rice,1
+2021,Canada,North America,Vegetables,1
+2002,Canada,North America,Sugarcane,1
+1994,Russia,Eurasia,Rice,1
+2021,Russia,Eurasia,Coffee,1
+2005,USA,North America,Fruits,1
+2004,Canada,North America,Soybeans,1
+2017,Argentina,South America,Rice,1
+2017,Nigeria,Africa,Corn,1
+2011,Canada,North America,Cotton,1
+1998,Canada,North America,Corn,1
+2010,Argentina,South America,Soybeans,1
+2014,Argentina,South America,Corn,1
+2004,USA,North America,Vegetables,1
+1993,Argentina,South America,Barley,1
+1995,France,Europe,Soybeans,1
+1997,Argentina,South America,Vegetables,1
+2019,Argentina,South America,Wheat,1
+1990,France,Europe,Rice,1
+1996,Brazil,South America,Cotton,1
+2017,Brazil,South America,Soybeans,1
+2003,France,Europe,Cotton,1
+2004,India,South Asia,Vegetables,1
+2000,Brazil,South America,Rice,1
+2024,Argentina,South America,Rice,1
+1994,Canada,North America,Coffee,1
+2018,France,Europe,Rice,1
+1999,Nigeria,Africa,Corn,1
+2011,Nigeria,Africa,Cotton,1
+1992,China,East Asia,Sugarcane,1
+2006,Brazil,South America,Fruits,1
+1999,USA,North America,Fruits,1
+1996,India,South Asia,Wheat,1
+2021,Brazil,South America,Coffee,1
+1997,Canada,North America,Vegetables,1
+2012,Canada,North America,Coffee,1
+2019,Canada,North America,Barley,1
+2021,USA,North America,Barley,1
+2019,Argentina,South America,Wheat,1
+2014,France,Europe,Fruits,1
+2003,France,Europe,Sugarcane,1
+2024,Argentina,South America,Fruits,1
+2003,Russia,Eurasia,Vegetables,1
+2014,Nigeria,Africa,Soybeans,1
+2000,Russia,Eurasia,Sugarcane,1
+2011,Brazil,South America,Vegetables,1
+2013,Australia,Oceania,Cotton,1
+2015,Nigeria,Africa,Coffee,1
+2019,Canada,North America,Cotton,1
+2017,China,East Asia,Rice,1
+2016,Brazil,South America,Wheat,1
+2008,Australia,Oceania,Sugarcane,1
+2010,Nigeria,Africa,Vegetables,1
+2009,Russia,Eurasia,Wheat,1
+1999,Nigeria,Africa,Rice,1
+1992,Nigeria,Africa,Fruits,1
+1993,France,Europe,Corn,1
+2001,Australia,Oceania,Vegetables,1
+2015,Australia,Oceania,Fruits,1
+1996,Canada,North America,Barley,1
+2023,Russia,Eurasia,Sugarcane,1
+1995,India,South Asia,Vegetables,1
+2018,Nigeria,Africa,Cotton,1
+1992,Argentina,South America,Corn,1
+1999,France,Europe,Wheat,1
+1997,Australia,Oceania,Cotton,1
+2016,Nigeria,Africa,Rice,1
+2016,China,East Asia,Vegetables,1
+2008,Nigeria,Africa,Soybeans,1
+2014,China,East Asia,Wheat,1
+2013,India,South Asia,Fruits,1
+1999,Australia,Oceania,Sugarcane,1
+2022,Nigeria,Africa,Coffee,1
+2000,USA,North America,Fruits,1
+1998,Russia,Eurasia,Barley,1
+2015,USA,North America,Rice,1
+2019,Brazil,South America,Vegetables,1
+2024,Brazil,South America,Rice,1
+2020,Russia,Eurasia,Rice,1
+2013,China,East Asia,Sugarcane,1
+2008,China,East Asia,Rice,1
+2021,Argentina,South America,Vegetables,1
+2014,Canada,North America,Vegetables,1
+1997,USA,North America,Coffee,1
+2021,Brazil,South America,Rice,1
+1996,Argentina,South America,Rice,1
+2006,Nigeria,Africa,Cotton,1
+1997,India,South Asia,Vegetables,1
+1995,Argentina,South America,Rice,1
+2022,Australia,Oceania,Wheat,1
+1992,Russia,Eurasia,Rice,1
+1996,China,East Asia,Cotton,1
+1999,France,Europe,Barley,1
+2024,Nigeria,Africa,Barley,1
+2002,France,Europe,Coffee,1
+1998,China,East Asia,Rice,1
+2024,Canada,North America,Coffee,1
+2003,USA,North America,Barley,1
+2000,Russia,Eurasia,Sugarcane,1
+1999,China,East Asia,Barley,1
+2016,Russia,Eurasia,Cotton,1
+2016,Brazil,South America,Coffee,1
+2008,France,Europe,Cotton,1
+2022,USA,North America,Vegetables,1
+2013,China,East Asia,Wheat,1
+1992,Brazil,South America,Soybeans,1
+2009,Australia,Oceania,Cotton,1
+2012,China,East Asia,Vegetables,1
+2004,USA,North America,Wheat,1
+2018,Canada,North America,Sugarcane,1
+2015,China,East Asia,Wheat,1
+1998,Brazil,South America,Corn,1
+2009,China,East Asia,Fruits,1
+2002,Nigeria,Africa,Soybeans,1
+2015,Australia,Oceania,Wheat,1
+2001,USA,North America,Rice,1
+2016,Argentina,South America,Fruits,1
+1998,Australia,Oceania,Wheat,1
+2024,Australia,Oceania,Wheat,1
+2014,France,Europe,Vegetables,1
+2017,India,South Asia,Sugarcane,1
+1997,Canada,North America,Coffee,1
+2007,Australia,Oceania,Corn,1
+2013,Argentina,South America,Vegetables,1
+2021,Australia,Oceania,Fruits,1
+2004,Argentina,South America,Soybeans,1
+2000,Nigeria,Africa,Corn,1
+2007,China,East Asia,Wheat,1
+1996,Canada,North America,Sugarcane,1
+2012,USA,North America,Barley,1
+1990,Russia,Eurasia,Sugarcane,1
+2016,India,South Asia,Fruits,1
+2000,Australia,Oceania,Barley,1
+2019,Canada,North America,Soybeans,1
+2010,Australia,Oceania,Barley,1
+1999,Nigeria,Africa,Corn,1
+1992,USA,North America,Wheat,1
+2009,Canada,North America,Fruits,1
+2012,China,East Asia,Wheat,1
+2010,Australia,Oceania,Rice,1
+2013,Russia,Eurasia,Wheat,1
+2008,Canada,North America,Vegetables,1
+2004,USA,North America,Cotton,1
+1991,Nigeria,Africa,Fruits,1
+2011,Brazil,South America,Vegetables,1
+2001,Australia,Oceania,Barley,1
+2009,Canada,North America,Wheat,1
+2023,Canada,North America,Coffee,1
+2019,France,Europe,Fruits,1
+2009,Russia,Eurasia,Rice,1
+2018,Nigeria,Africa,Vegetables,1
+2001,China,East Asia,Coffee,1
+2000,Russia,Eurasia,Corn,1
+1997,Argentina,South America,Vegetables,1
+2013,Nigeria,Africa,Soybeans,1
+1999,USA,North America,Sugarcane,1
+2009,Argentina,South America,Wheat,1
+2006,USA,North America,Vegetables,1
+1990,Brazil,South America,Sugarcane,1
+2005,India,South Asia,Vegetables,1
+2009,Australia,Oceania,Cotton,1
+1996,Argentina,South America,Wheat,1
+2006,USA,North America,Sugarcane,1
+2006,France,Europe,Barley,1
+2011,Canada,North America,Cotton,1
+2017,India,South Asia,Soybeans,1
+2019,Russia,Eurasia,Cotton,1
+2003,Australia,Oceania,Sugarcane,1
+1993,Brazil,South America,Wheat,1
+2011,Russia,Eurasia,Rice,1
+2014,China,East Asia,Sugarcane,1
+2011,Brazil,South America,Wheat,1
+1991,Argentina,South America,Coffee,1
+2008,Argentina,South America,Rice,1
+2018,France,Europe,Wheat,1
+1994,Nigeria,Africa,Barley,1
+2000,USA,North America,Wheat,1
+2006,France,Europe,Corn,1
+2007,China,East Asia,Wheat,1
+2019,Canada,North America,Sugarcane,1
+1990,Brazil,South America,Corn,1
+2014,Australia,Oceania,Wheat,1
+1992,France,Europe,Vegetables,1
+1995,Australia,Oceania,Sugarcane,1
+2003,India,South Asia,Corn,1
+2019,India,South Asia,Coffee,1
+1996,USA,North America,Cotton,1
+2022,Nigeria,Africa,Soybeans,1
+1992,Brazil,South America,Cotton,1
+2016,Argentina,South America,Soybeans,1
+2002,China,East Asia,Sugarcane,1
+1993,India,South Asia,Vegetables,1
+2006,China,East Asia,Coffee,1
+2015,USA,North America,Vegetables,1
+1994,China,East Asia,Barley,1
+1995,Argentina,South America,Cotton,1
+1999,Russia,Eurasia,Coffee,1
+2008,Australia,Oceania,Sugarcane,1
+2011,Argentina,South America,Barley,1
+2017,Brazil,South America,Sugarcane,1
+2013,Nigeria,Africa,Sugarcane,1
+2022,Nigeria,Africa,Cotton,1
+1996,Australia,Oceania,Fruits,1
+2003,France,Europe,Corn,1
+2004,Brazil,South America,Coffee,1
+2016,Australia,Oceania,Wheat,1
+2013,USA,North America,Sugarcane,1
+1998,Australia,Oceania,Corn,1
+2001,China,East Asia,Soybeans,1
+1992,Nigeria,Africa,Soybeans,1
+2021,Canada,North America,Vegetables,1
+2011,USA,North America,Corn,1
+2012,China,East Asia,Wheat,1
+1997,India,South Asia,Barley,1
+1999,Australia,Oceania,Vegetables,1
+1999,Australia,Oceania,Soybeans,1
+1997,USA,North America,Wheat,1
+2013,Russia,Eurasia,Barley,1
+2020,Canada,North America,Sugarcane,1
+2014,Nigeria,Africa,Sugarcane,1
+2015,Canada,North America,Soybeans,1
+2015,Argentina,South America,Sugarcane,1
+1993,Canada,North America,Vegetables,1
+1996,France,Europe,Vegetables,1
+2009,Canada,North America,Wheat,1
+1997,Canada,North America,Barley,1
+2014,Australia,Oceania,Rice,1
+2022,Canada,North America,Soybeans,1
+2013,Australia,Oceania,Fruits,1
+2005,USA,North America,Cotton,1
+1992,India,South Asia,Cotton,1
+1998,Brazil,South America,Sugarcane,1
+2009,India,South Asia,Wheat,1
+2009,India,South Asia,Vegetables,1
+2001,Argentina,South America,Wheat,1
+2015,Nigeria,Africa,Cotton,1
+2011,Russia,Eurasia,Corn,1
+2022,India,South Asia,Soybeans,1
+1998,France,Europe,Coffee,1
+2012,France,Europe,Soybeans,1
+2018,Argentina,South America,Coffee,1
+2009,France,Europe,Cotton,1
+2009,India,South Asia,Barley,1
+1998,France,Europe,Wheat,1
+2015,Brazil,South America,Soybeans,1
+2016,Australia,Oceania,Sugarcane,1
+2004,Russia,Eurasia,Wheat,1
+1990,Canada,North America,Sugarcane,1
+2005,Canada,North America,Vegetables,1
+2001,India,South Asia,Corn,1
+1996,Argentina,South America,Rice,1
+2010,India,South Asia,Vegetables,1
+2012,Australia,Oceania,Barley,1
+2021,Argentina,South America,Sugarcane,1
+1992,Brazil,South America,Vegetables,1
+2009,India,South Asia,Soybeans,1
+1991,Nigeria,Africa,Vegetables,1
+2000,China,East Asia,Sugarcane,1
+2007,France,Europe,Wheat,1
+2005,France,Europe,Soybeans,1
+1995,Brazil,South America,Corn,1
+2020,Canada,North America,Rice,1
+2019,China,East Asia,Wheat,1
+2016,Russia,Eurasia,Wheat,1
+2000,Australia,Oceania,Sugarcane,1
+2001,USA,North America,Fruits,1
+2010,Brazil,South America,Soybeans,1
+2014,Canada,North America,Fruits,1
+2003,China,East Asia,Cotton,1
+2001,Canada,North America,Soybeans,1
+2018,Nigeria,Africa,Soybeans,1
+2003,China,East Asia,Rice,1
+2014,Russia,Eurasia,Vegetables,1
+2001,Russia,Eurasia,Fruits,1
+2001,France,Europe,Vegetables,1
+1991,Canada,North America,Rice,1
+2024,Nigeria,Africa,Cotton,1
+1990,Canada,North America,Vegetables,1
+1995,France,Europe,Barley,1
+2005,France,Europe,Barley,1
+2017,India,South Asia,Wheat,1
+2024,Australia,Oceania,Sugarcane,1
+2018,Canada,North America,Vegetables,1
+2007,India,South Asia,Barley,1
+2005,Australia,Oceania,Wheat,1
+1990,Australia,Oceania,Fruits,1
+2014,India,South Asia,Fruits,1
+1991,Argentina,South America,Fruits,1
+1993,Brazil,South America,Barley,1
+1996,Canada,North America,Corn,1
+2003,Canada,North America,Sugarcane,1
+2011,USA,North America,Barley,1
+1992,Argentina,South America,Corn,1
+2002,Nigeria,Africa,Corn,1
+2017,Brazil,South America,Vegetables,1
+1996,Brazil,South America,Sugarcane,1
+1994,Australia,Oceania,Vegetables,1
+1997,Canada,North America,Vegetables,1
+2016,Argentina,South America,Corn,1
+2005,China,East Asia,Coffee,1
+2023,USA,North America,Fruits,1
+2007,Brazil,South America,Coffee,1
+2011,USA,North America,Corn,1
+1997,India,South Asia,Barley,1
+2024,Canada,North America,Fruits,1
+2016,Argentina,South America,Rice,1
+1995,Australia,Oceania,Wheat,1
+2007,Australia,Oceania,Corn,1
+2014,USA,North America,Rice,1
+2007,Brazil,South America,Rice,1
+2016,USA,North America,Soybeans,1
+1994,Russia,Eurasia,Cotton,1
+2014,India,South Asia,Cotton,1
+2013,Russia,Eurasia,Rice,1
+1991,Nigeria,Africa,Fruits,1
+2009,Nigeria,Africa,Fruits,1
+2010,USA,North America,Rice,1
+2001,Brazil,South America,Coffee,1
+2020,Argentina,South America,Cotton,1
+1996,France,Europe,Soybeans,1
+2020,Australia,Oceania,Corn,1
+2003,Argentina,South America,Rice,1
+2020,India,South Asia,Cotton,1
+2005,Russia,Eurasia,Wheat,1
+2013,India,South Asia,Vegetables,1
+2015,USA,North America,Barley,1
+2023,Brazil,South America,Cotton,1
+2013,Nigeria,Africa,Vegetables,1
+2000,China,East Asia,Barley,1
+1997,USA,North America,Rice,1
+2019,Australia,Oceania,Barley,1
+2001,Australia,Oceania,Fruits,1
+2012,India,South Asia,Vegetables,1
+1998,Argentina,South America,Vegetables,1
+2023,Canada,North America,Cotton,1
+2019,Russia,Eurasia,Wheat,1
+1997,USA,North America,Rice,1
+2008,Argentina,South America,Sugarcane,1
+2013,India,South Asia,Cotton,1
+2002,Nigeria,Africa,Vegetables,1
+1991,Russia,Eurasia,Coffee,1
+2015,USA,North America,Wheat,1
+2002,China,East Asia,Fruits,1
+2007,Argentina,South America,Vegetables,1
+2015,Nigeria,Africa,Vegetables,1
+1991,Canada,North America,Corn,1
+1990,Canada,North America,Corn,1
+2024,USA,North America,Soybeans,1
+2001,Nigeria,Africa,Soybeans,1
+1993,Canada,North America,Barley,1
+2022,Australia,Oceania,Cotton,1
+2021,Brazil,South America,Sugarcane,1
+2000,India,South Asia,Barley,1
+2002,China,East Asia,Sugarcane,1
+2014,Russia,Eurasia,Wheat,1
+1998,China,East Asia,Sugarcane,1
+2021,Canada,North America,Wheat,1
+2000,Australia,Oceania,Rice,1
+2000,Australia,Oceania,Rice,1
+2003,India,South Asia,Vegetables,1
+2010,Argentina,South America,Barley,1
+2014,Canada,North America,Sugarcane,1
+2019,Argentina,South America,Wheat,1
+2015,Canada,North America,Corn,1
+2003,Brazil,South America,Cotton,1
+2005,India,South Asia,Sugarcane,1
+1997,France,Europe,Soybeans,1
+2010,Canada,North America,Rice,1
+2021,India,South Asia,Rice,1
+1994,China,East Asia,Cotton,1
+1995,Canada,North America,Coffee,1
+2002,India,South Asia,Sugarcane,1
+2015,Argentina,South America,Fruits,1
+2024,Russia,Eurasia,Sugarcane,1
+2024,France,Europe,Cotton,1
+2007,Argentina,South America,Rice,1
+1995,Russia,Eurasia,Barley,1
+2005,Nigeria,Africa,Vegetables,1
+2004,India,South Asia,Corn,1
+1990,Argentina,South America,Coffee,1
+2007,Argentina,South America,Cotton,1
+2015,Brazil,South America,Coffee,1
+1998,India,South Asia,Wheat,1
+2010,Canada,North America,Sugarcane,1
+2016,Nigeria,Africa,Sugarcane,1
+2021,Brazil,South America,Soybeans,1
+2008,France,Europe,Corn,1
+2012,Argentina,South America,Corn,1
+1994,France,Europe,Corn,1
+1996,France,Europe,Fruits,1
+2024,Canada,North America,Vegetables,1
+2008,China,East Asia,Corn,1
+1999,China,East Asia,Vegetables,1
+2007,China,East Asia,Fruits,1
+2021,Australia,Oceania,Barley,1
+2018,Russia,Eurasia,Corn,1
+2009,Argentina,South America,Cotton,1
+2022,France,Europe,Soybeans,1
+2023,China,East Asia,Sugarcane,1
+2024,Brazil,South America,Coffee,1
+1996,Canada,North America,Soybeans,1
+1997,India,South Asia,Vegetables,1
+2004,India,South Asia,Soybeans,1
+2008,Argentina,South America,Barley,1
+1994,Nigeria,Africa,Coffee,1
+1996,France,Europe,Wheat,1
+2022,India,South Asia,Corn,1
+1991,France,Europe,Vegetables,1
+2017,China,East Asia,Fruits,1
+2018,Nigeria,Africa,Fruits,1
+2015,Argentina,South America,Coffee,1
+2000,Russia,Eurasia,Soybeans,1
+1999,Canada,North America,Wheat,1
+2017,Canada,North America,Corn,1
+2022,Australia,Oceania,Soybeans,1
+2008,Argentina,South America,Barley,1
+2019,Argentina,South America,Wheat,1
+2001,China,East Asia,Vegetables,1
+2001,Australia,Oceania,Coffee,1
+1998,Brazil,South America,Corn,1
+2013,Brazil,South America,Sugarcane,1
+2001,China,East Asia,Coffee,1
+2018,Australia,Oceania,Vegetables,1
+1993,Argentina,South America,Wheat,1
+2007,France,Europe,Fruits,1
+2011,China,East Asia,Corn,1
+2009,Nigeria,Africa,Corn,1
+1995,Brazil,South America,Vegetables,1
+1997,India,South Asia,Wheat,1
+2005,Russia,Eurasia,Vegetables,1
+2000,India,South Asia,Coffee,1
+1999,China,East Asia,Coffee,1
+1997,France,Europe,Vegetables,1
+2022,Brazil,South America,Rice,1
+2013,Russia,Eurasia,Rice,1
+2016,Australia,Oceania,Sugarcane,1
+1996,Australia,Oceania,Sugarcane,1
+2005,Russia,Eurasia,Sugarcane,1
+2021,Russia,Eurasia,Rice,1
+2010,Nigeria,Africa,Sugarcane,1
+2011,India,South Asia,Vegetables,1
+2024,France,Europe,Soybeans,1
+1992,Nigeria,Africa,Wheat,1
+2016,China,East Asia,Coffee,1
+1995,USA,North America,Cotton,1
+2014,Nigeria,Africa,Corn,1
+1991,Australia,Oceania,Wheat,1
+2023,Argentina,South America,Rice,1
+1993,Nigeria,Africa,Rice,1
+2021,Argentina,South America,Vegetables,1
+2021,Nigeria,Africa,Fruits,1
+2015,Canada,North America,Coffee,1
+2010,Australia,Oceania,Vegetables,1
+2002,Canada,North America,Cotton,1
+1998,France,Europe,Fruits,1
+2022,Canada,North America,Coffee,1
+2004,Brazil,South America,Rice,1
+2008,Nigeria,Africa,Cotton,1
+2017,Russia,Eurasia,Sugarcane,1
+1990,China,East Asia,Rice,1
+1993,Argentina,South America,Wheat,1
+2010,Canada,North America,Barley,1
+2020,Russia,Eurasia,Sugarcane,1
+2017,Brazil,South America,Sugarcane,1
+2023,Canada,North America,Soybeans,1
+1999,Canada,North America,Wheat,1
+2000,Russia,Eurasia,Cotton,1
+1993,China,East Asia,Soybeans,1
+2014,USA,North America,Cotton,1
+2022,China,East Asia,Fruits,1
+1998,Russia,Eurasia,Barley,1
+2014,Russia,Eurasia,Soybeans,1
+2004,Canada,North America,Vegetables,1
+2011,Brazil,South America,Barley,1
+1998,China,East Asia,Soybeans,1
+2011,Brazil,South America,Cotton,1
+2003,Argentina,South America,Barley,1
+2012,Russia,Eurasia,Vegetables,1
+2001,Nigeria,Africa,Corn,1
+2000,Canada,North America,Wheat,1
+2010,China,East Asia,Soybeans,1
+1998,Argentina,South America,Sugarcane,1
+2019,Canada,North America,Fruits,1
+1997,Australia,Oceania,Coffee,1
+2023,India,South Asia,Coffee,1
+2005,Australia,Oceania,Sugarcane,1
+1999,Nigeria,Africa,Soybeans,1
+2003,India,South Asia,Corn,1
+2006,Argentina,South America,Fruits,1
+2016,France,Europe,Soybeans,1
+2010,Nigeria,Africa,Wheat,1
+1991,Nigeria,Africa,Vegetables,1
+2023,Brazil,South America,Wheat,1
+1999,Nigeria,Africa,Soybeans,1
+2019,India,South Asia,Coffee,1
+2021,Brazil,South America,Vegetables,1
+1997,Canada,North America,Cotton,1
+2022,Nigeria,Africa,Barley,1
+1998,France,Europe,Soybeans,1
+2016,Nigeria,Africa,Sugarcane,1
+2008,China,East Asia,Coffee,1
+2000,USA,North America,Corn,1
+1998,Brazil,South America,Soybeans,1
+2021,Nigeria,Africa,Barley,1
+1999,Brazil,South America,Cotton,1
+1991,Nigeria,Africa,Sugarcane,1
+2015,Russia,Eurasia,Corn,1
+2017,China,East Asia,Fruits,1
+2006,Canada,North America,Vegetables,1
+2003,Brazil,South America,Wheat,1
+2021,Canada,North America,Vegetables,1
+2011,France,Europe,Wheat,1
+2000,France,Europe,Cotton,1
+2001,India,South Asia,Sugarcane,1
+2023,China,East Asia,Soybeans,1
+2016,Russia,Eurasia,Fruits,1
+1997,Brazil,South America,Cotton,1
+2015,Canada,North America,Rice,1
+2013,France,Europe,Fruits,1
+2016,Nigeria,Africa,Sugarcane,1
+2023,France,Europe,Sugarcane,1
+2021,Brazil,South America,Sugarcane,1
+1997,Australia,Oceania,Barley,1
+2010,Argentina,South America,Corn,1
+2016,USA,North America,Vegetables,1
+2021,France,Europe,Sugarcane,1
+2001,India,South Asia,Corn,1
+2023,China,East Asia,Barley,1
+1994,Australia,Oceania,Barley,1
+1991,China,East Asia,Fruits,1
+2014,Australia,Oceania,Corn,1
+1994,USA,North America,Fruits,1
+2004,India,South Asia,Coffee,1
+2002,Nigeria,Africa,Cotton,1
+2002,Canada,North America,Rice,1
+2019,Canada,North America,Cotton,1
+2023,Nigeria,Africa,Fruits,1
+2022,Australia,Oceania,Fruits,1
+1998,Russia,Eurasia,Corn,1
+2023,Russia,Eurasia,Corn,1
+1997,USA,North America,Corn,1
+2006,USA,North America,Coffee,1
+2005,Nigeria,Africa,Soybeans,1
+2008,France,Europe,Vegetables,1
+2010,Russia,Eurasia,Sugarcane,1
+2009,Nigeria,Africa,Cotton,1
+2000,Russia,Eurasia,Wheat,1
+1994,Russia,Eurasia,Wheat,1
+2012,Argentina,South America,Corn,1
+2007,India,South Asia,Coffee,1
+1991,Nigeria,Africa,Coffee,1
+2017,Australia,Oceania,Corn,1
+2000,China,East Asia,Cotton,1
+1999,Nigeria,Africa,Rice,1
+1998,Nigeria,Africa,Cotton,1
+2019,India,South Asia,Soybeans,1
+2004,Argentina,South America,Cotton,1
+2013,USA,North America,Fruits,1
+2017,India,South Asia,Barley,1
+2020,Nigeria,Africa,Wheat,1
+1996,Nigeria,Africa,Sugarcane,1
+1997,Australia,Oceania,Fruits,1
+2023,Nigeria,Africa,Corn,1
+1993,Nigeria,Africa,Corn,1
+2007,Australia,Oceania,Soybeans,1
+2005,India,South Asia,Rice,1
+2021,Nigeria,Africa,Wheat,1
+2004,India,South Asia,Corn,1
+1991,Australia,Oceania,Cotton,1
+2004,Brazil,South America,Wheat,1
+1997,France,Europe,Coffee,1
+2007,Canada,North America,Vegetables,1
+1991,Nigeria,Africa,Barley,1
+2017,China,East Asia,Corn,1
+2022,Australia,Oceania,Vegetables,1
+2008,Nigeria,Africa,Rice,1
+2000,France,Europe,Coffee,1
+1993,USA,North America,Coffee,1
+2003,Nigeria,Africa,Wheat,1
+2024,India,South Asia,Coffee,1
+2000,Nigeria,Africa,Sugarcane,1
+2020,France,Europe,Cotton,1
+2009,Argentina,South America,Vegetables,1
+1992,India,South Asia,Fruits,1
+1992,India,South Asia,Coffee,1
+1993,Argentina,South America,Fruits,1
+2018,Russia,Eurasia,Cotton,1
+2009,Australia,Oceania,Coffee,1
+2010,Brazil,South America,Barley,1
+1991,China,East Asia,Coffee,1
+2022,India,South Asia,Cotton,1
+2008,China,East Asia,Cotton,1
+1999,France,Europe,Soybeans,1
+2000,USA,North America,Wheat,1
+2016,Australia,Oceania,Rice,1
+2008,USA,North America,Cotton,1
+1990,Australia,Oceania,Cotton,1
+2004,Nigeria,Africa,Corn,1
+2018,India,South Asia,Corn,1
+2004,Argentina,South America,Vegetables,1
+1993,Russia,Eurasia,Rice,1
+1991,USA,North America,Sugarcane,1
+2016,Canada,North America,Corn,1
+2008,Russia,Eurasia,Wheat,1
+2015,Russia,Eurasia,Coffee,1
+2012,Russia,Eurasia,Vegetables,1
+2012,China,East Asia,Rice,1
+2015,Nigeria,Africa,Vegetables,1
+2004,India,South Asia,Vegetables,1
+2023,China,East Asia,Sugarcane,1
+1994,India,South Asia,Fruits,1
+2009,China,East Asia,Soybeans,1
+2021,Russia,Eurasia,Coffee,1
+2021,Australia,Oceania,Barley,1
+2022,Argentina,South America,Coffee,1
+2021,Russia,Eurasia,Cotton,1
+2020,China,East Asia,Vegetables,1
+1994,Australia,Oceania,Rice,1
+1996,USA,North America,Barley,1
+2014,Australia,Oceania,Corn,1
+1998,France,Europe,Cotton,1
+1995,Nigeria,Africa,Coffee,1
+1997,Nigeria,Africa,Corn,1
+2015,Nigeria,Africa,Sugarcane,1
+2020,Nigeria,Africa,Coffee,1
+2010,China,East Asia,Barley,1
+2024,Australia,Oceania,Corn,1
+2015,Argentina,South America,Coffee,1
+2022,Nigeria,Africa,Sugarcane,1
+2022,Argentina,South America,Sugarcane,1
+2018,Russia,Eurasia,Vegetables,1
+2010,France,Europe,Coffee,1
+2011,China,East Asia,Fruits,1
+1995,Nigeria,Africa,Coffee,1
+2019,India,South Asia,Soybeans,1
+2006,China,East Asia,Cotton,1
+2012,India,South Asia,Coffee,1
+2000,Brazil,South America,Coffee,1
+2014,Canada,North America,Corn,1
+2008,Canada,North America,Coffee,1
+1993,India,South Asia,Fruits,1
+2014,India,South Asia,Coffee,1
+2003,India,South Asia,Rice,1
+2014,Australia,Oceania,Soybeans,1
+2023,Nigeria,Africa,Barley,1
+2003,China,East Asia,Wheat,1
+1992,Brazil,South America,Barley,1
+2022,Russia,Eurasia,Fruits,1
+2019,Canada,North America,Barley,1
+1990,Nigeria,Africa,Barley,1
+1991,France,Europe,Rice,1
+2003,Nigeria,Africa,Wheat,1
+1996,Argentina,South America,Fruits,1
+1995,Russia,Eurasia,Wheat,1
+2009,France,Europe,Fruits,1
+1991,France,Europe,Vegetables,1
+2003,France,Europe,Vegetables,1
+2023,Brazil,South America,Vegetables,1
+2009,Russia,Eurasia,Corn,1
+2014,Argentina,South America,Rice,1
+2017,China,East Asia,Sugarcane,1
+2022,France,Europe,Cotton,1
+2021,Nigeria,Africa,Sugarcane,1
+2023,Australia,Oceania,Fruits,1
+2009,France,Europe,Wheat,1
+1991,USA,North America,Wheat,1
+2002,Canada,North America,Barley,1
+2024,Russia,Eurasia,Coffee,1
+1998,India,South Asia,Soybeans,1
+2013,Nigeria,Africa,Sugarcane,1
+2019,Argentina,South America,Corn,1
+2020,Canada,North America,Vegetables,1
+2020,France,Europe,Vegetables,1
+1999,Russia,Eurasia,Barley,1
+2018,Brazil,South America,Corn,1
+2013,India,South Asia,Wheat,1
+2018,India,South Asia,Barley,1
+1991,Argentina,South America,Rice,1
+2004,India,South Asia,Sugarcane,1
+2015,USA,North America,Wheat,1
+1998,Nigeria,Africa,Rice,1
+2009,India,South Asia,Coffee,1
+2008,USA,North America,Coffee,1
+2013,France,Europe,Corn,1
+2013,USA,North America,Soybeans,1
+2013,USA,North America,Soybeans,1
+2012,India,South Asia,Wheat,1
+2005,Australia,Oceania,Cotton,1
+1996,France,Europe,Rice,1
+2001,Argentina,South America,Cotton,1
+1997,Canada,North America,Wheat,1
+2011,Russia,Eurasia,Corn,1
+1997,France,Europe,Soybeans,1
+2001,Brazil,South America,Coffee,1
+2002,Canada,North America,Vegetables,1
+1992,Russia,Eurasia,Coffee,1
+1992,China,East Asia,Fruits,1
+2021,France,Europe,Barley,1
+2015,Canada,North America,Wheat,1
+2002,USA,North America,Coffee,1
+2005,India,South Asia,Corn,1
+2013,Brazil,South America,Cotton,1
+2024,Brazil,South America,Cotton,1
+1994,Canada,North America,Barley,1
+2002,India,South Asia,Wheat,1
+2002,China,East Asia,Vegetables,1
+1997,France,Europe,Cotton,1
+2021,Brazil,South America,Wheat,1
+2010,France,Europe,Barley,1
+1992,Canada,North America,Fruits,1
+1993,USA,North America,Rice,1
+1996,Australia,Oceania,Coffee,1
+2006,Russia,Eurasia,Sugarcane,1
+2007,France,Europe,Vegetables,1
+2018,Argentina,South America,Sugarcane,1
+2014,Canada,North America,Barley,1
+2017,USA,North America,Vegetables,1
+2007,Russia,Eurasia,Vegetables,1
+2001,France,Europe,Fruits,1
+2017,USA,North America,Rice,1
+2006,Brazil,South America,Rice,1
+2024,Argentina,South America,Rice,1
+1997,Nigeria,Africa,Sugarcane,1
+2012,USA,North America,Coffee,1
+1992,India,South Asia,Corn,1
+2001,USA,North America,Fruits,1
+1996,USA,North America,Barley,1
+1992,Argentina,South America,Barley,1
+1996,Brazil,South America,Coffee,1
+2005,Australia,Oceania,Soybeans,1
+2017,Australia,Oceania,Cotton,1
+2016,Nigeria,Africa,Cotton,1
+1998,Nigeria,Africa,Coffee,1
+2018,Brazil,South America,Cotton,1
+2017,USA,North America,Vegetables,1
+2015,Brazil,South America,Sugarcane,1
+2016,Nigeria,Africa,Barley,1
+2024,Argentina,South America,Wheat,1
+2005,Brazil,South America,Vegetables,1
+1996,India,South Asia,Barley,1
+1996,Australia,Oceania,Cotton,1
+2021,Canada,North America,Sugarcane,1
+1993,Nigeria,Africa,Coffee,1
+2018,France,Europe,Soybeans,1
+2024,China,East Asia,Cotton,1
+1997,USA,North America,Barley,1
+2000,China,East Asia,Fruits,1
+2003,China,East Asia,Soybeans,1
+2018,Nigeria,Africa,Corn,1
+2014,China,East Asia,Barley,1
+1992,Brazil,South America,Corn,1
+2000,Brazil,South America,Sugarcane,1
+2017,Russia,Eurasia,Barley,1
+1992,Nigeria,Africa,Sugarcane,1
+2006,India,South Asia,Coffee,1
+2024,Russia,Eurasia,Wheat,1
+2003,Argentina,South America,Barley,1
+2017,Russia,Eurasia,Fruits,1
+2001,Australia,Oceania,Corn,1
+2020,Russia,Eurasia,Corn,1
+2013,India,South Asia,Corn,1
+2012,Australia,Oceania,Barley,1
+2019,Australia,Oceania,Fruits,1
+1996,France,Europe,Barley,1
+1992,Russia,Eurasia,Sugarcane,1
+2002,Canada,North America,Corn,1
+2023,India,South Asia,Corn,1
+2020,Canada,North America,Barley,1
+2004,Canada,North America,Wheat,1
+2000,India,South Asia,Fruits,1
+1993,Russia,Eurasia,Corn,1
+1995,Argentina,South America,Wheat,1
+2008,Argentina,South America,Sugarcane,1
+2011,Canada,North America,Cotton,1
+2017,China,East Asia,Fruits,1
+2008,Brazil,South America,Barley,1
+2014,India,South Asia,Fruits,1
+2005,Russia,Eurasia,Vegetables,1
+2018,Canada,North America,Rice,1
+2004,Australia,Oceania,Corn,1
+2003,Nigeria,Africa,Sugarcane,1
+2018,France,Europe,Corn,1
+1992,Nigeria,Africa,Cotton,1
+2005,Argentina,South America,Sugarcane,1
+2019,Russia,Eurasia,Corn,1
+2024,Australia,Oceania,Cotton,1
+1995,Argentina,South America,Coffee,1
+1995,Australia,Oceania,Cotton,1
+2018,Canada,North America,Vegetables,1
+2000,Canada,North America,Sugarcane,1
+2006,Argentina,South America,Rice,1
+1990,USA,North America,Soybeans,1
+2022,Canada,North America,Cotton,1
+2005,Canada,North America,Coffee,1
+2023,Brazil,South America,Soybeans,1
+1993,Russia,Eurasia,Cotton,1
+2010,Argentina,South America,Cotton,1
+2020,Nigeria,Africa,Sugarcane,1
+2017,Canada,North America,Rice,1
+2002,USA,North America,Cotton,1
+2004,Nigeria,Africa,Corn,1
+1997,Russia,Eurasia,Rice,1
+1993,Nigeria,Africa,Cotton,1
+2004,Russia,Eurasia,Fruits,1
+2001,Canada,North America,Vegetables,1
+2005,USA,North America,Corn,1
+2014,Australia,Oceania,Barley,1
+1998,USA,North America,Coffee,1
+1992,Australia,Oceania,Cotton,1
+1991,India,South Asia,Corn,1
+2000,India,South Asia,Barley,1
+1997,Australia,Oceania,Coffee,1
+2021,USA,North America,Corn,1
+2017,Nigeria,Africa,Fruits,1
+2016,India,South Asia,Vegetables,1
+2021,USA,North America,Fruits,1
+2017,China,East Asia,Coffee,1
+1991,Australia,Oceania,Sugarcane,1
+2005,France,Europe,Sugarcane,1
+2014,China,East Asia,Barley,1
+2000,Brazil,South America,Vegetables,1
+2007,France,Europe,Fruits,1
+2002,Australia,Oceania,Cotton,1
+2020,India,South Asia,Corn,1
+2019,Russia,Eurasia,Vegetables,1
+1993,Argentina,South America,Vegetables,1
+2006,Canada,North America,Rice,1
+2012,USA,North America,Sugarcane,1
+2011,France,Europe,Soybeans,1
+1993,Canada,North America,Sugarcane,1
+2012,India,South Asia,Cotton,1
+2004,India,South Asia,Rice,1
+2007,Australia,Oceania,Cotton,1
+2011,Argentina,South America,Wheat,1
+2017,Australia,Oceania,Cotton,1
+2014,Argentina,South America,Fruits,1
+1997,Nigeria,Africa,Cotton,1
+2002,USA,North America,Vegetables,1
+2023,USA,North America,Corn,1
+2010,India,South Asia,Sugarcane,1
+1992,Australia,Oceania,Rice,1
+2019,Canada,North America,Cotton,1
+2014,Nigeria,Africa,Corn,1
+2004,Australia,Oceania,Coffee,1
+2005,USA,North America,Vegetables,1
+2005,China,East Asia,Coffee,1
+1991,India,South Asia,Soybeans,1
+1998,USA,North America,Barley,1
+1995,Nigeria,Africa,Rice,1
+2016,Nigeria,Africa,Rice,1
+2005,Brazil,South America,Barley,1
+2024,Argentina,South America,Rice,1
+2015,Russia,Eurasia,Fruits,1
+1995,Brazil,South America,Rice,1
+2023,USA,North America,Vegetables,1
+1995,USA,North America,Rice,1
+1996,USA,North America,Barley,1
+2003,France,Europe,Coffee,1
+2010,USA,North America,Fruits,1
+2011,Nigeria,Africa,Barley,1
+2006,France,Europe,Coffee,1
+1991,Nigeria,Africa,Cotton,1
+2009,Russia,Eurasia,Rice,1
+2023,India,South Asia,Fruits,1
+1994,France,Europe,Corn,1
+1992,Nigeria,Africa,Rice,1
+2004,Australia,Oceania,Coffee,1
+2019,Australia,Oceania,Fruits,1
+1994,Australia,Oceania,Rice,1
+1995,Canada,North America,Cotton,1
+1993,Russia,Eurasia,Coffee,1
+1994,France,Europe,Fruits,1
+2005,Canada,North America,Rice,1
+2007,Australia,Oceania,Sugarcane,1
+2000,Canada,North America,Fruits,1
+1994,Russia,Eurasia,Cotton,1
+2012,Australia,Oceania,Soybeans,1
+1995,Argentina,South America,Coffee,1
+2012,India,South Asia,Vegetables,1
+2004,Argentina,South America,Barley,1
+2004,India,South Asia,Coffee,1
+1993,Canada,North America,Coffee,1
+2019,USA,North America,Wheat,1
+2016,Australia,Oceania,Coffee,1
+2008,France,Europe,Barley,1
+2018,Argentina,South America,Sugarcane,1
+2023,Canada,North America,Fruits,1
+2000,Australia,Oceania,Barley,1
+2005,Argentina,South America,Wheat,1
+1994,Brazil,South America,Wheat,1
+1996,China,East Asia,Corn,1
+2015,Australia,Oceania,Vegetables,1
+1994,Nigeria,Africa,Sugarcane,1
+2008,Argentina,South America,Fruits,1
+2021,Australia,Oceania,Wheat,1
+2013,France,Europe,Vegetables,1
+2001,China,East Asia,Cotton,1
+2005,China,East Asia,Coffee,1
+2001,Russia,Eurasia,Rice,1
+2007,China,East Asia,Barley,1
+2014,China,East Asia,Coffee,1
+1997,Argentina,South America,Rice,1
+1990,USA,North America,Barley,1
+2004,USA,North America,Wheat,1
+2019,China,East Asia,Fruits,1
+2003,France,Europe,Soybeans,1
+2002,China,East Asia,Cotton,1
+2015,Nigeria,Africa,Vegetables,1
+2009,France,Europe,Sugarcane,1
+2012,China,East Asia,Barley,1
+2011,Canada,North America,Vegetables,1
+2020,Argentina,South America,Fruits,1
+2002,Australia,Oceania,Fruits,1
+2007,India,South Asia,Sugarcane,1
+2012,Russia,Eurasia,Cotton,1
+2007,Nigeria,Africa,Vegetables,1
+2000,India,South Asia,Corn,1
+1994,USA,North America,Coffee,1
+2009,USA,North America,Corn,1
+1991,Nigeria,Africa,Corn,1
+2010,Canada,North America,Wheat,1
+1994,France,Europe,Cotton,1
+1993,USA,North America,Coffee,1
+2005,Brazil,South America,Wheat,1
+1992,Canada,North America,Wheat,1
+1999,Canada,North America,Cotton,1
+2019,Argentina,South America,Rice,1
+2019,India,South Asia,Cotton,1
+2011,Nigeria,Africa,Barley,1
+1996,China,East Asia,Vegetables,1
+2001,Brazil,South America,Coffee,1
+2017,India,South Asia,Wheat,1
+2017,Russia,Eurasia,Cotton,1
+2024,India,South Asia,Barley,1
+2017,India,South Asia,Fruits,1
+2008,India,South Asia,Rice,1
+2014,Australia,Oceania,Fruits,1
+2012,Australia,Oceania,Coffee,1
+2024,Australia,Oceania,Cotton,1
+2001,USA,North America,Wheat,1
+1996,USA,North America,Soybeans,1
+1997,France,Europe,Fruits,1
+2016,Argentina,South America,Wheat,1
+2005,France,Europe,Sugarcane,1
+1992,Brazil,South America,Rice,1
+2011,USA,North America,Sugarcane,1
+2008,Argentina,South America,Fruits,1
+2018,Australia,Oceania,Barley,1
+1996,Canada,North America,Vegetables,1
+1998,Nigeria,Africa,Barley,1
+1998,Nigeria,Africa,Corn,1
+2005,Nigeria,Africa,Corn,1
+2017,France,Europe,Fruits,1
+2009,Canada,North America,Soybeans,1
+1995,Argentina,South America,Coffee,1
+2004,Brazil,South America,Sugarcane,1
+1990,China,East Asia,Barley,1
+2022,Brazil,South America,Sugarcane,1
+2001,Argentina,South America,Wheat,1
+2002,Nigeria,Africa,Sugarcane,1
+2002,Australia,Oceania,Wheat,1
+2012,Australia,Oceania,Coffee,1
+2007,India,South Asia,Vegetables,1
+2021,USA,North America,Soybeans,1
+2012,India,South Asia,Wheat,1
+2015,Canada,North America,Rice,1
+1994,Australia,Oceania,Vegetables,1
+2000,Canada,North America,Sugarcane,1
+2024,Brazil,South America,Corn,1
+2018,Russia,Eurasia,Barley,1
+2007,Russia,Eurasia,Barley,1
+1994,France,Europe,Coffee,1
+2012,USA,North America,Vegetables,1
+2009,USA,North America,Soybeans,1
+2024,Russia,Eurasia,Rice,1
+2023,Nigeria,Africa,Soybeans,1
+2013,USA,North America,Wheat,1
+2004,India,South Asia,Wheat,1
+2020,Argentina,South America,Barley,1
+2011,Brazil,South America,Sugarcane,1
+2020,Argentina,South America,Coffee,1
+2019,Argentina,South America,Sugarcane,1
+2013,France,Europe,Coffee,1
+2007,Australia,Oceania,Soybeans,1
+2011,Nigeria,Africa,Wheat,1
+2023,China,East Asia,Cotton,1
+2001,Argentina,South America,Wheat,1
+2023,China,East Asia,Fruits,1
+2013,India,South Asia,Fruits,1
+1996,China,East Asia,Coffee,1
+2002,Brazil,South America,Corn,1
+1991,Russia,Eurasia,Wheat,1
+1997,Argentina,South America,Corn,1
+1990,India,South Asia,Sugarcane,1
+2023,Nigeria,Africa,Corn,1
+2023,Australia,Oceania,Soybeans,1
+1999,China,East Asia,Fruits,1
+1992,Australia,Oceania,Vegetables,1
+2017,Argentina,South America,Vegetables,1
+2013,Canada,North America,Vegetables,1
+2023,USA,North America,Soybeans,1
+2005,Canada,North America,Fruits,1
+2002,France,Europe,Vegetables,1
+2016,France,Europe,Soybeans,1
+1994,Canada,North America,Barley,1
+2007,Australia,Oceania,Fruits,1
+2015,Argentina,South America,Soybeans,1
+2024,Argentina,South America,Cotton,1
+1994,Australia,Oceania,Vegetables,1
+1991,China,East Asia,Sugarcane,1
+2014,Nigeria,Africa,Cotton,1
+2002,Canada,North America,Fruits,1
+2016,India,South Asia,Coffee,1
+2005,USA,North America,Corn,1
+1996,Argentina,South America,Soybeans,1
+1996,Argentina,South America,Coffee,1
+2003,Nigeria,Africa,Fruits,1
+2020,Australia,Oceania,Corn,1
+1994,Nigeria,Africa,Corn,1
+2011,USA,North America,Soybeans,1
+2010,Brazil,South America,Fruits,1
+2019,Canada,North America,Sugarcane,1
+1998,Russia,Eurasia,Sugarcane,1
+2024,France,Europe,Coffee,1
+2000,Brazil,South America,Vegetables,1
+2008,USA,North America,Barley,1
+2005,France,Europe,Coffee,1
+2000,Nigeria,Africa,Corn,1
+2007,Brazil,South America,Fruits,1
+2021,Canada,North America,Wheat,1
+2010,Nigeria,Africa,Coffee,1
+1991,France,Europe,Cotton,1
+2014,Argentina,South America,Sugarcane,1
+2019,France,Europe,Fruits,1
+1998,India,South Asia,Corn,1
+2014,India,South Asia,Wheat,1
+1998,Australia,Oceania,Wheat,1
+2011,Australia,Oceania,Wheat,1
+2000,Argentina,South America,Sugarcane,1
+2010,Brazil,South America,Fruits,1
+2020,Nigeria,Africa,Rice,1
+2007,China,East Asia,Rice,1
+2021,China,East Asia,Fruits,1
+2019,Canada,North America,Soybeans,1
+1994,USA,North America,Vegetables,1
+2009,Argentina,South America,Sugarcane,1
+2009,Nigeria,Africa,Wheat,1
+2007,India,South Asia,Rice,1
+2002,Australia,Oceania,Rice,1
+2019,China,East Asia,Cotton,1
+2002,Nigeria,Africa,Rice,1
+2015,Canada,North America,Soybeans,1
+2004,India,South Asia,Cotton,1
+2018,France,Europe,Rice,1
+1999,India,South Asia,Fruits,1
+2019,USA,North America,Rice,1
+2012,India,South Asia,Sugarcane,1
+2010,USA,North America,Vegetables,1
+2002,Canada,North America,Rice,1
+2006,USA,North America,Fruits,1
+2001,Argentina,South America,Barley,1
+1991,Australia,Oceania,Rice,1
+2001,Argentina,South America,Sugarcane,1
+1990,Argentina,South America,Barley,1
+1999,Nigeria,Africa,Cotton,1
+2007,Argentina,South America,Vegetables,1
+1992,China,East Asia,Wheat,1
+2019,Nigeria,Africa,Fruits,1
+1990,China,East Asia,Barley,1
+2023,India,South Asia,Rice,1
+2015,Argentina,South America,Sugarcane,1
+1998,Russia,Eurasia,Wheat,1
+2022,Brazil,South America,Barley,1
+2014,France,Europe,Fruits,1
+1996,Australia,Oceania,Barley,1
+1997,China,East Asia,Fruits,1
+2007,India,South Asia,Sugarcane,1
+2021,France,Europe,Soybeans,1
+1993,Russia,Eurasia,Barley,1
+2017,China,East Asia,Coffee,1
+2020,Argentina,South America,Corn,1
+2024,Nigeria,Africa,Soybeans,1
+1992,Russia,Eurasia,Coffee,1
+2011,Argentina,South America,Coffee,1
+2024,Canada,North America,Rice,1
+2000,Brazil,South America,Soybeans,1
+2004,USA,North America,Sugarcane,1
+2000,Argentina,South America,Cotton,1
+1995,Russia,Eurasia,Corn,1
+2011,Canada,North America,Fruits,1
+2002,Australia,Oceania,Corn,1
+2016,India,South Asia,Cotton,1
+2011,Canada,North America,Cotton,1
+1991,Australia,Oceania,Vegetables,1
+2004,France,Europe,Rice,1
+1997,India,South Asia,Coffee,1
+1991,China,East Asia,Cotton,1
+2001,India,South Asia,Sugarcane,1
+2008,Nigeria,Africa,Coffee,1
+1996,Brazil,South America,Rice,1
+1992,France,Europe,Sugarcane,1
+1991,France,Europe,Vegetables,1
+2002,China,East Asia,Wheat,1
+2008,USA,North America,Rice,1
+2018,Canada,North America,Fruits,1
+2010,Brazil,South America,Coffee,1
+2013,Brazil,South America,Sugarcane,1
+1994,USA,North America,Wheat,1
+2021,Russia,Eurasia,Soybeans,1
+1996,Brazil,South America,Sugarcane,1
+2004,China,East Asia,Rice,1
+2022,India,South Asia,Sugarcane,1
+2017,India,South Asia,Sugarcane,1
+2012,India,South Asia,Wheat,1
+2019,France,Europe,Rice,1
+2008,France,Europe,Wheat,1
+2017,USA,North America,Rice,1
+2020,USA,North America,Soybeans,1
+2013,USA,North America,Cotton,1
+2013,Brazil,South America,Sugarcane,1
+1998,Nigeria,Africa,Soybeans,1
+1994,USA,North America,Vegetables,1
+2020,Argentina,South America,Soybeans,1
+2023,Brazil,South America,Fruits,1
+1997,Argentina,South America,Barley,1
+2000,China,East Asia,Fruits,1
+2012,India,South Asia,Soybeans,1
+2012,China,East Asia,Soybeans,1
+2023,Canada,North America,Sugarcane,1
+1990,France,Europe,Vegetables,1
+1997,Nigeria,Africa,Barley,1
+2020,USA,North America,Rice,1
+1997,Argentina,South America,Vegetables,1
+2008,Nigeria,Africa,Sugarcane,1
+2002,Australia,Oceania,Cotton,1
+2011,USA,North America,Cotton,1
+2002,Canada,North America,Rice,1
+2014,France,Europe,Wheat,1
+1990,Argentina,South America,Corn,1
+2005,Nigeria,Africa,Wheat,1
+1991,China,East Asia,Vegetables,1
+2004,China,East Asia,Soybeans,1
+2005,Brazil,South America,Corn,1
+1991,China,East Asia,Sugarcane,1
+2009,Argentina,South America,Sugarcane,1
+2005,India,South Asia,Cotton,1
+2007,Russia,Eurasia,Sugarcane,1
+2015,Nigeria,Africa,Fruits,1
+2024,France,Europe,Coffee,1
+1997,USA,North America,Coffee,1
+2004,USA,North America,Vegetables,1
+2002,Canada,North America,Barley,1
+2005,Brazil,South America,Soybeans,1
+1998,France,Europe,Barley,1
+1994,Russia,Eurasia,Barley,1
+2003,USA,North America,Vegetables,1
+2021,India,South Asia,Soybeans,1
+2002,France,Europe,Corn,1
+2015,Russia,Eurasia,Coffee,1
+2005,China,East Asia,Wheat,1
+2022,France,Europe,Wheat,1
+2019,India,South Asia,Cotton,1
+2017,Canada,North America,Corn,1
+2008,Brazil,South America,Vegetables,1
+2007,USA,North America,Fruits,1
+2012,China,East Asia,Sugarcane,1
+2012,India,South Asia,Soybeans,1
+2023,Argentina,South America,Soybeans,1
+1995,Brazil,South America,Fruits,1
+2005,Argentina,South America,Wheat,1
+1994,Canada,North America,Fruits,1
+2020,Brazil,South America,Vegetables,1
+2024,Australia,Oceania,Rice,1
+2024,Australia,Oceania,Corn,1
+1994,Nigeria,Africa,Corn,1
+2019,Canada,North America,Cotton,1
+2007,Australia,Oceania,Cotton,1
+1995,Nigeria,Africa,Cotton,1
+2000,France,Europe,Coffee,1
+2023,Brazil,South America,Vegetables,1
+2015,USA,North America,Coffee,1
+2001,Russia,Eurasia,Corn,1
+1993,Brazil,South America,Rice,1
+1994,Brazil,South America,Corn,1
+2013,Australia,Oceania,Barley,1
+1991,Nigeria,Africa,Wheat,1
+2007,France,Europe,Barley,1
+1990,Australia,Oceania,Rice,1
+2015,China,East Asia,Vegetables,1
+2023,India,South Asia,Fruits,1
+1997,Canada,North America,Corn,1
+2021,Argentina,South America,Corn,1
+2017,Canada,North America,Wheat,1
+2021,Canada,North America,Fruits,1
+1997,Canada,North America,Wheat,1
+1991,Russia,Eurasia,Sugarcane,1
+2009,India,South Asia,Wheat,1
+1999,USA,North America,Sugarcane,1
+2015,Nigeria,Africa,Barley,1
+1991,Nigeria,Africa,Fruits,1
+2007,Brazil,South America,Wheat,1
+2012,Brazil,South America,Sugarcane,1
+2000,China,East Asia,Cotton,1
+2004,France,Europe,Cotton,1
+2023,Canada,North America,Fruits,1
+2002,Russia,Eurasia,Fruits,1
+2007,Canada,North America,Soybeans,1
+2004,Canada,North America,Barley,1
+2012,China,East Asia,Sugarcane,1
+1999,China,East Asia,Corn,1
+2000,India,South Asia,Sugarcane,1
+2002,Nigeria,Africa,Wheat,1
+1992,Australia,Oceania,Vegetables,1
+2010,Canada,North America,Wheat,1
+2024,France,Europe,Rice,1
+2001,Nigeria,Africa,Corn,1
+2017,China,East Asia,Sugarcane,1
+2000,Canada,North America,Sugarcane,1
+1991,Argentina,South America,Coffee,1
+2024,India,South Asia,Soybeans,1
+2002,India,South Asia,Barley,1
+1990,Russia,Eurasia,Barley,1
+1998,Brazil,South America,Soybeans,1
+1993,France,Europe,Cotton,1
+2004,Australia,Oceania,Fruits,1
+1993,USA,North America,Soybeans,1
+2014,India,South Asia,Fruits,1
+2001,Nigeria,Africa,Sugarcane,1
+2005,Nigeria,Africa,Barley,1
+2023,Brazil,South America,Cotton,1
+2009,India,South Asia,Rice,1
+1995,Nigeria,Africa,Rice,1
+1991,USA,North America,Corn,1
+2002,Brazil,South America,Rice,1
+1994,France,Europe,Fruits,1
+1995,France,Europe,Fruits,1
+2008,China,East Asia,Rice,1
+2021,Argentina,South America,Cotton,1
+1993,Russia,Eurasia,Vegetables,1
+2005,Nigeria,Africa,Coffee,1
+2006,France,Europe,Cotton,1
+1998,Argentina,South America,Rice,1
+1996,China,East Asia,Soybeans,1
+2009,France,Europe,Cotton,1
+1993,Australia,Oceania,Wheat,1
+2010,Australia,Oceania,Coffee,1
+1999,Canada,North America,Fruits,1
+2004,USA,North America,Corn,1
+2006,China,East Asia,Cotton,1
+2015,Russia,Eurasia,Soybeans,1
+1993,China,East Asia,Soybeans,1
+2002,India,South Asia,Cotton,1
+1991,France,Europe,Vegetables,1
+1992,Russia,Eurasia,Rice,1
+2022,Argentina,South America,Vegetables,1
+2021,France,Europe,Wheat,1
+1995,Argentina,South America,Fruits,1
+2022,India,South Asia,Soybeans,1
+2019,Russia,Eurasia,Rice,1
+2002,Australia,Oceania,Wheat,1
+2010,India,South Asia,Coffee,1
+2024,China,East Asia,Sugarcane,1
+2011,Russia,Eurasia,Rice,1
+2019,China,East Asia,Vegetables,1
+1996,Brazil,South America,Vegetables,1
+1997,Brazil,South America,Corn,1
+2005,Argentina,South America,Rice,1
+2014,China,East Asia,Vegetables,1
+2005,USA,North America,Rice,1
+1990,Brazil,South America,Rice,1
+1999,Canada,North America,Vegetables,1
+1999,Brazil,South America,Vegetables,1
+2021,India,South Asia,Cotton,1
+2012,Australia,Oceania,Sugarcane,1
+2002,Brazil,South America,Vegetables,1
+2011,Brazil,South America,Rice,1
+1992,Nigeria,Africa,Sugarcane,1
+2011,Australia,Oceania,Fruits,1
+1994,Brazil,South America,Sugarcane,1
+2001,Brazil,South America,Soybeans,1
+1996,India,South Asia,Fruits,1
+2008,USA,North America,Sugarcane,1
+2019,Canada,North America,Wheat,1
+2015,USA,North America,Corn,1
+1996,France,Europe,Corn,1
+1999,Nigeria,Africa,Coffee,1
+1997,Canada,North America,Vegetables,1
+2016,Australia,Oceania,Rice,1
+2024,Argentina,South America,Fruits,1
+1995,Brazil,South America,Vegetables,1
+1996,Brazil,South America,Wheat,1
+2005,Brazil,South America,Wheat,1
+2000,Nigeria,Africa,Wheat,1
+2011,Nigeria,Africa,Vegetables,1
+2009,Canada,North America,Sugarcane,1
+1996,Russia,Eurasia,Coffee,1
+2020,France,Europe,Corn,1
+2023,Brazil,South America,Barley,1
+2022,Australia,Oceania,Barley,1
+2013,India,South Asia,Coffee,1
+1999,China,East Asia,Wheat,1
+1991,Nigeria,Africa,Fruits,1
+1996,USA,North America,Sugarcane,1
+2018,USA,North America,Barley,1
+2004,Australia,Oceania,Sugarcane,1
+2004,India,South Asia,Cotton,1
+2014,Argentina,South America,Rice,1
+2019,USA,North America,Barley,1
+1990,Nigeria,Africa,Fruits,1
+2010,India,South Asia,Vegetables,1
+2011,China,East Asia,Barley,1
+2004,USA,North America,Coffee,1
+1997,France,Europe,Coffee,1
+2012,Brazil,South America,Barley,1
+1992,Canada,North America,Vegetables,1
+2021,Nigeria,Africa,Coffee,1
+2008,USA,North America,Fruits,1
+2006,France,Europe,Rice,1
+1999,Argentina,South America,Barley,1
+2009,Canada,North America,Wheat,1
+2016,Nigeria,Africa,Cotton,1
+2016,France,Europe,Rice,1
+2024,Nigeria,Africa,Soybeans,1
+1993,Argentina,South America,Rice,1
+1995,Nigeria,Africa,Fruits,1
+2024,Nigeria,Africa,Coffee,1
+2015,Nigeria,Africa,Soybeans,1
+1997,Argentina,South America,Wheat,1
+2021,Australia,Oceania,Fruits,1
+2018,Nigeria,Africa,Vegetables,1
+2004,Nigeria,Africa,Sugarcane,1
+2019,China,East Asia,Vegetables,1
+2018,USA,North America,Wheat,1
+2024,Brazil,South America,Cotton,1
+2022,France,Europe,Rice,1
+2014,Russia,Eurasia,Wheat,1
+1994,Brazil,South America,Rice,1
+1993,Australia,Oceania,Cotton,1
+2005,Argentina,South America,Cotton,1
+1999,Australia,Oceania,Wheat,1
+2014,Argentina,South America,Sugarcane,1
+2024,Argentina,South America,Corn,1
+2013,China,East Asia,Wheat,1
+1993,Canada,North America,Fruits,1
+2003,China,East Asia,Corn,1
+1991,Canada,North America,Cotton,1
+2004,India,South Asia,Corn,1
+2010,Brazil,South America,Sugarcane,1
+1992,Australia,Oceania,Coffee,1
+2011,India,South Asia,Fruits,1
+2002,China,East Asia,Sugarcane,1
+1998,Argentina,South America,Wheat,1
+2001,Brazil,South America,Wheat,1
+1999,Argentina,South America,Vegetables,1
+2015,Brazil,South America,Barley,1
+2023,Canada,North America,Coffee,1
+1996,Canada,North America,Barley,1
+2001,Canada,North America,Wheat,1
+1995,India,South Asia,Coffee,1
+1991,Russia,Eurasia,Soybeans,1
+2003,Australia,Oceania,Sugarcane,1
+1991,Brazil,South America,Vegetables,1
+1992,Nigeria,Africa,Wheat,1
+2008,Argentina,South America,Sugarcane,1
+1992,Russia,Eurasia,Soybeans,1
+2023,Russia,Eurasia,Fruits,1
+2011,India,South Asia,Rice,1
+1998,Brazil,South America,Vegetables,1
+2006,India,South Asia,Cotton,1
+2006,China,East Asia,Corn,1
+2001,France,Europe,Soybeans,1
+2007,Canada,North America,Corn,1
+2012,Russia,Eurasia,Barley,1
+2014,Canada,North America,Sugarcane,1
+2022,Brazil,South America,Vegetables,1
+1991,Australia,Oceania,Vegetables,1
+1990,USA,North America,Barley,1
+1990,China,East Asia,Sugarcane,1
+2013,Argentina,South America,Barley,1
+2015,China,East Asia,Sugarcane,1
+2007,Brazil,South America,Cotton,1
+2022,Russia,Eurasia,Sugarcane,1
+2014,Argentina,South America,Rice,1
+2004,India,South Asia,Corn,1
+2016,China,East Asia,Vegetables,1
+2008,India,South Asia,Wheat,1
+2013,Brazil,South America,Wheat,1
+2019,Australia,Oceania,Cotton,1
+1998,India,South Asia,Sugarcane,1
+2005,Argentina,South America,Coffee,1
+2003,Russia,Eurasia,Soybeans,1
+2017,Argentina,South America,Coffee,1
+1991,Canada,North America,Soybeans,1
+1995,Russia,Eurasia,Vegetables,1
+2022,Argentina,South America,Soybeans,1
+2014,Argentina,South America,Vegetables,1
+1995,Russia,Eurasia,Sugarcane,1
+2007,Brazil,South America,Rice,1
+2021,China,East Asia,Corn,1
+1992,Brazil,South America,Cotton,1
+1992,Brazil,South America,Rice,1
+1996,USA,North America,Fruits,1
+2007,Canada,North America,Wheat,1
+1999,USA,North America,Cotton,1
+2007,France,Europe,Corn,1
+2016,France,Europe,Cotton,1
+2008,Canada,North America,Wheat,1
+2023,Australia,Oceania,Soybeans,1
+2019,Nigeria,Africa,Cotton,1
+2017,Nigeria,Africa,Rice,1
+2001,China,East Asia,Rice,1
+2012,India,South Asia,Rice,1
+2020,Australia,Oceania,Wheat,1
+2013,France,Europe,Cotton,1
+1997,Russia,Eurasia,Rice,1
+2021,China,East Asia,Corn,1
+1992,India,South Asia,Corn,1
+1991,France,Europe,Soybeans,1
+2023,Argentina,South America,Barley,1
+2012,Nigeria,Africa,Soybeans,1
+2014,Nigeria,Africa,Vegetables,1
+2018,USA,North America,Vegetables,1
+1999,Brazil,South America,Fruits,1
+2012,China,East Asia,Fruits,1
+2005,France,Europe,Sugarcane,1
+1996,France,Europe,Sugarcane,1
+2014,Australia,Oceania,Corn,1
+2009,India,South Asia,Wheat,1
+2006,Canada,North America,Cotton,1
+2008,Canada,North America,Corn,1
+2022,Australia,Oceania,Barley,1
+2006,Canada,North America,Corn,1
+1992,China,East Asia,Barley,1
+2020,Brazil,South America,Soybeans,1
+2014,Argentina,South America,Corn,1
+2016,Brazil,South America,Wheat,1
+2013,Argentina,South America,Coffee,1
+1993,USA,North America,Vegetables,1
+2005,France,Europe,Corn,1
+1994,Canada,North America,Barley,1
+1996,Australia,Oceania,Fruits,1
+2000,Nigeria,Africa,Soybeans,1
+1994,China,East Asia,Rice,1
+2022,Australia,Oceania,Coffee,1
+2010,Argentina,South America,Cotton,1
+2016,China,East Asia,Fruits,1
+1990,Russia,Eurasia,Corn,1
+2009,Nigeria,Africa,Coffee,1
+1996,Nigeria,Africa,Cotton,1
+1999,Russia,Eurasia,Vegetables,1
+2021,Canada,North America,Wheat,1
+2002,India,South Asia,Sugarcane,1
+2014,Argentina,South America,Barley,1
+2002,Argentina,South America,Fruits,1
+1991,France,Europe,Corn,1
+2002,Canada,North America,Fruits,1
+2022,USA,North America,Sugarcane,1
+1990,Russia,Eurasia,Sugarcane,1
+1999,India,South Asia,Sugarcane,1
+2021,Brazil,South America,Soybeans,1
+2000,France,Europe,Barley,1
+2009,India,South Asia,Barley,1
+1994,Argentina,South America,Coffee,1
+2000,France,Europe,Corn,1
+2021,France,Europe,Rice,1
+2003,Australia,Oceania,Vegetables,1
+1991,Argentina,South America,Sugarcane,1
+2002,France,Europe,Sugarcane,1
+1990,Canada,North America,Barley,1
+2020,USA,North America,Corn,1
+1991,Canada,North America,Wheat,1
+1991,France,Europe,Vegetables,1
+2002,Brazil,South America,Sugarcane,1
+2001,Australia,Oceania,Sugarcane,1
+2005,USA,North America,Fruits,1
+1990,Canada,North America,Fruits,1
+2021,Nigeria,Africa,Rice,1
+1996,Brazil,South America,Cotton,1
+1995,Canada,North America,Vegetables,1
+2020,Australia,Oceania,Cotton,1
+1994,Canada,North America,Cotton,1
+1991,India,South Asia,Sugarcane,1
+1992,Australia,Oceania,Soybeans,1
+2011,USA,North America,Coffee,1
+2009,India,South Asia,Fruits,1
+2007,USA,North America,Fruits,1
+1997,France,Europe,Sugarcane,1
+2009,Russia,Eurasia,Corn,1
+2017,France,Europe,Sugarcane,1
+1998,Australia,Oceania,Wheat,1
+2024,USA,North America,Soybeans,1
+2000,China,East Asia,Soybeans,1
+2012,Brazil,South America,Sugarcane,1
+1992,Australia,Oceania,Wheat,1
+2022,Nigeria,Africa,Coffee,1
+1995,Russia,Eurasia,Fruits,1
+2010,Australia,Oceania,Sugarcane,1
+2015,Nigeria,Africa,Rice,1
+2006,Australia,Oceania,Sugarcane,1
+1991,Brazil,South America,Fruits,1
+2004,Argentina,South America,Soybeans,1
+1991,India,South Asia,Barley,1
+2021,Argentina,South America,Corn,1
+1990,Australia,Oceania,Vegetables,1
+2008,India,South Asia,Vegetables,1
+2022,Nigeria,Africa,Corn,1
+2004,Russia,Eurasia,Rice,1
+1999,Argentina,South America,Sugarcane,1
+2002,USA,North America,Coffee,1
+1993,France,Europe,Vegetables,1
+2011,Brazil,South America,Vegetables,1
+2018,Brazil,South America,Wheat,1
+2007,USA,North America,Coffee,1
+1993,Brazil,South America,Vegetables,1
+2021,USA,North America,Cotton,1
+2002,China,East Asia,Soybeans,1
+2001,Brazil,South America,Wheat,1
+2004,India,South Asia,Fruits,1
+2008,France,Europe,Wheat,1
+2016,Australia,Oceania,Rice,1
+2008,Nigeria,Africa,Barley,1
+2001,Brazil,South America,Cotton,1
+2003,Brazil,South America,Soybeans,1
+1995,Australia,Oceania,Rice,1
+1994,Brazil,South America,Sugarcane,1
+2001,Canada,North America,Corn,1
+2015,Canada,North America,Wheat,1
+1991,Brazil,South America,Cotton,1
+2001,Nigeria,Africa,Barley,1
+1992,Argentina,South America,Soybeans,1
+2015,Canada,North America,Vegetables,1
+1991,Brazil,South America,Sugarcane,1
+2015,USA,North America,Coffee,1
+2020,Argentina,South America,Barley,1
+2003,Australia,Oceania,Vegetables,1
+2001,Nigeria,Africa,Vegetables,1
+2021,Brazil,South America,Cotton,1
+2009,India,South Asia,Corn,1
+2012,India,South Asia,Rice,1
+1991,Argentina,South America,Corn,1
+1990,USA,North America,Barley,1
+1992,China,East Asia,Wheat,1
+1998,Brazil,South America,Corn,1
+2008,Russia,Eurasia,Vegetables,1
+2024,India,South Asia,Fruits,1
+1994,Argentina,South America,Rice,1
+2007,Brazil,South America,Wheat,1
+2011,Russia,Eurasia,Wheat,1
+1994,Brazil,South America,Vegetables,1
+1991,Brazil,South America,Wheat,1
+2009,Argentina,South America,Fruits,1
+1996,India,South Asia,Cotton,1
+2022,India,South Asia,Fruits,1
+1994,Canada,North America,Corn,1
+2004,Brazil,South America,Cotton,1
+2017,Argentina,South America,Rice,1
+1994,USA,North America,Corn,1
+2003,France,Europe,Soybeans,1
+1998,Australia,Oceania,Rice,1
+2007,Australia,Oceania,Cotton,1
+1990,India,South Asia,Vegetables,1
+2018,Brazil,South America,Sugarcane,1
+1993,Argentina,South America,Fruits,1
+2009,Canada,North America,Coffee,1
+2022,Russia,Eurasia,Fruits,1
+2023,Nigeria,Africa,Soybeans,1
+1999,Australia,Oceania,Rice,1
+2024,India,South Asia,Cotton,1
+2011,Nigeria,Africa,Corn,1
+2001,USA,North America,Fruits,1
+2002,France,Europe,Sugarcane,1
+2020,Canada,North America,Sugarcane,1
+2017,USA,North America,Fruits,1
+2014,Russia,Eurasia,Vegetables,1
+1997,Australia,Oceania,Fruits,1
+1992,Nigeria,Africa,Wheat,1
+2011,Nigeria,Africa,Fruits,1
+2001,Australia,Oceania,Barley,1
+1998,Argentina,South America,Rice,1
+1990,India,South Asia,Soybeans,1
+2004,France,Europe,Wheat,1
+2002,France,Europe,Coffee,1
+2005,Canada,North America,Vegetables,1
+2024,France,Europe,Wheat,1
+2000,USA,North America,Fruits,1
+2002,Australia,Oceania,Barley,1
+1993,India,South Asia,Sugarcane,1
+2014,India,South Asia,Wheat,1
+1993,Brazil,South America,Cotton,1
+1996,India,South Asia,Rice,1
+2001,India,South Asia,Rice,1
+1993,Nigeria,Africa,Cotton,1
+2017,Russia,Eurasia,Sugarcane,1
+2018,USA,North America,Coffee,1
+1996,Russia,Eurasia,Soybeans,1
+2009,India,South Asia,Barley,1
+1991,India,South Asia,Corn,1
+2021,France,Europe,Corn,1
+2008,Brazil,South America,Wheat,1
+2017,India,South Asia,Soybeans,1
+2016,Nigeria,Africa,Fruits,1
+2014,Argentina,South America,Fruits,1
+1992,Russia,Eurasia,Barley,1
+1998,Brazil,South America,Rice,1
+2012,India,South Asia,Coffee,1
+1993,Brazil,South America,Sugarcane,1
+2005,Canada,North America,Soybeans,1
+1996,Canada,North America,Corn,1
+2016,China,East Asia,Fruits,1
+2001,Canada,North America,Cotton,1
+2005,India,South Asia,Rice,1
+2000,USA,North America,Wheat,1
+1997,Brazil,South America,Wheat,1
+1997,Brazil,South America,Vegetables,1
+2024,Russia,Eurasia,Coffee,1
+2024,India,South Asia,Cotton,1
+2000,USA,North America,Corn,1
+2005,Argentina,South America,Cotton,1
+2024,Argentina,South America,Fruits,1
+2021,Argentina,South America,Sugarcane,1
+2000,India,South Asia,Soybeans,1
+2011,Russia,Eurasia,Corn,1
+2010,France,Europe,Soybeans,1
+1997,Brazil,South America,Coffee,1
+1992,Argentina,South America,Corn,1
+1995,Russia,Eurasia,Coffee,1
+2012,Australia,Oceania,Coffee,1
+1993,Nigeria,Africa,Vegetables,1
+2000,Russia,Eurasia,Cotton,1
+1999,Russia,Eurasia,Coffee,1
+1998,Nigeria,Africa,Wheat,1
+1994,Brazil,South America,Coffee,1
+2024,France,Europe,Rice,1
+2018,France,Europe,Rice,1
+1990,Russia,Eurasia,Soybeans,1
+2003,India,South Asia,Wheat,1
+2011,China,East Asia,Vegetables,1
+2017,Argentina,South America,Rice,1
+2024,USA,North America,Corn,1
+2020,Russia,Eurasia,Soybeans,1
+2002,Canada,North America,Rice,1
+1993,France,Europe,Vegetables,1
+2020,Brazil,South America,Coffee,1
+2002,France,Europe,Cotton,1
+1998,France,Europe,Soybeans,1
+2018,Nigeria,Africa,Wheat,1
+1996,Brazil,South America,Sugarcane,1
+1994,India,South Asia,Vegetables,1
+1993,Nigeria,Africa,Soybeans,1
+2003,China,East Asia,Wheat,1
+2016,France,Europe,Vegetables,1
+2007,Brazil,South America,Wheat,1
+2009,Russia,Eurasia,Barley,1
+1995,Argentina,South America,Soybeans,1
+2017,Nigeria,Africa,Rice,1
+1999,Canada,North America,Coffee,1
+1992,Russia,Eurasia,Rice,1
+2022,Russia,Eurasia,Wheat,1
+1996,France,Europe,Cotton,1
+2020,USA,North America,Sugarcane,1
+2002,China,East Asia,Coffee,1
+2022,Russia,Eurasia,Sugarcane,1
+2020,USA,North America,Vegetables,1
+2007,Russia,Eurasia,Barley,1
+2001,Nigeria,Africa,Soybeans,1
+2000,Brazil,South America,Fruits,1
+2002,Brazil,South America,Vegetables,1
+2005,Nigeria,Africa,Fruits,1
+1996,Argentina,South America,Vegetables,1
+1991,Brazil,South America,Soybeans,1
+1996,USA,North America,Sugarcane,1
+1995,Canada,North America,Sugarcane,1
+1990,Canada,North America,Wheat,1
+2009,Australia,Oceania,Vegetables,1
+1994,Argentina,South America,Fruits,1
+2020,France,Europe,Soybeans,1
+2018,Brazil,South America,Fruits,1
+2003,Nigeria,Africa,Coffee,1
+2005,Brazil,South America,Sugarcane,1
+2002,Argentina,South America,Vegetables,1
+2010,Brazil,South America,Rice,1
+1992,India,South Asia,Cotton,1
+2022,Nigeria,Africa,Rice,1
+1997,France,Europe,Corn,1
+2011,Australia,Oceania,Wheat,1
+2006,China,East Asia,Wheat,1
+2005,Brazil,South America,Wheat,1
+2003,Brazil,South America,Rice,1
+1997,India,South Asia,Corn,1
+2008,Brazil,South America,Sugarcane,1
+2013,USA,North America,Corn,1
+1995,Canada,North America,Corn,1
+2023,Argentina,South America,Barley,1
+1994,Australia,Oceania,Wheat,1
+2009,Nigeria,Africa,Rice,1
+2008,Argentina,South America,Barley,1
+2012,China,East Asia,Cotton,1
+2022,Nigeria,Africa,Cotton,1
+2010,Brazil,South America,Coffee,1
+1992,Nigeria,Africa,Coffee,1
+2006,France,Europe,Barley,1
+2013,Australia,Oceania,Coffee,1
+2010,Nigeria,Africa,Coffee,1
+2005,Brazil,South America,Fruits,1
+2021,France,Europe,Vegetables,1
+2023,China,East Asia,Cotton,1
+2000,Argentina,South America,Sugarcane,1
+1993,France,Europe,Vegetables,1
+2014,Brazil,South America,Corn,1
+1996,Nigeria,Africa,Corn,1
+2000,Russia,Eurasia,Corn,1
+2008,India,South Asia,Sugarcane,1
+2003,Canada,North America,Fruits,1
+2012,India,South Asia,Sugarcane,1
+2017,Australia,Oceania,Vegetables,1
+2008,France,Europe,Corn,1
+2003,Russia,Eurasia,Wheat,1
+2024,India,South Asia,Sugarcane,1
+2017,Brazil,South America,Sugarcane,1
+2013,China,East Asia,Soybeans,1
+2002,USA,North America,Coffee,1
+2021,USA,North America,Wheat,1
+2011,Canada,North America,Soybeans,1
+1998,Argentina,South America,Fruits,1
+2011,Argentina,South America,Rice,1
+2021,India,South Asia,Soybeans,1
+2000,Canada,North America,Rice,1
+2008,China,East Asia,Coffee,1
+2003,Nigeria,Africa,Soybeans,1
+2022,Russia,Eurasia,Barley,1
+1999,India,South Asia,Rice,1
+1993,Canada,North America,Coffee,1
+2022,Russia,Eurasia,Rice,1
+2015,China,East Asia,Coffee,1
+2020,India,South Asia,Rice,1
+1993,Brazil,South America,Sugarcane,1
+1991,USA,North America,Fruits,1
+2024,France,Europe,Rice,1
+2017,Brazil,South America,Wheat,1
+2024,Argentina,South America,Fruits,1
+2000,Canada,North America,Cotton,1
+2006,China,East Asia,Coffee,1
+2008,China,East Asia,Cotton,1
+2005,Argentina,South America,Coffee,1
+2020,China,East Asia,Fruits,1
+2023,Australia,Oceania,Cotton,1
+1999,Nigeria,Africa,Corn,1
+2003,Nigeria,Africa,Corn,1
+1992,Nigeria,Africa,Cotton,1
+2017,Russia,Eurasia,Fruits,1
+2014,Russia,Eurasia,Sugarcane,1
+2016,Canada,North America,Soybeans,1
+2008,Argentina,South America,Vegetables,1
+2018,Argentina,South America,Soybeans,1
+2015,France,Europe,Barley,1
+2008,Russia,Eurasia,Vegetables,1
+1998,China,East Asia,Vegetables,1
+1999,Canada,North America,Sugarcane,1
+2008,Canada,North America,Cotton,1
+2006,India,South Asia,Rice,1
+2022,Canada,North America,Corn,1
+2007,Canada,North America,Rice,1
+2024,Australia,Oceania,Barley,1
+1994,France,Europe,Fruits,1
+2024,Canada,North America,Rice,1
+2017,France,Europe,Rice,1
+1992,Russia,Eurasia,Fruits,1
+1993,Brazil,South America,Soybeans,1
+2006,Argentina,South America,Wheat,1
+1997,Russia,Eurasia,Sugarcane,1
+1995,China,East Asia,Fruits,1
+2009,France,Europe,Corn,1
+1993,France,Europe,Coffee,1
+2020,Canada,North America,Vegetables,1
+2017,Argentina,South America,Barley,1
+2020,France,Europe,Vegetables,1
+2013,France,Europe,Corn,1
+1992,India,South Asia,Barley,1
+2015,India,South Asia,Vegetables,1
+2003,Nigeria,Africa,Barley,1
+2011,India,South Asia,Rice,1
+2007,USA,North America,Vegetables,1
+2004,France,Europe,Coffee,1
+1996,Australia,Oceania,Soybeans,1
+1991,USA,North America,Vegetables,1
+2009,USA,North America,Vegetables,1
+1996,Argentina,South America,Barley,1
+1997,France,Europe,Cotton,1
+1995,USA,North America,Sugarcane,1
+2022,China,East Asia,Cotton,1
+1991,Nigeria,Africa,Fruits,1
+2024,Russia,Eurasia,Wheat,1
+1994,USA,North America,Fruits,1
+2008,Nigeria,Africa,Barley,1
+2022,France,Europe,Sugarcane,1
+2011,Brazil,South America,Sugarcane,1
+2021,France,Europe,Fruits,1
+2002,France,Europe,Fruits,1
+1997,Argentina,South America,Fruits,1
+2008,Russia,Eurasia,Sugarcane,1
+1999,Nigeria,Africa,Soybeans,1
+2013,Canada,North America,Vegetables,1
+2002,France,Europe,Rice,1
+2023,India,South Asia,Corn,1
+2003,Russia,Eurasia,Vegetables,1
+1999,Nigeria,Africa,Cotton,1
+2000,Argentina,South America,Coffee,1
+1990,Nigeria,Africa,Coffee,1
+2017,India,South Asia,Wheat,1
+1999,China,East Asia,Cotton,1
+1998,Australia,Oceania,Coffee,1
+2013,Nigeria,Africa,Cotton,1
+2023,Brazil,South America,Cotton,1
+1991,Nigeria,Africa,Corn,1
+2005,China,East Asia,Wheat,1
+1992,Brazil,South America,Barley,1
+2005,USA,North America,Soybeans,1
+2023,Australia,Oceania,Wheat,1
+2014,Australia,Oceania,Corn,1
+2000,USA,North America,Barley,1
+1991,France,Europe,Rice,1
+1996,Brazil,South America,Barley,1
+2003,Russia,Eurasia,Rice,1
+2023,China,East Asia,Wheat,1
+1992,India,South Asia,Soybeans,1
+2008,India,South Asia,Barley,1
+2003,Australia,Oceania,Corn,1
+2007,India,South Asia,Soybeans,1
+2009,Nigeria,Africa,Corn,1
+2011,France,Europe,Cotton,1
+1992,India,South Asia,Cotton,1
+2001,Brazil,South America,Rice,1
+1992,Brazil,South America,Corn,1
+2021,India,South Asia,Vegetables,1
+1996,India,South Asia,Sugarcane,1
+2012,Argentina,South America,Sugarcane,1
+2024,France,Europe,Wheat,1
+1991,France,Europe,Sugarcane,1
+2007,Brazil,South America,Wheat,1
+2008,Russia,Eurasia,Cotton,1
+1999,Nigeria,Africa,Fruits,1
+1997,Canada,North America,Cotton,1
+2002,France,Europe,Wheat,1
+2024,USA,North America,Cotton,1
+1996,Australia,Oceania,Fruits,1
+1999,China,East Asia,Vegetables,1
+1994,India,South Asia,Rice,1
+2023,India,South Asia,Wheat,1
+2021,France,Europe,Vegetables,1
+1997,Australia,Oceania,Soybeans,1
+1997,India,South Asia,Soybeans,1
+1993,Nigeria,Africa,Barley,1
+2008,Nigeria,Africa,Rice,1
+1995,China,East Asia,Soybeans,1
+2008,Argentina,South America,Coffee,1
+2005,Argentina,South America,Coffee,1
+2023,India,South Asia,Wheat,1
+2000,Canada,North America,Cotton,1
+2006,India,South Asia,Barley,1
+2018,France,Europe,Vegetables,1
+2017,France,Europe,Fruits,1
+1993,USA,North America,Soybeans,1
+2005,Australia,Oceania,Rice,1
+2002,Nigeria,Africa,Corn,1
+2012,China,East Asia,Soybeans,1
+2019,France,Europe,Barley,1
+2001,Argentina,South America,Vegetables,1
+1994,Russia,Eurasia,Rice,1
+1990,Russia,Eurasia,Sugarcane,1
+2009,France,Europe,Soybeans,1
+1994,USA,North America,Vegetables,1
+2008,Nigeria,Africa,Barley,1
+1996,Australia,Oceania,Soybeans,1
+2010,Nigeria,Africa,Vegetables,1
+2019,Argentina,South America,Barley,1
+2010,China,East Asia,Sugarcane,1
+2008,Russia,Eurasia,Corn,1
+2018,Australia,Oceania,Coffee,1
+1997,Argentina,South America,Soybeans,1
+2019,France,Europe,Corn,1
+2005,China,East Asia,Wheat,1
+2002,India,South Asia,Vegetables,1
+1997,USA,North America,Wheat,1
+2002,China,East Asia,Fruits,1
+2013,Argentina,South America,Wheat,1
+1996,Brazil,South America,Wheat,1
+2009,Nigeria,Africa,Soybeans,1
+1994,Argentina,South America,Rice,1
+2009,Canada,North America,Coffee,1
+2013,China,East Asia,Cotton,1
+2016,China,East Asia,Vegetables,1
+2001,Nigeria,Africa,Sugarcane,1
+2016,Argentina,South America,Soybeans,1
+2009,Argentina,South America,Wheat,1
+1992,France,Europe,Vegetables,1
+1996,France,Europe,Vegetables,1
+2023,Nigeria,Africa,Sugarcane,1
+2019,USA,North America,Barley,1
+1998,Australia,Oceania,Sugarcane,1
+2001,Canada,North America,Soybeans,1
+2004,Nigeria,Africa,Cotton,1
+2022,Argentina,South America,Soybeans,1
+1990,Brazil,South America,Rice,1
+2014,Argentina,South America,Fruits,1
+2017,Nigeria,Africa,Coffee,1
+2021,France,Europe,Coffee,1
+2015,Nigeria,Africa,Fruits,1
+2024,Australia,Oceania,Cotton,1
+2016,China,East Asia,Rice,1
+2018,Australia,Oceania,Cotton,1
+2008,Russia,Eurasia,Rice,1
+2012,India,South Asia,Fruits,1
+2017,Argentina,South America,Wheat,1
+2015,Argentina,South America,Rice,1
+1994,Australia,Oceania,Vegetables,1
+2006,France,Europe,Soybeans,1
+1994,India,South Asia,Corn,1
+2007,India,South Asia,Vegetables,1
+2024,France,Europe,Rice,1
+2022,China,East Asia,Wheat,1
+2001,Australia,Oceania,Corn,1
+2000,Canada,North America,Sugarcane,1
+2024,Russia,Eurasia,Rice,1
+2001,Nigeria,Africa,Coffee,1
+2003,Russia,Eurasia,Sugarcane,1
+2017,USA,North America,Fruits,1
+2021,Argentina,South America,Wheat,1
+2018,Brazil,South America,Fruits,1
+1992,Russia,Eurasia,Sugarcane,1
+2016,Australia,Oceania,Sugarcane,1
+1999,Canada,North America,Cotton,1
+2009,USA,North America,Fruits,1
+1995,India,South Asia,Soybeans,1
+2008,India,South Asia,Soybeans,1
+2005,Nigeria,Africa,Cotton,1
+2004,France,Europe,Barley,1
+2013,Russia,Eurasia,Wheat,1
+2010,Nigeria,Africa,Coffee,1
+2000,France,Europe,Soybeans,1
+2008,Nigeria,Africa,Sugarcane,1
+2021,Canada,North America,Wheat,1
+2005,Argentina,South America,Fruits,1
+2014,USA,North America,Wheat,1
+2011,Russia,Eurasia,Sugarcane,1
+2006,Argentina,South America,Corn,1
+1990,USA,North America,Coffee,1
+2014,Argentina,South America,Sugarcane,1
+2002,Argentina,South America,Corn,1
+1995,India,South Asia,Wheat,1
+2020,China,East Asia,Cotton,1
+2013,Russia,Eurasia,Cotton,1
+2004,Nigeria,Africa,Barley,1
+2016,France,Europe,Sugarcane,1
+2000,Brazil,South America,Barley,1
+2013,France,Europe,Vegetables,1
+2017,Russia,Eurasia,Cotton,1
+2023,Russia,Eurasia,Wheat,1
+2019,Brazil,South America,Vegetables,1
+1996,Russia,Eurasia,Sugarcane,1
+2008,France,Europe,Barley,1
+1990,Argentina,South America,Wheat,1
+2002,France,Europe,Coffee,1
+2004,USA,North America,Soybeans,1
+2002,USA,North America,Wheat,1
+1992,Nigeria,Africa,Soybeans,1
+2020,Australia,Oceania,Vegetables,1
+2002,Russia,Eurasia,Vegetables,1
+1991,Russia,Eurasia,Vegetables,1
+2007,China,East Asia,Coffee,1
+2019,India,South Asia,Coffee,1
+1995,Canada,North America,Soybeans,1
+2003,China,East Asia,Coffee,1
+2010,Canada,North America,Wheat,1
+2013,Nigeria,Africa,Soybeans,1
+1994,Russia,Eurasia,Corn,1
+2008,France,Europe,Vegetables,1
+2003,Canada,North America,Vegetables,1
+2008,France,Europe,Barley,1
+2020,Argentina,South America,Vegetables,1
+2022,Brazil,South America,Cotton,1
+2010,France,Europe,Wheat,1
+2010,Russia,Eurasia,Corn,1
+2008,Brazil,South America,Coffee,1
+2020,USA,North America,Wheat,1
+1996,Nigeria,Africa,Cotton,1
+2004,Canada,North America,Barley,1
+1992,Australia,Oceania,Wheat,1
+2000,China,East Asia,Rice,1
+2001,USA,North America,Corn,1
+2017,India,South Asia,Vegetables,1
+2022,Argentina,South America,Sugarcane,1
+2018,China,East Asia,Corn,1
+2002,Australia,Oceania,Vegetables,1
+1999,Russia,Eurasia,Sugarcane,1
+2002,USA,North America,Rice,1
+1991,Canada,North America,Fruits,1
+2023,USA,North America,Sugarcane,1
+1998,India,South Asia,Sugarcane,1
+2021,India,South Asia,Sugarcane,1
+2009,Canada,North America,Cotton,1
+2019,Russia,Eurasia,Barley,1
+2021,USA,North America,Fruits,1
+1994,France,Europe,Fruits,1
+2017,France,Europe,Sugarcane,1
+2003,France,Europe,Corn,1
+2014,China,East Asia,Barley,1
+2022,USA,North America,Sugarcane,1
+2009,USA,North America,Barley,1
+1995,Australia,Oceania,Vegetables,1
+2000,China,East Asia,Sugarcane,1
+1998,France,Europe,Cotton,1
+1999,Brazil,South America,Vegetables,1
+1999,China,East Asia,Barley,1
+2011,Brazil,South America,Rice,1
+2006,Argentina,South America,Wheat,1
+2016,France,Europe,Barley,1
+2007,Australia,Oceania,Vegetables,1
+1992,Argentina,South America,Wheat,1
+2020,Argentina,South America,Vegetables,1
+2022,India,South Asia,Wheat,1
+2018,France,Europe,Fruits,1
+2024,Brazil,South America,Cotton,1
+2007,Russia,Eurasia,Coffee,1
+2010,Russia,Eurasia,Soybeans,1
+2012,Russia,Eurasia,Fruits,1
+2007,Brazil,South America,Fruits,1
+2016,Australia,Oceania,Cotton,1
+2004,France,Europe,Barley,1
+1990,China,East Asia,Cotton,1
+2023,Brazil,South America,Corn,1
+2008,Australia,Oceania,Rice,1
+2004,Brazil,South America,Coffee,1
+2011,Russia,Eurasia,Corn,1
+2006,Australia,Oceania,Coffee,1
+2018,France,Europe,Soybeans,1
+2017,Australia,Oceania,Wheat,1
+2018,Brazil,South America,Cotton,1
+2003,India,South Asia,Corn,1
+1993,Russia,Eurasia,Cotton,1
+1993,Russia,Eurasia,Soybeans,1
+2004,China,East Asia,Soybeans,1
+2001,France,Europe,Rice,1
+1995,France,Europe,Corn,1
+2019,Canada,North America,Cotton,1
+2007,Argentina,South America,Soybeans,1
+2003,China,East Asia,Vegetables,1
+1997,France,Europe,Soybeans,1
+1999,Nigeria,Africa,Barley,1
+1995,China,East Asia,Wheat,1
+2000,China,East Asia,Corn,1
+2004,China,East Asia,Soybeans,1
+2001,Canada,North America,Sugarcane,1
+2009,India,South Asia,Rice,1
+1992,Nigeria,Africa,Sugarcane,1
+1993,France,Europe,Fruits,1
+1992,Russia,Eurasia,Barley,1
+2017,China,East Asia,Coffee,1
+2021,Russia,Eurasia,Fruits,1
+1996,Canada,North America,Barley,1
+2008,Russia,Eurasia,Barley,1
+2019,Argentina,South America,Sugarcane,1
+2020,USA,North America,Sugarcane,1
+2005,USA,North America,Coffee,1
+1992,USA,North America,Vegetables,1
+2007,USA,North America,Soybeans,1
+2016,Argentina,South America,Rice,1
+1998,Canada,North America,Wheat,1
+2012,France,Europe,Corn,1
+2000,Australia,Oceania,Fruits,1
+2008,Canada,North America,Cotton,1
+1994,USA,North America,Cotton,1
+1993,India,South Asia,Fruits,1
+1993,India,South Asia,Vegetables,1
+2013,Brazil,South America,Fruits,1
+1991,Brazil,South America,Wheat,1
+2012,Nigeria,Africa,Fruits,1
+2024,Russia,Eurasia,Sugarcane,1
+1999,Argentina,South America,Corn,1
+2016,France,Europe,Coffee,1
+2015,Australia,Oceania,Soybeans,1
+2021,Russia,Eurasia,Rice,1
+2016,China,East Asia,Barley,1
+1998,Nigeria,Africa,Corn,1
+2020,Australia,Oceania,Soybeans,1
+1992,France,Europe,Cotton,1
+2024,Australia,Oceania,Cotton,1
+2017,USA,North America,Rice,1
+1993,Russia,Eurasia,Fruits,1
+1990,Nigeria,Africa,Sugarcane,1
+1993,Brazil,South America,Barley,1
+2002,USA,North America,Sugarcane,1
+2017,Brazil,South America,Soybeans,1
+2019,Australia,Oceania,Corn,1
+1990,Australia,Oceania,Wheat,1
+2023,Nigeria,Africa,Rice,1
+2010,Argentina,South America,Coffee,1
+1991,Russia,Eurasia,Fruits,1
+1996,China,East Asia,Cotton,1
+2001,China,East Asia,Vegetables,1
+2018,Australia,Oceania,Vegetables,1
+2018,India,South Asia,Barley,1
+1990,Brazil,South America,Rice,1
+1999,Russia,Eurasia,Fruits,1
+2020,Australia,Oceania,Sugarcane,1
+2000,Russia,Eurasia,Sugarcane,1
+1993,China,East Asia,Cotton,1
+2024,France,Europe,Coffee,1
+2023,Nigeria,Africa,Rice,1
+2008,Brazil,South America,Barley,1
+2019,France,Europe,Vegetables,1
+1998,Brazil,South America,Barley,1
+1999,Nigeria,Africa,Coffee,1
+2017,France,Europe,Vegetables,1
+2005,Australia,Oceania,Coffee,1
+2007,Australia,Oceania,Cotton,1
+2015,Brazil,South America,Vegetables,1
+1990,Nigeria,Africa,Rice,1
+1993,Nigeria,Africa,Soybeans,1
+2000,India,South Asia,Fruits,1
+2022,India,South Asia,Sugarcane,1
+2018,USA,North America,Coffee,1
+2024,France,Europe,Fruits,1
+2022,Argentina,South America,Corn,1
+1999,USA,North America,Corn,1
+2006,India,South Asia,Corn,1
+1993,France,Europe,Wheat,1
+1990,USA,North America,Sugarcane,1
+2021,Argentina,South America,Coffee,1
+1996,France,Europe,Corn,1
+2013,USA,North America,Wheat,1
+1999,France,Europe,Vegetables,1
+2003,Brazil,South America,Soybeans,1
+1996,Canada,North America,Wheat,1
+2013,Russia,Eurasia,Sugarcane,1
+2012,Canada,North America,Coffee,1
+1999,India,South Asia,Soybeans,1
+2005,USA,North America,Cotton,1
+1996,USA,North America,Sugarcane,1
+2003,Nigeria,Africa,Soybeans,1
+1994,Russia,Eurasia,Fruits,1
+2019,USA,North America,Rice,1
+1997,USA,North America,Fruits,1
+1996,India,South Asia,Rice,1
+1994,Brazil,South America,Fruits,1
+1992,China,East Asia,Cotton,1
+2021,India,South Asia,Coffee,1
+2021,India,South Asia,Fruits,1
+2011,Brazil,South America,Fruits,1
+2003,India,South Asia,Fruits,1
+2000,France,Europe,Cotton,1
+2020,France,Europe,Soybeans,1
+2015,France,Europe,Barley,1
+2005,India,South Asia,Corn,1
+2005,Brazil,South America,Corn,1
+1999,India,South Asia,Coffee,1
+2013,China,East Asia,Cotton,1
+2012,India,South Asia,Cotton,1
+2011,Brazil,South America,Coffee,1
+2024,USA,North America,Barley,1
+1991,Australia,Oceania,Fruits,1
+2009,USA,North America,Corn,1
+1998,India,South Asia,Vegetables,1
+2019,USA,North America,Sugarcane,1
+2019,Canada,North America,Soybeans,1
+2021,USA,North America,Sugarcane,1
+2015,France,Europe,Wheat,1
+1995,France,Europe,Corn,1
+1994,Canada,North America,Corn,1
+2009,USA,North America,Wheat,1
+1993,Australia,Oceania,Soybeans,1
+1996,Nigeria,Africa,Barley,1
+2023,India,South Asia,Sugarcane,1
+2011,Australia,Oceania,Barley,1
+2001,Russia,Eurasia,Coffee,1
+1998,France,Europe,Barley,1
+2015,France,Europe,Barley,1
+1991,China,East Asia,Sugarcane,1
+2018,Australia,Oceania,Corn,1
+2009,Argentina,South America,Sugarcane,1
+2003,Australia,Oceania,Sugarcane,1
+1990,Australia,Oceania,Rice,1
+2019,Argentina,South America,Vegetables,1
+2011,USA,North America,Coffee,1
+2013,Brazil,South America,Sugarcane,1
+2020,Brazil,South America,Wheat,1
+1996,Nigeria,Africa,Barley,1
+2021,Brazil,South America,Fruits,1
+2004,Australia,Oceania,Rice,1
+2004,Canada,North America,Sugarcane,1
+2004,India,South Asia,Barley,1
+2004,Russia,Eurasia,Cotton,1
+2015,USA,North America,Fruits,1
+2013,Australia,Oceania,Sugarcane,1
+1993,Russia,Eurasia,Corn,1
+2019,China,East Asia,Barley,1
+2018,Canada,North America,Coffee,1
+2016,India,South Asia,Cotton,1
+2019,Canada,North America,Coffee,1
+2005,Australia,Oceania,Wheat,1
+2015,India,South Asia,Fruits,1
+1990,India,South Asia,Wheat,1
+2019,Russia,Eurasia,Corn,1
+2008,France,Europe,Corn,1
+2007,Russia,Eurasia,Rice,1
+1994,Australia,Oceania,Barley,1
+2001,Australia,Oceania,Fruits,1
+1993,Brazil,South America,Coffee,1
+1997,China,East Asia,Corn,1
+2008,Nigeria,Africa,Coffee,1
+2020,Argentina,South America,Sugarcane,1
+2010,Canada,North America,Soybeans,1
+2024,USA,North America,Barley,1
+2011,Russia,Eurasia,Sugarcane,1
+2010,India,South Asia,Cotton,1
+2019,China,East Asia,Barley,1
+2000,Canada,North America,Soybeans,1
+2004,Nigeria,Africa,Corn,1
+2013,USA,North America,Coffee,1
+2020,Russia,Eurasia,Coffee,1
+1996,Brazil,South America,Barley,1
+2021,Nigeria,Africa,Vegetables,1
+2014,USA,North America,Cotton,1
+2004,Nigeria,Africa,Corn,1
+2007,Argentina,South America,Barley,1
+1999,Nigeria,Africa,Cotton,1
+2020,Brazil,South America,Soybeans,1
+1995,Russia,Eurasia,Rice,1
+2010,USA,North America,Corn,1
+2000,China,East Asia,Vegetables,1
+2007,Canada,North America,Corn,1
+2016,Nigeria,Africa,Vegetables,1
+1993,Nigeria,Africa,Cotton,1
+2018,Russia,Eurasia,Corn,1
+2017,Australia,Oceania,Corn,1
+1994,Argentina,South America,Rice,1
+2001,Canada,North America,Wheat,1
+2010,Brazil,South America,Fruits,1
+2009,India,South Asia,Fruits,1
+2014,Canada,North America,Corn,1
+1991,India,South Asia,Fruits,1
+2012,Argentina,South America,Soybeans,1
+2016,Brazil,South America,Corn,1
+2017,Nigeria,Africa,Coffee,1
+2014,Australia,Oceania,Vegetables,1
+1990,Argentina,South America,Corn,1
+2016,France,Europe,Rice,1
+2002,China,East Asia,Coffee,1
+2023,China,East Asia,Wheat,1
+1993,USA,North America,Soybeans,1
+1995,Brazil,South America,Sugarcane,1
+1999,Brazil,South America,Soybeans,1
+1990,Canada,North America,Cotton,1
+2002,USA,North America,Vegetables,1
+2017,Argentina,South America,Rice,1
+2016,Brazil,South America,Coffee,1
+2024,China,East Asia,Coffee,1
+2014,Nigeria,Africa,Vegetables,1
+2002,Argentina,South America,Vegetables,1
+1996,Nigeria,Africa,Fruits,1
+2021,Russia,Eurasia,Coffee,1
+2019,Russia,Eurasia,Vegetables,1
+2024,Russia,Eurasia,Soybeans,1
+1992,Russia,Eurasia,Rice,1
+1994,Australia,Oceania,Rice,1
+2008,Australia,Oceania,Soybeans,1
+1993,Nigeria,Africa,Cotton,1
+2022,Australia,Oceania,Rice,1
+2003,Nigeria,Africa,Wheat,1
+2011,Brazil,South America,Soybeans,1
+2008,Australia,Oceania,Barley,1
+2012,Russia,Eurasia,Soybeans,1
+2018,Australia,Oceania,Barley,1
+2012,France,Europe,Sugarcane,1
+2009,Canada,North America,Coffee,1
+1995,China,East Asia,Sugarcane,1
+2004,Australia,Oceania,Sugarcane,1
+2010,Australia,Oceania,Wheat,1
+2023,France,Europe,Vegetables,1
+2016,Argentina,South America,Barley,1
+1995,Australia,Oceania,Wheat,1
+2015,Brazil,South America,Wheat,1
+2020,India,South Asia,Wheat,1
+2015,USA,North America,Coffee,1
+1996,USA,North America,Barley,1
+2020,Brazil,South America,Coffee,1
+2013,USA,North America,Wheat,1
+1992,Argentina,South America,Wheat,1
+1996,Nigeria,Africa,Sugarcane,1
+2000,USA,North America,Rice,1
+2014,France,Europe,Corn,1
+2018,Brazil,South America,Wheat,1
+2011,Nigeria,Africa,Sugarcane,1
+2014,Canada,North America,Wheat,1
+2006,India,South Asia,Cotton,1
+2017,Argentina,South America,Rice,1
+2010,Argentina,South America,Soybeans,1
+2023,France,Europe,Soybeans,1
+2010,Argentina,South America,Corn,1
+2013,USA,North America,Vegetables,1
+2012,Australia,Oceania,Fruits,1
+2007,Australia,Oceania,Cotton,1
+2015,Russia,Eurasia,Vegetables,1
+2014,Australia,Oceania,Cotton,1
+2018,France,Europe,Coffee,1
+2000,India,South Asia,Sugarcane,1
+1998,Argentina,South America,Wheat,1
+1993,USA,North America,Fruits,1
+2013,Canada,North America,Soybeans,1
+2005,Australia,Oceania,Barley,1
+1999,India,South Asia,Soybeans,1
+2004,Australia,Oceania,Wheat,1
+2013,Australia,Oceania,Corn,1
+1995,Russia,Eurasia,Corn,1
+2019,Nigeria,Africa,Corn,1
+2019,Russia,Eurasia,Soybeans,1
+1998,Russia,Eurasia,Soybeans,1
+2000,Argentina,South America,Wheat,1
+2014,Argentina,South America,Sugarcane,1
+2009,Nigeria,Africa,Barley,1
+2011,Canada,North America,Vegetables,1
+2000,Russia,Eurasia,Rice,1
+2009,Nigeria,Africa,Wheat,1
+2003,France,Europe,Fruits,1
+2021,China,East Asia,Barley,1
+2023,Australia,Oceania,Vegetables,1
+2010,Russia,Eurasia,Coffee,1
+2022,India,South Asia,Soybeans,1
+2021,USA,North America,Fruits,1
+2010,Australia,Oceania,Wheat,1
+2011,Russia,Eurasia,Vegetables,1
+2009,USA,North America,Cotton,1
+2011,Australia,Oceania,Coffee,1
+1992,Nigeria,Africa,Cotton,1
+2001,India,South Asia,Vegetables,1
+2009,Brazil,South America,Barley,1
+1997,USA,North America,Vegetables,1
+1997,Nigeria,Africa,Sugarcane,1
+2000,China,East Asia,Vegetables,1
+2007,France,Europe,Corn,1
+2000,Canada,North America,Cotton,1
+2019,Russia,Eurasia,Coffee,1
+2015,Brazil,South America,Soybeans,1
+2013,USA,North America,Coffee,1
+2024,India,South Asia,Barley,1
+1995,Russia,Eurasia,Vegetables,1
+1998,USA,North America,Sugarcane,1
+2016,Brazil,South America,Sugarcane,1
+2006,Russia,Eurasia,Barley,1
+2018,France,Europe,Soybeans,1
+2018,USA,North America,Fruits,1
+2020,China,East Asia,Soybeans,1
+2011,Brazil,South America,Fruits,1
+2022,China,East Asia,Rice,1
+2020,Canada,North America,Coffee,1
+2002,Nigeria,Africa,Soybeans,1
+2023,India,South Asia,Soybeans,1
+2020,Nigeria,Africa,Cotton,1
+2013,France,Europe,Wheat,1
+2019,Russia,Eurasia,Corn,1
+2016,Australia,Oceania,Fruits,1
+2014,Russia,Eurasia,Corn,1
+2023,Brazil,South America,Fruits,1
+2017,France,Europe,Coffee,1
+2015,Russia,Eurasia,Wheat,1
+2005,Brazil,South America,Wheat,1
+2009,China,East Asia,Corn,1
+1996,Canada,North America,Coffee,1
+2019,India,South Asia,Fruits,1
+2010,Canada,North America,Corn,1
+2014,Australia,Oceania,Vegetables,1
+1996,Argentina,South America,Corn,1
+2009,USA,North America,Soybeans,1
+2010,Russia,Eurasia,Cotton,1
+1997,Australia,Oceania,Wheat,1
+1990,India,South Asia,Vegetables,1
+1994,Nigeria,Africa,Corn,1
+2021,Nigeria,Africa,Wheat,1
+2009,Canada,North America,Vegetables,1
+2019,France,Europe,Cotton,1
+1996,Australia,Oceania,Soybeans,1
+2020,France,Europe,Coffee,1
+2020,Argentina,South America,Vegetables,1
+2001,France,Europe,Barley,1
+2004,France,Europe,Fruits,1
+1996,Argentina,South America,Coffee,1
+2013,USA,North America,Corn,1
+2000,China,East Asia,Rice,1
+1990,Canada,North America,Soybeans,1
+2008,Australia,Oceania,Vegetables,1
+1994,Canada,North America,Corn,1
+1995,Nigeria,Africa,Sugarcane,1
+2016,Nigeria,Africa,Fruits,1
+2015,China,East Asia,Wheat,1
+1998,Nigeria,Africa,Coffee,1
+2003,Brazil,South America,Corn,1
+2017,Australia,Oceania,Wheat,1
+2014,Canada,North America,Wheat,1
+1999,Argentina,South America,Rice,1
+2007,Argentina,South America,Wheat,1
+2006,Australia,Oceania,Barley,1
+2023,Nigeria,Africa,Sugarcane,1
+2019,China,East Asia,Coffee,1
+2020,Nigeria,Africa,Sugarcane,1
+2022,France,Europe,Corn,1
+2006,USA,North America,Wheat,1
+2010,Russia,Eurasia,Vegetables,1
+2001,India,South Asia,Vegetables,1
+2023,Nigeria,Africa,Rice,1
+2016,Brazil,South America,Corn,1
+2004,USA,North America,Cotton,1
+1992,Australia,Oceania,Soybeans,1
+1992,USA,North America,Cotton,1
+2006,Argentina,South America,Corn,1
+2010,Nigeria,Africa,Sugarcane,1
+2010,USA,North America,Fruits,1
+2011,Australia,Oceania,Corn,1
+2024,China,East Asia,Soybeans,1
+2020,Russia,Eurasia,Barley,1
+1990,Nigeria,Africa,Rice,1
+2004,Argentina,South America,Sugarcane,1
+2018,Australia,Oceania,Fruits,1
+1998,Nigeria,Africa,Barley,1
+2009,Canada,North America,Barley,1
+2018,Canada,North America,Cotton,1
+2004,India,South Asia,Cotton,1
+1996,Argentina,South America,Wheat,1
+1999,Canada,North America,Barley,1
+2003,France,Europe,Soybeans,1
+2016,India,South Asia,Coffee,1
+2013,Nigeria,Africa,Fruits,1
+2003,India,South Asia,Sugarcane,1
+2014,China,East Asia,Soybeans,1
+1994,Canada,North America,Corn,1
+2020,Argentina,South America,Soybeans,1
+2007,USA,North America,Vegetables,1
+2008,Brazil,South America,Sugarcane,1
+2020,USA,North America,Rice,1
+1997,Canada,North America,Sugarcane,1
+1992,Russia,Eurasia,Wheat,1
+2023,Nigeria,Africa,Rice,1
+2011,India,South Asia,Cotton,1
+1990,Brazil,South America,Vegetables,1
+2005,Canada,North America,Soybeans,1
+2020,USA,North America,Corn,1
+2024,Australia,Oceania,Sugarcane,1
+1996,France,Europe,Fruits,1
+2001,India,South Asia,Sugarcane,1
+2005,France,Europe,Sugarcane,1
+2006,India,South Asia,Soybeans,1
+1994,Russia,Eurasia,Coffee,1
+2015,France,Europe,Sugarcane,1
+2017,Australia,Oceania,Cotton,1
+2002,Canada,North America,Rice,1
+2018,Russia,Eurasia,Fruits,1
+2013,Brazil,South America,Barley,1
+1991,Argentina,South America,Rice,1
+1995,Nigeria,Africa,Wheat,1
+1994,Russia,Eurasia,Fruits,1
+2023,China,East Asia,Corn,1
+2004,Australia,Oceania,Corn,1
+1993,France,Europe,Sugarcane,1
+2012,Canada,North America,Sugarcane,1
+2001,Canada,North America,Rice,1
+2004,China,East Asia,Coffee,1
+2003,Brazil,South America,Corn,1
+1996,USA,North America,Cotton,1
+2003,Russia,Eurasia,Soybeans,1
+1995,Argentina,South America,Corn,1
+2011,Russia,Eurasia,Soybeans,1
+2000,Nigeria,Africa,Vegetables,1
+2004,China,East Asia,Corn,1
+2014,India,South Asia,Fruits,1
+2017,India,South Asia,Fruits,1
+2004,Canada,North America,Sugarcane,1
+2022,China,East Asia,Soybeans,1
+2018,China,East Asia,Barley,1
+2018,USA,North America,Fruits,1
+1996,India,South Asia,Wheat,1
+1990,Canada,North America,Coffee,1
+2021,Argentina,South America,Cotton,1
+1992,USA,North America,Sugarcane,1
+1995,Argentina,South America,Sugarcane,1
+2006,Australia,Oceania,Corn,1
+2018,Nigeria,Africa,Vegetables,1
+2022,USA,North America,Sugarcane,1
+1991,USA,North America,Vegetables,1
+2008,Russia,Eurasia,Soybeans,1
+2004,Russia,Eurasia,Wheat,1
+1996,Canada,North America,Sugarcane,1
+1999,Australia,Oceania,Vegetables,1
+2016,Nigeria,Africa,Vegetables,1
+2022,India,South Asia,Cotton,1
+2003,Argentina,South America,Barley,1
+1999,Australia,Oceania,Corn,1
+1995,Brazil,South America,Coffee,1
+2002,Brazil,South America,Cotton,1
+2024,Australia,Oceania,Rice,1
+2004,Nigeria,Africa,Vegetables,1
+2016,Canada,North America,Soybeans,1
+1998,USA,North America,Fruits,1
+2004,Argentina,South America,Corn,1
+2018,Canada,North America,Coffee,1
+2017,Russia,Eurasia,Coffee,1
+2003,Nigeria,Africa,Soybeans,1
+2020,Nigeria,Africa,Coffee,1
+2006,Australia,Oceania,Corn,1
+2009,India,South Asia,Rice,1
+1996,India,South Asia,Coffee,1
+2024,Canada,North America,Barley,1
+1997,France,Europe,Soybeans,1
+1998,Argentina,South America,Coffee,1
+2015,China,East Asia,Wheat,1
+2008,Argentina,South America,Corn,1
+2003,Brazil,South America,Rice,1
+2010,USA,North America,Corn,1
+2001,Nigeria,Africa,Wheat,1
+1999,France,Europe,Coffee,1
+2008,Australia,Oceania,Rice,1
+1991,China,East Asia,Soybeans,1
+2003,China,East Asia,Fruits,1
+2009,Canada,North America,Wheat,1
+2013,India,South Asia,Rice,1
+2013,China,East Asia,Rice,1
+2009,Argentina,South America,Cotton,1
+2010,France,Europe,Cotton,1
+2015,Nigeria,Africa,Corn,1
+1993,Russia,Eurasia,Rice,1
+1992,Russia,Eurasia,Rice,1
+2021,India,South Asia,Sugarcane,1
+1992,Nigeria,Africa,Cotton,1
+2010,Argentina,South America,Vegetables,1
+2007,China,East Asia,Barley,1
+2023,Russia,Eurasia,Soybeans,1
+2024,USA,North America,Barley,1
+2001,Argentina,South America,Barley,1
+1991,Argentina,South America,Coffee,1
+2008,China,East Asia,Wheat,1
+2011,Brazil,South America,Fruits,1
+2010,India,South Asia,Barley,1
+2010,France,Europe,Soybeans,1
+2024,Canada,North America,Wheat,1
+2015,Russia,Eurasia,Barley,1
+1990,China,East Asia,Corn,1
+2017,Canada,North America,Barley,1
+2011,Argentina,South America,Vegetables,1
+2013,Russia,Eurasia,Wheat,1
+2004,Argentina,South America,Coffee,1
+2015,Russia,Eurasia,Vegetables,1
+2002,USA,North America,Wheat,1
+1994,France,Europe,Coffee,1
+2000,Canada,North America,Rice,1
+2015,USA,North America,Sugarcane,1
+2021,Australia,Oceania,Soybeans,1
+1996,Canada,North America,Barley,1
+2009,Nigeria,Africa,Soybeans,1
+2016,Australia,Oceania,Coffee,1
+2023,Nigeria,Africa,Vegetables,1
+2011,India,South Asia,Fruits,1
+2014,Australia,Oceania,Barley,1
+2012,France,Europe,Cotton,1
+2008,China,East Asia,Wheat,1
+2007,Brazil,South America,Fruits,1
+2017,Brazil,South America,Wheat,1
+2012,China,East Asia,Vegetables,1
+2022,China,East Asia,Rice,1
+1991,China,East Asia,Fruits,1
+2021,USA,North America,Vegetables,1
+2014,Brazil,South America,Corn,1
+1993,China,East Asia,Rice,1
+2002,Russia,Eurasia,Fruits,1
+2023,India,South Asia,Fruits,1
+2000,China,East Asia,Cotton,1
+1999,USA,North America,Barley,1
+1999,France,Europe,Sugarcane,1
+1990,USA,North America,Fruits,1
+2012,France,Europe,Vegetables,1
+2003,Argentina,South America,Soybeans,1
+2008,China,East Asia,Corn,1
+1999,India,South Asia,Cotton,1
+2003,Russia,Eurasia,Corn,1
+2005,Australia,Oceania,Fruits,1
+2020,Argentina,South America,Sugarcane,1
+1999,France,Europe,Rice,1
+2008,Argentina,South America,Cotton,1
+2000,China,East Asia,Fruits,1
+2001,Canada,North America,Rice,1
+1994,Brazil,South America,Coffee,1
+2009,Canada,North America,Rice,1
+2001,India,South Asia,Cotton,1
+2013,France,Europe,Vegetables,1
+2021,Argentina,South America,Sugarcane,1
+2012,China,East Asia,Barley,1
+2012,Australia,Oceania,Corn,1
+2017,USA,North America,Vegetables,1
+1991,Argentina,South America,Sugarcane,1
+1998,USA,North America,Corn,1
+2014,France,Europe,Cotton,1
+2003,France,Europe,Wheat,1
+2007,Australia,Oceania,Coffee,1
+2004,Brazil,South America,Fruits,1
+2016,Brazil,South America,Soybeans,1
+2015,USA,North America,Barley,1
+2010,France,Europe,Corn,1
+2024,Canada,North America,Cotton,1
+1998,Canada,North America,Fruits,1
+2004,Australia,Oceania,Wheat,1
+2009,Canada,North America,Cotton,1
+2024,Russia,Eurasia,Coffee,1
+1991,France,Europe,Cotton,1
+1991,Australia,Oceania,Rice,1
+2024,Brazil,South America,Wheat,1
+2021,France,Europe,Fruits,1
+2007,China,East Asia,Barley,1
+2001,China,East Asia,Barley,1
+1994,Nigeria,Africa,Barley,1
+2003,Canada,North America,Vegetables,1
+2020,China,East Asia,Vegetables,1
+1996,Argentina,South America,Soybeans,1
+2024,Australia,Oceania,Vegetables,1
+2008,Canada,North America,Cotton,1
+2021,USA,North America,Soybeans,1
+1993,Australia,Oceania,Fruits,1
+1999,USA,North America,Vegetables,1
+2012,USA,North America,Barley,1
+1995,USA,North America,Rice,1
+2008,France,Europe,Rice,1
+2000,Nigeria,Africa,Fruits,1
+2014,Canada,North America,Rice,1
+2024,Australia,Oceania,Rice,1
+1991,USA,North America,Coffee,1
+1997,India,South Asia,Sugarcane,1
+2004,Argentina,South America,Corn,1
+2015,Brazil,South America,Corn,1
+2015,USA,North America,Cotton,1
+2010,USA,North America,Vegetables,1
+2012,Canada,North America,Corn,1
+2003,China,East Asia,Cotton,1
+2004,Argentina,South America,Fruits,1
+1991,India,South Asia,Coffee,1
+2013,Russia,Eurasia,Fruits,1
+2018,Argentina,South America,Corn,1
+2013,France,Europe,Fruits,1
+2006,Brazil,South America,Vegetables,1
+2021,Canada,North America,Cotton,1
+2002,India,South Asia,Coffee,1
+2000,Nigeria,Africa,Cotton,1
+1999,China,East Asia,Rice,1
+2001,USA,North America,Sugarcane,1
+2005,Australia,Oceania,Sugarcane,1
+2010,Canada,North America,Vegetables,1
+2004,Australia,Oceania,Wheat,1
+2013,Canada,North America,Coffee,1
+2003,Russia,Eurasia,Corn,1
+2008,China,East Asia,Cotton,1
+1991,China,East Asia,Cotton,1
+1995,Russia,Eurasia,Fruits,1
+2021,China,East Asia,Fruits,1
+2019,China,East Asia,Sugarcane,1
+2013,Canada,North America,Corn,1
+2004,India,South Asia,Soybeans,1
+2019,India,South Asia,Soybeans,1
+2020,Nigeria,Africa,Corn,1
+2018,Australia,Oceania,Coffee,1
+2008,China,East Asia,Coffee,1
+1992,Nigeria,Africa,Cotton,1
+1991,Canada,North America,Coffee,1
+1991,France,Europe,Soybeans,1
+2023,USA,North America,Coffee,1
+2009,Canada,North America,Soybeans,1
+2019,France,Europe,Vegetables,1
+2013,Brazil,South America,Barley,1
+1994,Canada,North America,Cotton,1
+2012,Nigeria,Africa,Coffee,1
+1994,Argentina,South America,Coffee,1
+1996,Canada,North America,Cotton,1
+1991,Russia,Eurasia,Corn,1
+2010,Argentina,South America,Rice,1
+2017,Russia,Eurasia,Corn,1
+1990,Australia,Oceania,Cotton,1
+1995,Brazil,South America,Soybeans,1
+2022,Australia,Oceania,Soybeans,1
+2014,Nigeria,Africa,Fruits,1
+2015,USA,North America,Coffee,1
+1997,Russia,Eurasia,Sugarcane,1
+2013,USA,North America,Vegetables,1
+2003,Brazil,South America,Soybeans,1
+1994,Argentina,South America,Cotton,1
+1991,India,South Asia,Cotton,1
+2020,USA,North America,Fruits,1
+2016,China,East Asia,Rice,1
+2000,USA,North America,Wheat,1
+2020,France,Europe,Barley,1
+1997,Argentina,South America,Soybeans,1
+2005,India,South Asia,Soybeans,1
+1994,Nigeria,Africa,Sugarcane,1
+2009,USA,North America,Sugarcane,1
+2021,Nigeria,Africa,Rice,1
+2016,Brazil,South America,Corn,1
+1994,Canada,North America,Soybeans,1
+2006,Canada,North America,Wheat,1
+2018,Canada,North America,Rice,1
+1999,France,Europe,Soybeans,1
+2000,India,South Asia,Fruits,1
+1994,Canada,North America,Soybeans,1
+2006,Nigeria,Africa,Cotton,1
+2001,France,Europe,Rice,1
+1998,Canada,North America,Wheat,1
+2007,Australia,Oceania,Wheat,1
+2018,Russia,Eurasia,Corn,1
+1997,Brazil,South America,Cotton,1
+1992,Australia,Oceania,Corn,1
+2021,Russia,Eurasia,Rice,1
+2007,India,South Asia,Vegetables,1
+2003,France,Europe,Barley,1
+2000,China,East Asia,Vegetables,1
+2001,India,South Asia,Sugarcane,1
+2023,Australia,Oceania,Vegetables,1
+2011,USA,North America,Soybeans,1
+2013,USA,North America,Barley,1
+2013,India,South Asia,Sugarcane,1
+2021,Brazil,South America,Corn,1
+2012,France,Europe,Rice,1
+1996,Russia,Eurasia,Fruits,1
+2015,China,East Asia,Wheat,1
+1995,Canada,North America,Soybeans,1
+2012,Australia,Oceania,Cotton,1
+1990,Australia,Oceania,Wheat,1
+1997,Russia,Eurasia,Rice,1
+1993,China,East Asia,Vegetables,1
+2016,India,South Asia,Rice,1
+2011,Brazil,South America,Corn,1
+2000,France,Europe,Fruits,1
+2003,Argentina,South America,Sugarcane,1
+1993,China,East Asia,Cotton,1
+2016,Nigeria,Africa,Wheat,1
+1992,Canada,North America,Barley,1
+2010,USA,North America,Vegetables,1
+2011,Argentina,South America,Fruits,1
+1997,Russia,Eurasia,Barley,1
+2008,India,South Asia,Rice,1
+2005,USA,North America,Fruits,1
+1996,China,East Asia,Sugarcane,1
+2004,Brazil,South America,Cotton,1
+1994,China,East Asia,Cotton,1
+1992,India,South Asia,Wheat,1
+2002,Argentina,South America,Barley,1
+2003,Brazil,South America,Cotton,1
+2009,Nigeria,Africa,Rice,1
+2001,Canada,North America,Coffee,1
+2008,India,South Asia,Wheat,1
+1990,Canada,North America,Barley,1
+1997,France,Europe,Rice,1
+1994,Australia,Oceania,Soybeans,1
+1992,China,East Asia,Wheat,1
+2005,France,Europe,Rice,1
+2014,Australia,Oceania,Wheat,1
+2005,Argentina,South America,Wheat,1
+1996,USA,North America,Barley,1
+2006,India,South Asia,Fruits,1
+2015,USA,North America,Sugarcane,1
+2021,Australia,Oceania,Wheat,1
+1991,China,East Asia,Barley,1
+2020,China,East Asia,Wheat,1
+2015,USA,North America,Sugarcane,1
+2008,China,East Asia,Cotton,1
+1997,Canada,North America,Sugarcane,1
+2022,Nigeria,Africa,Cotton,1
+2022,Australia,Oceania,Wheat,1
+2003,France,Europe,Cotton,1
+1995,Nigeria,Africa,Coffee,1
+2024,Nigeria,Africa,Vegetables,1
+1993,Australia,Oceania,Coffee,1
+1996,France,Europe,Sugarcane,1
+2000,India,South Asia,Vegetables,1
+1993,Russia,Eurasia,Sugarcane,1
+2018,Argentina,South America,Corn,1
+1995,Australia,Oceania,Coffee,1
+2022,Argentina,South America,Corn,1
+2006,USA,North America,Vegetables,1
+1991,Russia,Eurasia,Corn,1
+2019,Russia,Eurasia,Coffee,1
+2016,Nigeria,Africa,Fruits,1
+2008,Australia,Oceania,Barley,1
+2001,France,Europe,Coffee,1
+1999,Nigeria,Africa,Soybeans,1
+2020,Russia,Eurasia,Rice,1
+2023,Argentina,South America,Soybeans,1
+2000,Canada,North America,Barley,1
+1999,France,Europe,Soybeans,1
+1993,Brazil,South America,Barley,1
+2011,USA,North America,Soybeans,1
+1995,Nigeria,Africa,Rice,1
+2017,France,Europe,Rice,1
+2005,Australia,Oceania,Rice,1
+2017,China,East Asia,Coffee,1
+2009,China,East Asia,Wheat,1
+2013,India,South Asia,Wheat,1
+2012,India,South Asia,Soybeans,1
+2020,Australia,Oceania,Vegetables,1
+1994,France,Europe,Corn,1
+2021,Argentina,South America,Fruits,1
+2005,USA,North America,Soybeans,1
+1994,Nigeria,Africa,Wheat,1
+2000,Nigeria,Africa,Vegetables,1
+2013,Russia,Eurasia,Fruits,1
+1998,France,Europe,Barley,1
+2001,China,East Asia,Wheat,1
+2012,USA,North America,Coffee,1
+2017,China,East Asia,Soybeans,1
+1995,China,East Asia,Rice,1
+1990,France,Europe,Sugarcane,1
+2024,USA,North America,Coffee,1
+1999,USA,North America,Wheat,1
+2004,Russia,Eurasia,Cotton,1
+2006,Brazil,South America,Coffee,1
+1993,USA,North America,Soybeans,1
+2002,France,Europe,Wheat,1
+2016,Russia,Eurasia,Wheat,1
+2017,Nigeria,Africa,Rice,1
+1999,Argentina,South America,Fruits,1
+1997,Argentina,South America,Fruits,1
+1990,Russia,Eurasia,Corn,1
+2023,Russia,Eurasia,Vegetables,1
+2021,Canada,North America,Wheat,1
+2022,Australia,Oceania,Barley,1
+1993,Australia,Oceania,Soybeans,1
+1999,India,South Asia,Fruits,1
+1997,Argentina,South America,Fruits,1
+1995,Canada,North America,Coffee,1
+2014,France,Europe,Coffee,1
+1991,Canada,North America,Rice,1
+2018,USA,North America,Rice,1
+2004,France,Europe,Coffee,1
+1991,India,South Asia,Fruits,1
+2020,Argentina,South America,Cotton,1
+2022,Australia,Oceania,Cotton,1
+2012,Argentina,South America,Sugarcane,1
+2024,Russia,Eurasia,Soybeans,1
+2014,Australia,Oceania,Soybeans,1
+1999,Canada,North America,Vegetables,1
+1990,China,East Asia,Fruits,1
+1994,Australia,Oceania,Coffee,1
+2012,Canada,North America,Wheat,1
+2015,Canada,North America,Vegetables,1
+2006,Brazil,South America,Soybeans,1
+2022,Canada,North America,Rice,1
+1990,India,South Asia,Wheat,1
+2011,Russia,Eurasia,Rice,1
+2012,India,South Asia,Corn,1
+2004,Brazil,South America,Coffee,1
+2017,Brazil,South America,Cotton,1
+2020,Canada,North America,Wheat,1
+2016,China,East Asia,Sugarcane,1
+2007,China,East Asia,Corn,1
+1997,USA,North America,Corn,1
+2019,France,Europe,Barley,1
+1990,Russia,Eurasia,Soybeans,1
+2016,Russia,Eurasia,Vegetables,1
+2019,France,Europe,Cotton,1
+1990,Russia,Eurasia,Cotton,1
+2009,France,Europe,Cotton,1
+1992,Canada,North America,Fruits,1
+2005,China,East Asia,Coffee,1
+2023,Russia,Eurasia,Corn,1
+1994,USA,North America,Wheat,1
+1992,Argentina,South America,Soybeans,1
+2002,Russia,Eurasia,Coffee,1
+2006,Canada,North America,Wheat,1
+1991,USA,North America,Vegetables,1
+2011,Australia,Oceania,Rice,1
+2016,Russia,Eurasia,Soybeans,1
+1996,Argentina,South America,Fruits,1
+2005,Argentina,South America,Corn,1
+2020,Nigeria,Africa,Sugarcane,1
+2013,Russia,Eurasia,Fruits,1
+2012,USA,North America,Corn,1
+2017,China,East Asia,Sugarcane,1
+2021,Nigeria,Africa,Cotton,1
+2007,France,Europe,Soybeans,1
+2023,Russia,Eurasia,Rice,1
+1996,Canada,North America,Corn,1
+1995,Russia,Eurasia,Fruits,1
+1995,India,South Asia,Soybeans,1
+2013,China,East Asia,Fruits,1
+2005,Russia,Eurasia,Corn,1
+1994,Argentina,South America,Vegetables,1
+1992,Australia,Oceania,Vegetables,1
+2014,France,Europe,Fruits,1
+2010,Australia,Oceania,Sugarcane,1
+2022,USA,North America,Corn,1
+1999,Brazil,South America,Corn,1
+1990,Argentina,South America,Soybeans,1
+2019,Argentina,South America,Soybeans,1
+2007,Canada,North America,Cotton,1
+2019,Russia,Eurasia,Soybeans,1
+1994,Brazil,South America,Rice,1
+2015,Canada,North America,Wheat,1
+2019,Brazil,South America,Wheat,1
+2016,Argentina,South America,Wheat,1
+2019,Argentina,South America,Wheat,1
+1991,Australia,Oceania,Corn,1
+2015,Nigeria,Africa,Corn,1
+1995,USA,North America,Fruits,1
+2012,USA,North America,Rice,1
+2001,Nigeria,Africa,Wheat,1
+1996,Australia,Oceania,Fruits,1
+1998,France,Europe,Barley,1
+2009,USA,North America,Coffee,1
+2020,Brazil,South America,Rice,1
+2004,China,East Asia,Rice,1
+2002,Argentina,South America,Cotton,1
+1993,Brazil,South America,Vegetables,1
+2002,Nigeria,Africa,Fruits,1
+2022,Nigeria,Africa,Barley,1
+1991,Australia,Oceania,Cotton,1
+2007,China,East Asia,Vegetables,1
+1991,Australia,Oceania,Soybeans,1
+1992,China,East Asia,Rice,1
+1998,Canada,North America,Sugarcane,1
+1998,Australia,Oceania,Barley,1
+2008,Russia,Eurasia,Fruits,1
+2010,Brazil,South America,Fruits,1
+2020,Brazil,South America,Sugarcane,1
+1994,Canada,North America,Wheat,1
+2010,Australia,Oceania,Rice,1
+1998,Australia,Oceania,Fruits,1
+2010,France,Europe,Soybeans,1
+1998,India,South Asia,Rice,1
+2023,France,Europe,Soybeans,1
+2009,India,South Asia,Barley,1
+2011,Argentina,South America,Rice,1
+1993,France,Europe,Fruits,1
+2017,Argentina,South America,Cotton,1
+1997,India,South Asia,Wheat,1
+1993,Canada,North America,Fruits,1
+2003,India,South Asia,Fruits,1
+2020,France,Europe,Wheat,1
+2020,Australia,Oceania,Coffee,1
+2021,USA,North America,Barley,1
+2016,Russia,Eurasia,Wheat,1
+2005,Argentina,South America,Corn,1
+2010,China,East Asia,Wheat,1
+2013,Argentina,South America,Cotton,1
+1996,China,East Asia,Sugarcane,1
+2004,China,East Asia,Rice,1
+1995,France,Europe,Soybeans,1
+1990,France,Europe,Coffee,1
+2011,China,East Asia,Coffee,1
+2022,France,Europe,Cotton,1
