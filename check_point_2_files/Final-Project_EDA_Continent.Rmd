@@ -1,0 +1,238 @@
+---
+title: "Final Project"
+author: "Daehee Cho"
+date: "2024-11-20"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+### Libraries
+```{r}
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+```
+
+### Import Dataset
+```{r}
+data <- read.csv("climate_change_impact_on_agriculture_2024.csv")
+```
+
+### Preparation and cleaning the data
+
+```{r}
+# mutate continent columns
+
+country_to_continent <- data.frame(
+  Country = c("Argentina", "Australia", "Brazil","Canada","China","France",
+              "India","Nigeria", "Russia","USA"),
+  Continent = c("South America", "Oceania", "South America", 
+                "North America", "East Asia", "Europe", 
+                "South Asia", "Africa","Eurasia","North America")
+)
+
+data_with_continent <- data %>%
+  left_join(country_to_continent, by = "Country") 
+
+data <- data_with_continent %>%
+  select(Year, Country, Continent, Region, everything())
+
+```
+
+# Continent
+
+# 1) avg_temp and continent
+
+Box plot for Average Temperature by Continent
+
+```{r}
+anova_results <- aov(Average_Temperature_C ~ Continent, data = data)
+summary(anova_results)
+```
+
+p-value
+
+```{r}
+p_value <- summary(anova_results)[[1]]["Pr(>F)"]
+```
+
+Box plot 
+
+```{r}
+ggplot(data) +
+  geom_boxplot(mapping = aes(x = Continent, Average_Temperature_C, fill = Continent)) +
+  labs(
+    title = "Average Temperature by Continent",
+    x = "Continent",
+    y = "Average Temperature (°C)"
+  )
+```
+
+Purpose:
+
+   - The graph shows the distribution of average temperatures for various continents. It helps compare the central tendencies, variability, and overall spread of temperatures across continents.
+
+Hypothesis:
+
+   - Null Hypothesis (H0): There is no significant difference in average temperature across continents.
+
+
+   - Alternative Hypothesis (Ha): There is a significant difference in average temperature across continents
+
+Analysis:
+
+   - East Asia and South Asia have slightly higher medians compared to others, indicating generally warmer climates in these regions.
+   
+   - **Africa**, **South America**, and **South Asia** have larger IQRs, meaning their average temperatures vary more within the continent. **Europe** has the smallest IQR, indicating less variability in temperatures across the continent.
+
+   - South Asia shows a slightly longer lower whisker, potentially indicating a slight negative skew with some regions experiencing cooler temperatures compared to the majority.
+   
+   - Most continents share a similar temperature range, roughly between 0°C and 30°C. **South Asia** and **South America** have slightly broader ranges, indicating greater diversity in climate. **Oceania** and **North America** show more consistent distributions around the mid-range temperatures.
+
+   - **Africa** and **South Asia** stand out for their broader variability, possibly reflecting diverse climate zones within these continents. The general clustering of median temperatures in the **10–20°C range** suggests a moderate climate across many regions, except for specific tropical or extreme climates.
+
+
+
+
+# 2) Year vs CO2 emissions
+
+Bar plot for CO2 Emissions by Year
+
+```{r}
+ggplot(data, aes(x = Year, y = CO2_Emissions_MT, fill = Continent)) +
+  geom_bar(stat = "identity") +
+  facet_wrap(~ Continent) +
+  labs(title = "CO₂ Emissions by Year (Separated by Content)",
+       x = "Year",
+       y = "CO₂ Emissions (Million Tons)",
+       fill = "Continent"
+  ) +
+  theme_minimal()
+```
+
+Graph Representation:
+   - This is a faceted bar plot showing CO₂ emissions (in million tons) over time (years) for different continents. Each facet (subplot) represents a continent, and the bars show how emissions vary across years within that continent. The color coding differentiates the continents, making it easier to identify which plot belongs to which continent.
+
+Hypotheses:
+
+   - Null Hypothesis (H0): CO₂ emissions have not significantly changed over 
+the years.
+
+   - Alternative Hypothesis (Ha): CO₂ emissions have significantly changed over the years.
+
+Analysis:
+
+   - **North America**: Generally higher emissions compared to other continents, but a possible stabilization or slight decline in recent years.
+   
+   - **South Asia**: Significant growth in emissions over the years, indicating rapid industrialization and development.
+
+   - **Africa & Oceania**: Lower overall emissions, with relatively stable trends over time.
+
+   - **Europe**: A slight decline in emissions, possibly due to cleaner energy policies and technological advancements.
+
+   - **South America**: Relatively stable emissions, with moderate year-to-year fluctuations.
+
+   - **East Asia**: Moderate to high emissions, showing gradual growth.
+
+
+
+
+# 3) Extreme weather by year
+
+```{r}
+ggplot(data, aes(x = Extreme_Weather_Events, fill = Continent)) +
+  geom_bar(binwidth = 0.5, color = "black", alpha = 0.7, position = "identity") +
+  facet_wrap(~ Continent) +
+  labs(
+    title = "Distribution of Extreme Weather Events by Continent",
+    x = "Number of Occurrences",
+    y = "Frequency",
+    fill = "Continent"
+  ) +
+  theme_minimal()
+```
+
+Hypotheses:
+
+   - Null Hypothesis (H0): There is no significant difference in the frequency 
+of extreme weather events across continents over the years; any observed differences are due to random chance.
+
+   - Alternative Hypothesis (Ha): There is a significant difference in the frequency of extreme weather events across continents over the years.
+
+Analysis:
+
+   - **North America**: Shows a higher frequency of extreme weather events in 
+the upper range, suggesting it might experience more severe or frequent events compared to other continents. Also, there’s a noticeable concentration of higher frequency events in the upper bins, indicating potential hotspots or clusters of severe events.
+
+   - **South America and Africa**: Display relatively balanced distributions, with  no significant spikes in event frequency. This indicates a consistent pattern of extreme weather events across different ranges.
+
+   - **Oceania and Europe**: Have lower frequency distributions overall compared to continents like North America, suggesting they might experience fewer extreme weather events.
+
+   - **South Asia**: Exhibits a wider spread of extreme weather events, indicating varying severity or frequency in this region.
+
+
+
+
+# 4) Year vs precipitation
+
+Histogram for extreme weather by year in continent
+
+```{r}
+precipitation_model <- aov(Total_Precipitation_mm ~ Continent * Year, data = data) 
+summary(precipitation_model)
+p_value <- summary(precipitation_model)[[1]]["Pr(>F)"]
+ggplot(data, aes(x = Year, y = Total_Precipitation_mm, fill = Continent)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  facet_wrap(~ Continent) +
+   labs(
+      title = "Annual Precipitation by Year and Continent", 
+      x = "Year", 
+      y = "Average Precipitation (mm)",
+      fill = "Continent"
+   ) +
+ theme_minimal()
+```
+
+Hypotheses:
+
+   - Null Hypothesis (H0): There is no significant difference in average annual precipitation across continents over the years; any observed differences are due to random variation.
+
+   - Alternative Hypothesis (Ha): There is a significant difference in average annual precipitation across continents over the years.
+
+Analysis:
+
+   - **Africa**: Precipitation levels appear relatively stable with minor fluctuations over time.
+
+   - **East Asia and Eurasia**: These continents show a similar trend of stable precipitation with no noticeable spikes or drops.
+
+   - **Europe**: Precipitation seems consistent, but a closer look may reveal slight yearly variations compared to other continents.
+
+   - **North America and Oceania**: Both regions maintain fairly consistent precipitation levels, with no significant changes year over year.
+
+   - **South America and South Asia**: South Asia has relatively stable precipitation. South America shows similar stability, but the overall precipitation levels are slightly higher than some other regions.
+
+
+

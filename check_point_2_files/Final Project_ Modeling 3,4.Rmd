@@ -1,0 +1,155 @@
+---
+title: "Final Project_ Modeling 3,4"
+author: "Joonsoo Choi"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+### Libraries
+```{r}
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+```
+
+### Import Dataset
+```{r}
+data <- read.csv("climate_change_impact_on_agriculture_2024.csv")
+```
+
+### Preparation and cleaning the data
+
+```{r}
+# mutate continent columns
+
+country_to_continent <- data.frame(
+  Country = c("Argentina", "Australia", "Brazil","Canada","China","France",
+              "India","Nigeria", "Russia","USA"),
+  Continent = c("South America", "Oceania", "South America", 
+                "North America", "East Asia", "Europe", 
+                "South Asia", "Africa","Eurasia","North America")
+)
+
+data_with_continent <- data %>%
+  left_join(country_to_continent, by = "Country") 
+
+data <- data_with_continent %>%
+  select(Year, Country, Continent, Region, everything())
+
+```
+
+```{r}
+# Load necessary libraries
+library(dplyr)
+
+# Check if the required variables are available in the dataset
+if (!all(c("Crop_Yield_MT_per_HA", "Soil_Health_Index") %in% colnames(data))) {
+  stop("Variables 'yield' and 'soil_health_index' are missing in the dataset.")
+}
+
+# Model: Yield as a function of Soil Health Index
+model_Crop_Yield_MT_per_HA_Soil_Health_Index <- lm(Crop_Yield_MT_per_HA ~ Soil_Health_Index, data = data)
+
+# Summary of the model
+summary(model_Crop_Yield_MT_per_HA_Soil_Health_Index)
+
+```
+```{r}
+# Rename 'Soil_Health_Index' to 'Soil_Health'
+data <- data %>%
+  rename(Soil_Health = Soil_Health_Index)
+
+```
+
+```{r}
+sampled_data_by_country <- data %>%
+  group_by(Country) %>%
+  sample_frac(0.1) %>%  
+  ungroup()  
+
+
+ggplot(sampled_data_by_country, aes(x = Soil_Health, y = Crop_Yield_MT_per_HA)) +
+  geom_point(size = 1.5, alpha = 0.5, aes(color = Country)) +  
+  geom_smooth(method = "lm", se = TRUE, color = "black", linetype = "dashed") +  
+  labs(
+    title = "Crop Yield vs Soil Health by Country (Sampled)",
+    x = "Soil Health Index",
+    y = "Crop Yield (MT/HA)"
+  ) +
+  scale_color_brewer(palette = "Set2") +  
+  theme_minimal() +
+  facet_wrap(~ Country, scales = "free") 
+```
+
+```{r}
+# Perform linear regression by country and extract slope and intercept
+library(dplyr)
+
+country_slopes <- data %>%
+  group_by(Country) %>%
+  summarize(
+    slope = coef(lm(Crop_Yield_MT_per_HA ~ Soil_Health, data = cur_data()))[2],
+    intercept = coef(lm(Crop_Yield_MT_per_HA ~ Soil_Health, data = cur_data()))[1]
+  ) %>%
+  arrange(desc(slope))  # Sort by slope in descending order
+
+# Print the results
+print(country_slopes)
+
+```
+
+###Modeling 4
+
+```{r}
+ggplot(data, aes(x = Crop_Yield_MT_per_HA, y = Economic_Impact_Million_USD)) +
+  geom_point(size = 3, alpha = 0.7, color = "blue") +  
+  geom_smooth(method = "lm", se = TRUE, color = "black", linetype = "dashed") +  
+  labs(
+    title = "Economic Impact vs Crop Yield by Country",
+    x = "Crop Yield (MT/HA)",
+    y = "Economic Impact (Million USD)"
+  ) +
+  theme_minimal() +
+  facet_wrap(~ Country, scales = "free")  
+```
+
+```{r}
+# Linear Regression by Country and Extracting Slopes
+library(dplyr)
+
+# Perform linear regression for each country and extract slope coefficients
+country_slopes <- data %>%
+  group_by(Country) %>%
+  summarize(
+    Slope = coef(lm(Economic_Impact_Million_USD ~ Crop_Yield_MT_per_HA, data = cur_data()))[2],
+    Intercept = coef(lm(Economic_Impact_Million_USD ~ Crop_Yield_MT_per_HA, data = cur_data()))[1]
+  ) %>%
+  arrange(desc(Slope))  # Sort by slope in descending order
+
+# Display the countries with the highest and lowest slopes
+print(country_slopes)
+```
+
+```{r}
+ggplot(country_slopes, aes(x = Country, y = Slope, color = Slope)) +
+  geom_point(size = 4, alpha = 0.8) +
+  geom_text(aes(label = round(Slope, 2)), vjust = -1, size = 3) +  # Display slope values
+  labs(
+    title = "Country-wise Crop Yield Efficiency (Slope)",
+    x = "Country",
+    y = "Slope (Efficiency)"
+  ) +
+  scale_color_gradient(low = "blue", high = "red") +
+  theme_minimal()
+```
+

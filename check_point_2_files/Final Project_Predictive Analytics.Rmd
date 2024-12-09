@@ -1,0 +1,342 @@
+---
+title: "Final Project_Predictive Analytics"
+author: "Juhyun"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+### Libraries
+```{r}
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+library(modelr)
+library(boot)
+```
+
+### Import Dataset
+```{r}
+data <- read.csv("climate_change_impact_on_agriculture_2024.csv")
+```
+
+### Preparation and cleaning the data
+
+```{r}
+# mutate continent columns
+
+country_to_continent <- data.frame(
+  Country = c("Argentina", "Australia", "Brazil","Canada","China","France",
+              "India","Nigeria", "Russia","USA"),
+  Continent = c("South America", "Oceania", "South America", 
+                "North America", "East Asia", "Europe", 
+                "South Asia", "Africa","Eurasia","North America")
+)
+
+data_with_continent <- data %>%
+  left_join(country_to_continent, by = "Country") 
+
+data <- data_with_continent %>%
+  select(Year, Country, Continent, Region, everything())
+
+```
+
+```{r}
+aggregated_data <- data %>%
+  group_by(Year, Continent) %>%
+  summarize(
+    avg_crop_yield = mean(Crop_Yield_MT_per_HA, na.rm = TRUE),
+    avg_extreme_weather_events =mean(Extreme_Weather_Events, na.rm= TRUE),
+    avg_temp_c = mean(Average_Temperature_C, na.rm = TRUE),
+    avg_total_precipitation_mm = mean(Total_Precipitation_mm, na.rm = TRUE),
+    avg_co2_emissions_mt = mean(CO2_Emissions_MT, na.rm =TRUE),
+    avg_pesticide_use_kg_per_ha = mean(Pesticide_Use_KG_per_HA, na.rm=TRUE),
+    avg_fertilizer_use_kg_per_ha = mean(Fertilizer_Use_KG_per_HA, na.rm =TRUE),
+    avg_soil_health_index = mean(Soil_Health_Index, na.rm=TRUE),
+    avg_economic_impact_million_usd = mean(Economic_Impact_Million_USD, na.rm = TRUE)
+  ) %>%
+  ungroup() 
+
+```
+
+```{r}
+data <- data %>%
+  left_join(aggregated_data, by = c("Year", "Continent"))
+
+data_constracted <- data %>%
+  select(-c(6:9, 12:14, 16))
+```
+
+```{r, fig.width=30}
+# Remove non-numeric columns for correlation analysis
+reduced_data <- data_constracted %>%
+  select(-Year, -Continent, -Country, -Region, -Crop_Type, -Adaptation_Strategies) %>%
+  select(where(is.numeric)) # Ensure only numeric columns remain
+
+# Compute correlation matrix, handling missing values
+corr_matrix <- round(cor(reduced_data, use = "complete.obs"), 2)
+
+# Visualize the correlation matrix
+ggcorrplot(corr_matrix, hc.order = TRUE, type = "lower", lab = TRUE)
+```
+```{r,fig.width=30}
+# Remove non-numeric columns for correlation analysis
+reduced_data <- data %>%
+  select(-Year, -Continent, -Country, -Region, -Crop_Type, -Adaptation_Strategies) %>%
+  select(where(is.numeric)) # Keep only numeric columns
+
+# Compute the correlation matrix
+corr_matrix <- round(cor(reduced_data, use = "complete.obs"), 2)
+
+# Visualize the correlation matrix
+ggcorrplot(corr_matrix, hc.order = TRUE, type = "lower", lab = TRUE)
+```
+```{r}
+ data %>%
+  pivot_longer(
+    cols = c(Average_Temperature_C, CO2_Emissions_MT, Total_Precipitation_mm, 
+             Crop_Yield_MT_per_HA, Extreme_Weather_Events), 
+    names_to = "measurement", 
+    values_to = "value"
+  ) %>%
+  ggplot() +
+  geom_point(mapping = aes(x = value, y = Economic_Impact_Million_USD)) +
+  facet_wrap(~measurement, scales = "free_x") +
+  geom_smooth(mapping = aes(x = value, y = Economic_Impact_Million_USD), method = "lm") +
+  labs(
+    title = "Relationships Between Measurements and Economic Impact",
+    x = "Measurement Value",
+    y = "Economic Impact (Million USD)"
+  ) +
+  theme_minimal()
+
+```
+
+
+```{r}
+set.seed(10000)
+
+train_df <- data %>% sample_frac(0.7)
+
+test_df <- anti_join(data, train_df)
+
+```
+```{r}
+train_df<-train_df%>%
+ mutate(
+ continent = as.factor(Continent),
+ crop_type = as.factor(Crop_Type),
+ average_temperature_c = as.numeric(Average_Temperature_C),
+ extreme_weather_events = as.logical(Extreme_Weather_Events)
+ )
+```
+```{r}
+ train_df%>%
+ pivot_longer(cols= Year|Average_Temperature_C, names_to="variable",values_to="value")%>%
+ ggplot()+
+ geom_histogram(
+ mapping=aes(x=value,fill=extreme_weather_events),
+ position="identity",
+ alpha=0.5)+
+ facet_wrap(~ variable,scales = "free")+
+ labs(title="HistogramofAgeandFareandwhethertheysurvived",
+ x= "value",
+ y= "count"
+ )
+```
+```{r}
+ train_df%>%
+ pivot_longer(cols= Year|avg_crop_yield, names_to="variable",values_to="value")%>%
+ ggplot()+
+ geom_histogram(
+ mapping=aes(x=value,fill= extreme_weather_events),
+ position="identity",
+ alpha=0.5)+
+ facet_wrap(~ variable,scales = "free")+
+ labs(title="HistogramofAgeandFareandwhethertheysurvived",
+ x= "value",
+ y= "count"
+ )
+```
+```{r, fig.size = 10}
+ train_df %>%
+ pivot_longer(cols = c(Year|avg_crop_yield), names_to = "variable",
+ values_to = "value")%>%
+ ggplot()+
+ geom_histogram(mapping=aes(x=value,fill=extreme_weather_events, alpha = 0.2)) +
+ facet_wrap(~ variable, scales= "free")+
+ labs(title="Bar graph of survival by Parch, Pclass, Sex, SibSp",
+ x = "value",
+ y= "count")
+```
+```{r}
+ train_df %>%
+ summarize(
+ total = n(),
+ missing = sum(is.na(avg_crop_yield)),
+ fraction_missing = missing/total
+ )
+```
+```{r}
+model_1<-glm(extreme_weather_events~avg_crop_yield,data=train_df,family="binomial")
+```
+
+```{r}
+ model_1_preds<-train_df %>%
+ add_predictions(model_1,type="response")%>%
+ mutate(
+ outcome= if_else(condition=pred>0.5,
+ true=1,
+ false=0)
+ )
+```
+```{r}
+ model_1_preds %>%
+ mutate(
+ correct= if_else(
+ condition=Extreme_Weather_Events== outcome,
+ true =1,
+ false=0
+ )
+ )%>%
+ summarize(
+ total_correct=sum(correct),
+ accuracy=total_correct/n()
+ )
+```
+```{r}
+library(boot)
+logistic_cv1 <- cv.glm(
+  data = train_df,
+  glmfit = model_1,
+  K = 5
+)
+```
+
+
+```{r}
+logistic_cv1$delta
+```
+
+
+```{r}
+model_2<-glm(extreme_weather_events~avg_crop_yield * Average_Temperature_C * Total_Precipitation_mm * CO2_Emissions_MT ,data=train_df,family="binomial")
+```
+
+```{r}
+ model_2_preds<-train_df %>%
+ add_predictions(model_2,type="response")%>%
+ mutate(
+ outcome= if_else(condition=pred>0.5,
+ true=1,
+ false=0)
+ )
+```
+```{r}
+ model_2_preds %>%
+ mutate(
+ correct= if_else(
+ condition=Extreme_Weather_Events== outcome,
+ true =1,
+ false=0
+ )
+ )%>%
+ summarize(
+ total_correct=sum(correct),
+ accuracy=total_correct/n()
+ )
+```
+```{r}
+library(boot)
+logistic_cv2 <- cv.glm(
+  data = train_df,
+  glmfit = model_2,
+  K = 5
+)
+```
+
+
+```{r}
+logistic_cv2$delta
+```
+
+```{r}
+model_3<-glm(extreme_weather_events ~ (Average_Temperature_C + Total_Precipitation_mm + CO2_Emissions_MT) * avg_crop_yield ,data=train_df,family="binomial")
+```
+
+```{r}
+ model_3_preds<-train_df %>%
+ add_predictions(model_3,type="response")%>%
+ mutate(
+ outcome= if_else(condition=pred>0.5,
+ true=1,
+ false=0)
+ )
+```
+```{r}
+ model_3_preds %>%
+ mutate(
+ correct= if_else(
+ condition=Extreme_Weather_Events== outcome,
+ true =1,
+ false=0
+ )
+ )%>%
+ summarize(
+ total_correct=sum(correct),
+ accuracy=total_correct/n()
+ )
+```
+```{r}
+logistic_cv3 <- cv.glm(
+  data = train_df,
+  glmfit = model_3,
+  K = 5
+)
+```
+
+
+```{r}
+logistic_cv3$delta
+```
+
+```{r}
+test_df<-test_df%>%
+ mutate(
+ continent = as.factor(Continent),
+ crop_type = as.factor(Crop_Type),
+ extreme_weather_events = as.logical(Extreme_Weather_Events)
+ )
+```
+```{r}
+model_best <-glm(extreme_weather_events ~ avg_crop_yield,data= test_df,
+                  family="binomial")
+```
+```{r}
+ model_best_preds<-test_df%>%
+ add_predictions(model_best,type="response")%>%
+ mutate(
+ outcome= if_else(condition=pred>0.5,
+ true=1,
+ false=0)
+ )
+```
+```{r}
+logistic_cv_best <- cv.glm(
+  data = test_df,
+  glmfit = model_best,
+  K = 5
+)
+```
+
+
+```{r}
+logistic_cv3$delta
+```
+```{r}
+ Bonus_exercise_df<-model_best_preds%>%
+ select(Year, Country, Continent,Crop_Type,outcome)%>%
+ rename(extreme_weather_model=outcome)
+ write_csv(Bonus_exercise_df,"Bonus_exercise.csv")
+```
+
+
